@@ -63,7 +63,7 @@
     },
     "F-Bento.dc.html": {
       "expand": "fill",
-      "h": 6360,
+      "h": 8630,
       "is_interactive": true,
       "title": "F · Editorial bento (gekozen, ronde 4)",
       "w": 1440,
@@ -81,12 +81,12 @@
     },
     "F-Makers.dc.html": {
       "expand": "fill",
-      "h": 6080,
+      "h": 6310,
       "is_interactive": true,
       "title": "F2 · Voor makers",
       "w": 1440,
       "x": 9120,
-      "y": 6510
+      "y": 8780
     }
   },
   "createdOnFiles": {

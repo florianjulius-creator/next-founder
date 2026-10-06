@@ -21,7 +21,7 @@ input::placeholder{color:#6E6E74}
 .nf-navlink:hover{text-decoration:underline}
 .nm-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:stretch}
 .nm-pas{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(150px,auto));grid-template-areas:"te te pr pr" "te te kl pp" "ip bv kl pp"}
-.nm-tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 24px}
+.nm-tl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 24px}
 .nm-form{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:start}
 .nm-preview{position:sticky;top:24px}
 .nm-tegel{transition:background-color 480ms cubic-bezier(.16,1,.3,1),color 480ms cubic-bezier(.16,1,.3,1)}
@@ -32,6 +32,7 @@ input::placeholder{color:#6E6E74}
 .nm-input[aria-invalid="true"]{border-color:#B3261E!important;box-shadow:0 0 0 1px #B3261E}
 .nm-swatch:hover{transform:scale(1.08)}
 @media (max-width:1080px){.nm-hero{grid-template-columns:minmax(0,1fr);gap:48px}.nm-form{grid-template-columns:minmax(0,1fr);gap:40px}.nm-preview{position:static;order:-1}}
+@media (max-width:1180px){.nm-tl{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:900px){.nm-tl{grid-template-columns:minmax(0,1fr);gap:0}}
 @media (max-width:640px){.nf-navtekst{display:none}.nm-pas{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(140px,auto);grid-template-areas:"te te" "pr pr" "kl bv" "kl ip" "pp pp"}}
 .nm-pas>*{animation:nm-in 900ms cubic-bezier(.16,1,.3,1) backwards}
@@ -151,6 +152,34 @@ a:hover>svg:last-child{transform:translateX(4px)}
         <p style="margin: 0; font-size: 16px; font-weight: 500">{{pk.bedrijf}} · {{pk.plaats}}</p>
         <p style="margin: 0; font-size: 17px; line-height: 1.45; color: {{pk.sub}}; max-width: 40ch">{{pk.zin}}</p>
       </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 18px; border-top: 1px solid {{pk.lijn}}; animation: {{pAnim}} 560ms cubic-bezier(.16,1,.3,1) backwards 160ms">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 13px; color: {{pk.sub}}">Vakgebieden, afgeleid van het profiel</span>
+          <span style="display: flex; flex-wrap: wrap; gap: 6px">
+            <sc-for list="{{pk.vak}}" as="x" hint-placeholder-count="3">
+              <span style="padding: 2px 10px; border-radius: 999px; border: 1px solid {{pk.fg}}; font-size: 13px; font-weight: 500">{{x.t}}</span>
+            </sc-for>
+          </span>
+        </div>
+        <dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px; font-size: 15px; line-height: 1.4">
+          <dt style="color: {{pk.sub}}">Uren per maand</dt><dd style="margin: 0; font-weight: 500">[UREN]</dd>
+          <dt style="color: {{pk.sub}}">Intro's</dt><dd style="margin: 0; font-weight: 500">[INTRO'S]</dd>
+        </dl>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 15px; line-height: 1.4">{{pk.capZin}}</span>
+          <span aria-hidden="true" style="display: block; width: 100%; max-width: 180px; height: 8px; box-sizing: border-box; border-radius: 999px; border: 1px solid {{pk.fg}}; overflow: hidden"><span style="display: block; height: 100%; width: {{pk.meterW}}; background: {{pk.fg}}"></span></span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.45">
+          <sc-if value="{{pk.isMaker}}" hint-placeholder-val="{{false}}">
+            <p style="margin: 0; font-weight: 600">{{pk.makerVan}}</p>
+          </sc-if>
+          <p style="margin: 0">{{pk.track}}</p>
+        </div>
+        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; font-size: 14px; line-height: 1.4; color: {{pk.sub}}">
+          <span>Uit de who's who van Deel II</span>
+          <a href="{{pk.profielUrl}}" style="display: inline-flex; align-items: center; min-height: 44px; color: {{pk.fg}}; font-weight: 500; text-decoration: underline">Profiel aanpassen of verwijderen</a>
+        </p>
+      </div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
       <div role="group" aria-label="Filter de tafel" style="display: flex; flex-wrap: wrap; gap: 8px">
@@ -176,10 +205,10 @@ a:hover>svg:last-child{transform:translateX(4px)}
 <section id="belofte" aria-labelledby="belofte-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 40px; scroll-margin-top: 16px">
   <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px">
     <h2 id="belofte-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Wat jij belooft.</h2>
-    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">De kandidaat bewijst inzet. Jij bewijst dat wat er staat klopt. Vijf afspraken, van dag 0 tot de stemming.</p>
+    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">De kandidaat bewijst inzet. Jij bewijst dat wat er staat klopt. Zes afspraken, van dag 0 tot de stemming.</p>
   </div>
   <ol class="nm-tl" style="margin: 0; padding: 0; list-style: none">
-    <sc-for list="{{belofte}}" as="b" hint-placeholder-count="5">
+    <sc-for list="{{belofte}}" as="b" hint-placeholder-count="6">
       <li style="display: flex; flex-direction: column; gap: 10px; padding: 18px 0 28px; border-top: 2px solid #101012; min-width: 0">
         <span style="display: flex; align-items: center; gap: 10px">
           <span aria-hidden="true" style="flex: none; width: 14px; height: 14px; border-radius: 4px; background: {{b.kleur}}"></span>
@@ -270,6 +299,35 @@ a:hover>svg:last-child{transform:translateX(4px)}
           </div>
         </fieldset>
 
+        <fieldset style="margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <legend style="padding: 0; margin-bottom: 4px; font-size: 16px; font-weight: 600">Wat jij biedt</legend>
+          <p style="margin: 0 0 4px; font-size: 15px; color: #4A4A50">Je steunmenu voor wie je venture overneemt.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px 24px">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span id="l-uren" style="font-size: 15px; font-weight: 500">Uren per maand</span>
+              <div role="group" aria-labelledby="l-uren" style="display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{urenKeuze}}" as="u" hint-placeholder-count="3">
+                  <button type="button" class="nm-keuze" onClick="{{u.kies}}" aria-pressed="{{u.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid {{u.rand}}; background: {{u.bg}}; color: {{u.fg}}; font: inherit; font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; cursor: pointer">{{u.label}}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span id="l-intros" style="font-size: 15px; font-weight: 500">Intro's uit je netwerk</span>
+              <div role="group" aria-labelledby="l-intros" style="display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{introKeuze}}" as="i" hint-placeholder-count="3">
+                  <button type="button" class="nm-keuze" role="checkbox" onClick="{{i.wissel}}" aria-checked="{{i.aan}}" style="appearance: none; margin: 0; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; border-radius: 999px; border: 1px solid {{i.rand}}; background: {{i.bg}}; color: {{i.fg}}; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">
+                    <span aria-hidden="true" class="nm-vak" style="flex: none; width: 18px; height: 18px; box-sizing: border-box; border-radius: 5px; border: 2px solid currentColor; display: inline-flex; align-items: center; justify-content: center">
+                      <sc-if value="{{i.aan}}" hint-placeholder-val="{{false}}">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
+                      </sc-if>
+                    </span>{{i.label}}
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
         <div style="display: grid; grid-template-columns: minmax(0, 420px); gap: 24px">
           <div style="display: flex; flex-direction: column; gap: 8px">
             <label for="f-mail" style="font-size: 16px; font-weight: 600">Jouw e-mailadres</label>
@@ -354,6 +412,9 @@ a:hover>svg:last-child{transform:translateX(4px)}
             </sc-if>
             <span style="font-size: 14px; line-height: 1.35; color: #5C5C62">{{pMakersZin}}</span>
           </div>
+          <p style="margin: 0; display: flex; align-items: flex-start; gap: 8px; font-size: 14px; line-height: 1.4; color: #101012">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg><span>{{pSteun}}</span>
+          </p>
           <p style="margin: 0; padding-top: 12px; border-top: 1px solid #E2E2DE; font-size: 14px; font-weight: 500">{{pNiveau}} · {{pEditie}}</p>
         </div>
       </div>
@@ -366,12 +427,20 @@ a:hover>svg:last-child{transform:translateX(4px)}
     <div style="display: flex; flex-direction: column; gap: 18px">
       <h2 id="terug-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Wat je ervoor terugkrijgt.</h2>
       <p style="margin: 0; max-width: 36ch; font-size: 19px; line-height: 1.5; color: #4A4A50">Je venture blijft niet liggen, en jij blijft aan tafel.</p>
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px">
+        <div role="group" aria-label="Verdienmodel" style="display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid #E2E2DE">
+          <sc-for list="{{modelKnoppen}}" as="m" hint-placeholder-count="2">
+            <button type="button" onClick="{{m.kies}}" aria-pressed="{{m.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: {{m.bg}}; color: {{m.fg}}; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">{{m.label}}</button>
+          </sc-for>
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #5C5C62">Het verdienmodel ligt nog aan tafel. Bekijk beide.</p>
+      </div>
     </div>
     <dl style="margin: 0; display: flex; flex-direction: column">
       <sc-for list="{{terug}}" as="r" hint-placeholder-count="4">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 6px 24px; padding: 22px 0; border-top: 1px solid #E2E2DE">
-          <dt style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em">{{r.term}}</dt>
-          <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: #3A3A40">{{r.tekst}}</dd>
+          <dt style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; animation: {{mAnim}} 520ms cubic-bezier(.16,1,.3,1) backwards {{r.delay}}">{{r.term}}</dt>
+          <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: #3A3A40; animation: {{mAnim}} 520ms cubic-bezier(.16,1,.3,1) backwards {{r.delay}}">{{r.tekst}}</dd>
         </div>
       </sc-for>
     </dl>
@@ -422,7 +491,7 @@ a:hover>svg:last-child{transform:translateX(4px)}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":6080}}'>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":6310}}'>
 class Component extends DCLogic {
   renderVals() {
     const st = this.state || {};
@@ -456,6 +525,7 @@ class Component extends DCLogic {
       {"id": "martin-deumens", "naam": "Martin Deumens", "voornaam": "Martin", "groep": "Builder", "bedrijf": "BLEACH", "plaats": "Maastricht", "zin": "Merkontwerper uit de Maastrichtse scene die net creatief bureau BLEACH begon.", "foto": "/_blob/4e98c3cc2084380dde93303ee955ad2b"},
       {"id": "gwen", "naam": "Gwen Nijs", "voornaam": "Gwen", "groep": "Builder", "bedrijf": "BLEACH", "plaats": "Amsterdam", "zin": "Merk- en digitaal ontwerper, medeoprichter van BLEACH met Martin Deumens.", "foto": "/_blob/9a0ce25011246a4d773b119f5b496e60"}
     ];
+    const VAK = {"barbara-van-erp": ["Media", "Abonnementen", "Doelgroep 50+"], "bas-blokhuis": ["Software", "Zorg", "Impact"], "emilie-oostenbroek": ["Groei", "Klantervaring", "Fintech"], "florian-julius": ["AI", "Webontwikkeling", "MKB"], "hugo-hemmen": ["Teams op afstand", "Tech-werving", "Opschalen"], "jeroen-derwort": ["Games", "Community", "Branche"], "joachim-de-boer": ["E-commerce", "Retail", "Opschalen"], "lenneke-van-ingen": ["Talent", "Casting", "Serieel ondernemen"], "lisa-wals": ["Design", "Merken", "Verzamelobjecten"], "marco-nobel": ["Vastgoed", "Investeren", "Muziek"], "marleen-evertsz": ["Fintech", "Handel", "Serieel ondernemen"], "mike-van-klaveren": ["E-commerce", "Groothandel", "Opschalen"], "nick-velten": ["Exit", "Investeren", "DTC-merken"], "niels-verwij": ["E-commerce", "Bootstrappen", "Opschalen"], "pepijn-meddens": ["Fintech", "Betalen", "Venture building"], "stefan-witkamp": ["Hardware", "Smart home", "Exit"], "timothy-scheek": ["Hardware", "Exit", "Beveiliging"], "alex-butter": ["Techniek", "Fintech"], "giorgio-orsucci": ["Product", "Systeemontwerp", "AI"], "sander-belaen": ["Apps", "Gezondheid", "Indie"], "wouter-van-den-hoven": ["Techniek", "AI", "Food en landbouw"], "ruben-maas": ["Techniek", "Reizen", "AI"], "guido-schmitz": ["Apps", "HR-tech", "Frontlinie"], "martin-deumens": ["Merk", "Design"], "gwen": ["Merk", "Digitaal ontwerp"]};
     const SH = '­';
     const waarde = (e) => (e && e.target !== undefined) ? e.target.value : (e == null ? '' : String(e));
 
@@ -474,6 +544,18 @@ class Component extends DCLogic {
     const poging = !!st.poging;
     const verzonden = !!st.verzonden;
     const vraag = st.vraag ?? 0;
+    const uren = st.uren ?? 4;
+    const intros = st.intros ?? [];
+    const model = st.model ?? 'belang';
+    const fee = model === 'fee';
+    const mtik = st.mtik || 0;
+    // Ventures op Next Founder met een bekende maker. Alleen deze koppeling is bevestigd.
+    const GEMAAKT = [
+      { venture: 'Biedmeester', status: 'open', makers: ['florian-julius'] },
+      { venture: 'Vaste Prik', status: 'open', makers: ['florian-julius'] }
+    ];
+    const MAX_BEGELEIDING = null;
+    const PROFIEL_URL = 'https://github.com/florianjulius-creator/next-founder/issues/new?title=';
 
     const PAL = [
       { label: 'Limoen', bg: '#C6F05A', fg: INK, sub: '#2E3A12', tone: 'licht' },
@@ -502,11 +584,12 @@ class Component extends DCLogic {
     ].map((t) => ({ ...t, bg: PAL[t.p].bg, fg: PAL[t.p].fg, sub: PAL[t.p].sub, tone: PAL[t.p].tone }));
 
     const belofte = [
-      { dag: 'Dag 0', titel: 'Paspoort', tekst: 'Wat er staat, met een bron bij elke claim.', kleur: PAL[0].bg },
-      { dag: 'Dag 1 tot 7', titel: 'Bereikbaar', tekst: 'Vragen van de kandidaat binnen 48 uur beantwoord.', kleur: PAL[1].bg },
-      { dag: 'Dag 7', titel: 'Overdrachts' + SH + 'akte klaar', tekst: 'IP en aandelen liggen klaar voor overdracht.', kleur: PAL[2].bg },
-      { dag: 'Dag 8 tot 30', titel: 'Overdrachts' + SH + 'uren', tekst: 'Twee uur per week sparren en deuren openen.', kleur: PAL[3].bg },
-      { dag: 'Dag 30', titel: 'Stem met reden', tekst: 'Elke stem komt met een onderbouwing.', kleur: PAL[4].bg }
+      { dag: 'Dag 0', titel: 'Kennismaken', tekst: 'Een half uur, en een eerlijk oordeel of het klikt.', kleur: PAL[0].bg },
+      { dag: 'Dag 1', titel: 'Paspoort', tekst: 'Wat er staat, met een bron bij elke claim.', kleur: PAL[1].bg },
+      { dag: 'Dag 1 tot 7', titel: 'Bereikbaar', tekst: 'Vragen van de kandidaat binnen 48 uur beantwoord.', kleur: PAL[2].bg },
+      { dag: 'Dag 7', titel: 'Overdrachts' + SH + 'akte klaar', tekst: 'IP en aandelen liggen klaar voor overdracht.', kleur: PAL[3].bg },
+      { dag: 'Dag 8 tot 30', titel: 'Overdrachts' + SH + 'uren', tekst: 'Twee uur per week sparren en deuren openen.', kleur: PAL[4].bg },
+      { dag: 'Dag 30', titel: 'Stem met reden', tekst: 'Elke stem komt met een onderbouwing.', kleur: PAL[5].bg }
     ];
 
     const pil = (aan) => ({ bg: aan ? INK : WIT, fg: aan ? WIT : INK, rand: aan ? INK : '#D5D5D0' });
@@ -516,9 +599,9 @@ class Component extends DCLogic {
     ].map((e) => ({ ...e, aan: editie === e.key, ...pil(editie === e.key), kies: () => this.setState({ editie: e.key }) }));
     const niveaus = ['Schets', 'Prototype', 'Sleutelklaar'].map((n) => ({ label: n, aan: niveau === n, ...pil(niveau === n), kies: () => this.setState({ niveau: n }) }));
     const uitleg = {
-      Schets: 'Een gepitcht idee met een eerste validatie. Je zoekt een bouwer-founder, zonder inleg. De makers houden samen 5%.',
-      Prototype: 'Werkende MVP en eerste klantgesprekken. Je zoekt iemand die valideert en doorbouwt. Inleg [BEDRAG]. De makers houden samen 10%.',
-      Sleutelklaar: 'Compleet platform, alleen de verkoop ontbreekt. Je zoekt een commerciële CEO. Inleg [BEDRAG]. De makers houden samen 15%.'
+      Schets: 'Een gepitcht idee met een eerste validatie. Je zoekt een bouwer-founder, zonder inleg. ' + (fee ? 'Platformfee [BEDRAG] bij overdracht.' : 'De makers houden samen 5%.'),
+      Prototype: 'Werkende MVP en eerste klantgesprekken. Je zoekt iemand die valideert en doorbouwt. Inleg [BEDRAG]. ' + (fee ? 'Platformfee [BEDRAG] bij overdracht.' : 'De makers houden samen 10%.'),
+      Sleutelklaar: 'Compleet platform, alleen de verkoop ontbreekt. Je zoekt een commerciële CEO. Inleg [BEDRAG]. ' + (fee ? 'Platformfee [BEDRAG] bij overdracht.' : 'De makers houden samen 15%.')
     };
     const zoekt = { Schets: 'Bouwer-founder', Prototype: 'Iemand die valideert en doorbouwt', Sleutelklaar: 'Commerciële CEO' };
 
@@ -555,7 +638,7 @@ class Component extends DCLogic {
 
     const vragenData = [
       { vraag: 'Wat als niet alle makers willen overdragen?', antwoord: 'Dan gaat de venture niet de etalage in. Alle makers tekenen vooraf dat hij overgedragen mag worden, zodat niemand later alles kan blokkeren.' },
-      { vraag: 'Hoeveel tijd kost het mij?', antwoord: 'In de proefmaand twee uur per week om te sparren en deuren te openen, en vragen van de kandidaat beantwoord je binnen 48 uur. Wat daarna komt, spreek je af met de nieuwe founder.' },
+      { vraag: 'Hoeveel tijd kost het mij?', antwoord: 'In de proefmaand twee uur per week om te sparren en deuren te openen, en vragen van de kandidaat beantwoord je binnen 48 uur. Daarna geldt je steunmenu: je kiest zelf 2, 4 of 8 uur per maand, en bij wie je intro\'s geeft.' },
       { vraag: 'Wie ziet mijn paspoort?', antwoord: 'De etalage is voor iedereen zichtbaar. Code en klantdata ziet alleen de kandidaat, en pas na checkpoint 1.' }
     ];
     const vragen = vragenData.map((v, i) => {
@@ -580,7 +663,43 @@ class Component extends DCLogic {
       .filter((t) => tafelFilter === 'alle' || t.groep === tafelFilter)
       .map((t) => ({ ...t, aan: t.i === persoon, ring: t.i === persoon ? '0 0 0 3px #FFFFFF, 0 0 0 6px #101012' : 'none', kies: () => this.setState({ persoon: t.i, ptik: ((this.state && this.state.ptik) || 0) + 1 }) }));
     const pkPal = PAL[persoon % PAL.length];
-    const pk = { ...TAFEL[persoon], bg: pkPal.bg, fg: pkPal.fg, sub: pkPal.sub, tone: pkPal.tone };
+    const pkEigen = GEMAAKT.filter((g) => g.makers.includes(TAFEL[persoon].id));
+    const pkBegeleidt = pkEigen.filter((g) => g.status === 'vol' || g.status === 'over').length;
+    const pkOver = pkEigen.filter((g) => g.status === 'over').length;
+    const pkNamen = pkEigen.map((g) => g.venture);
+    const pk = {
+      ...TAFEL[persoon],
+      bg: pkPal.bg,
+      fg: pkPal.fg,
+      sub: pkPal.sub,
+      tone: pkPal.tone,
+      lijn: pkPal.tone === 'donker' ? 'rgba(255, 255, 255, 0.34)' : 'rgba(16, 16, 18, 0.22)',
+      vak: (VAK[TAFEL[persoon].id] || []).map((x) => ({ t: x })),
+      capZin: 'Begeleidt nu ' + pkBegeleidt + ' van max [MAX] ventures',
+      meterW: (MAX_BEGELEIDING ? Math.min(100, Math.round(pkBegeleidt / MAX_BEGELEIDING * 100)) : 0) + '%',
+      isMaker: pkNamen.length > 0,
+      makerVan: 'Maker van ' + (pkNamen.length < 2 ? pkNamen.join('') : pkNamen.slice(0, -1).join(', ') + ' en ' + pkNamen[pkNamen.length - 1]) + '.',
+      track: pkOver === 0 ? 'Op Next Founder: nieuw, nog geen overdrachten begeleid.' : 'Op Next Founder: ' + pkOver + (pkOver === 1 ? ' overdracht' : ' overdrachten') + ' begeleid.',
+      profielUrl: PROFIEL_URL + encodeURIComponent('Profiel aanpassen: ' + TAFEL[persoon].naam)
+    };
+    const INTRO = ['Klanten', 'Partners', 'Investeerders'];
+    const urenKeuze = [2, 4, 8].map((u) => ({ label: u + ' uur', aan: uren === u, ...pil(uren === u), kies: () => this.setState({ uren: u }) }));
+    const introKeuze = INTRO.map((label) => {
+      const aan = intros.includes(label);
+      return {
+        label: label,
+        aan: aan,
+        ...pil(aan),
+        wissel: () => {
+          const cur = ((this.state && this.state.intros) || intros).slice();
+          const k = cur.indexOf(label);
+          if (k >= 0) cur.splice(k, 1); else cur.push(label);
+          this.setState({ intros: cur });
+        }
+      };
+    });
+    const introNamen = INTRO.filter((x) => intros.includes(x)).map((x) => x.toLowerCase());
+    const introLijst = introNamen.length < 2 ? introNamen.join('') : introNamen.slice(0, -1).join(', ') + ' en ' + introNamen[introNamen.length - 1];
     const kiezer = TAFEL.map((t) => {
       const aan = makersSel.includes(t.id);
       return {
@@ -643,7 +762,10 @@ class Component extends DCLogic {
         if (fouten.length > 0) this.setState({ poging: true });
         else this.setState({ verzonden: true, poging: false });
       },
-      opnieuw: () => this.setState({ verzonden: false, poging: false, fNaam: '', fZin: '', makersSel: [], fMail: '', akkoord: false, bew: [true, false, false, false, false] }),
+      opnieuw: () => this.setState({ verzonden: false, poging: false, fNaam: '', fZin: '', makersSel: [], fMail: '', akkoord: false, bew: [true, false, false, false, false], uren: 4, intros: [] }),
+      urenKeuze: urenKeuze,
+      introKeuze: introKeuze,
+      pSteun: 'Steun: ' + uren + ' uur per maand' + (introNamen.length ? ", intro's bij " + introLijst : ''),
       klaarKop: (fNaam.trim() || 'Je venture') + ' staat als concept klaar.',
       pv: pv,
       pStatus: verzonden ? 'Concept · ingediend' : 'Concept',
@@ -658,11 +780,21 @@ class Component extends DCLogic {
       pNiveau: niveau,
       pEditie: editie === 'I' ? 'Deel I · Kaapstad' : 'Deel II · Marokko',
       terug: [
-        { term: 'Een eigen belang', tekst: 'Met de andere makers houd je samen 5 tot 15%, gebundeld in een STAK. Hoe verder de venture is, hoe groter dat belang. De nieuwe founder krijgt de meerderheid, met 4 jaar vesting.' },
+        fee
+          ? { term: 'Betaald voor je steun', tekst: 'Geen belang. Uit de platformfee betaalt een steunpot je uren, in de proefmaand en daarna.' }
+          : { term: 'Een eigen belang', tekst: 'Met de andere makers houd je samen 5 tot 15%, gebundeld in een STAK. Hoe verder de venture is, hoe groter dat belang. De nieuwe founder krijgt de meerderheid, met 4 jaar vesting.' },
         { term: 'Een founder die het meent', tekst: 'Niemand krijgt je venture zonder dertig dagen bewijs.' },
         { term: 'De laatste stem', tekst: 'Op dag 30 stemmen de makers, elk met een reden.' },
         { term: 'Een vangnet', tekst: 'Haalt de kandidaat de route niet, dan gaat de venture terug in de etalage.' }
-      ],
+      ].map((r, i) => ({ ...r, delay: (i * 50) + 'ms' })),
+      modelKnoppen: [
+        { key: 'belang', label: 'Belang' },
+        { key: 'fee', label: 'Eenmalige fee' }
+      ].map((m) => {
+        const aan = model === m.key;
+        return { label: m.label, aan: aan, bg: aan ? INK : 'transparent', fg: aan ? WIT : INK, kies: () => { if (!aan) this.setState({ model: m.key, mtik: ((this.state && this.state.mtik) || 0) + 1 }); } };
+      }),
+      mAnim: mtik % 2 ? 'nm-wa' : 'nm-wb',
       vragen: vragen
     };
   }
