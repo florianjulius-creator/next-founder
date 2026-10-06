@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · G Verzamelkaarten</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&amp;family=Figtree:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#EEEBF6}
+::selection{background:#14121C;color:#F4D35E}
+:focus-visible{outline:3px solid #14121C;outline-offset:3px}
+.nf-donker :focus-visible{outline-color:#F4D35E}
+.nf-track{--per:3;--max:var(--m3)}
+@media (max-width:1100px){.nf-track{--per:2;--max:var(--m2)}}
+@media (max-width:640px){.nf-track{--per:1;--max:var(--m1)}}
+.nf-kaart{transition:transform 260ms cubic-bezier(.16,1,.3,1),box-shadow 260ms cubic-bezier(.16,1,.3,1)}
+@media (hover:hover){.nf-kaart:hover{transform:translateY(-8px)!important;box-shadow:0 20px 36px -22px rgba(20,18,28,.55)!important}}
+.nf-nav,.nf-knop,.nf-chip,.nf-stap,.nf-pijl,.nf-draai,.nf-instap,.nf-seg{transition:background-color 160ms ease,border-color 160ms ease,color 160ms ease}
+.nf-nav:hover{background:#E1DAF0}
+.nf-chip:not([aria-pressed="true"]):hover,.nf-stap:not([aria-pressed="true"]):hover,.nf-knop:not([aria-pressed="true"]):hover{border-color:#14121C!important;background:#E1DAF0!important}
+.nf-seg:not([aria-pressed="true"]):hover{background:#D3CAE8!important}
+.nf-draai:hover{background:rgba(246,243,251,.2)!important}
+.nf-instap:hover{background:#FFE48A!important}
+.nf-pijl:not([aria-disabled="true"]):hover{background:#14121C!important;color:#F6F3FB!important}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; color: #14121C; background: #EEEBF6; display: flex; flex-direction: column; overflow-x: clip">
+
+<header style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 18px clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+  <a href="#top" style="display: flex; align-items: center; gap: 12px; min-height: 44px; color: #14121C; text-decoration: none">
+    <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="11" y="3" width="19" height="25" rx="5" transform="rotate(12 20.5 15.5)" fill="#3A2244"></rect><rect x="4" y="6" width="19" height="25" rx="5" fill="#14121C"></rect><rect x="8" y="10" width="11" height="10" rx="2.5" fill="#F4D35E"></rect></svg>
+    <span style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -0.025em">{{naam}}</span>
+      <span style="font-size: 13px; font-weight: 500; line-height: 1; color: #4F4963">by House of Founders</span>
+    </span>
+  </a>
+  <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 16px; font-weight: 600">
+    <a class="nf-nav" href="#collectie" style="padding: 12px 14px; border-radius: 12px; color: #14121C; text-decoration: none">Collectie</a>
+    <a class="nf-nav" href="#route" style="padding: 12px 14px; border-radius: 12px; color: #14121C; text-decoration: none">Bewijsroute</a>
+    <a class="nf-nav" href="#makers" style="padding: 12px 14px; border-radius: 12px; color: #14121C; text-decoration: none">Voor makers</a>
+    <a href="#collectie" style="margin-left: 8px; padding: 13px 20px; border-radius: 14px; background: #14121C; color: #F6F3FB; text-decoration: none; font-weight: 700">Instappen</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section aria-labelledby="hero-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 8px clamp(16px, 3vw, 32px) 0">
+  <div style="border-radius: 28px; background: #E1DAF0; padding: clamp(28px, 4.4vw, 60px) clamp(20px, 3vw, 40px) clamp(24px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px 44px">
+    <div style="flex: 1 1 300px; max-width: 420px; display: flex; flex-direction: column; gap: 24px">
+      <h1 id="hero-kop" style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(40px, 4vw, 54px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance">Gebouwd in het Huis. Wie pakt het op?</h1>
+      <p style="margin: 0; max-width: 36ch; font-size: 18px; line-height: 1.5; color: #3F3A52">{{heroTekst}}</p>
+      <div role="group" aria-label="Ik kom als" style="display: flex; flex-wrap: wrap; gap: 10px">
+        <button type="button" class="nf-knop" onClick="{{kiesKandidaat}}" aria-pressed="{{isKandidaat}}" style="min-height: 52px; padding: 0 20px; border-radius: 14px; border: 2px solid #14121C; background: {{rolK.bg}}; color: {{rolK.fg}}; font-family: Figtree, sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Ik wil instappen</button>
+        <button type="button" class="nf-knop" onClick="{{kiesMaker}}" aria-pressed="{{isMaker}}" style="min-height: 52px; padding: 0 20px; border-radius: 14px; border: 2px solid #14121C; background: {{rolM.bg}}; color: {{rolM.fg}}; font-family: Figtree, sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Ik lever een venture aan</button>
+      </div>
+      <p style="margin: 0; display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.45; color: #4F4963">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+        <span>{{heroHint}}</span>
+      </p>
+    </div>
+
+    <div role="region" aria-roledescription="carrousel" aria-label="Ventures met een open plek" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <div style="overflow: clip; padding: 16px 0 44px; margin: -16px 0 -44px">
+        <ul class="nf-track" style="--m3: {{m3}}; --m2: {{m2}}; --m1: {{m1}}; list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; transition: transform 520ms cubic-bezier(.16, 1, .3, 1); transform: translateX(calc(-1 * min({{idx}}, var(--max)) * (100% + 20px) / var(--per)))">
+          <sc-for list="{{uitgelicht}}" as="k" hint-placeholder-count="6">
+            <li style="flex: 0 0 calc((100% - (var(--per) - 1) * 20px) / var(--per)); min-width: 0; display: flex">
+              <article class="nf-kaart" aria-label="{{k.naam}}" style="flex: 1; min-width: 0; display: flex; border-radius: 18px; perspective: 1600px; transform: {{k.lift}}; box-shadow: {{k.schaduw}}">
+                <div style="flex: 1; min-width: 0; display: grid; transform-style: preserve-3d; transition: transform 500ms cubic-bezier(.16, 1, .3, 1); transform: {{k.rot}}">
+                  <div class="nf-donker" onClick="{{k.omdraaien}}" style="grid-area: 1 / 1; min-width: 0; visibility: {{k.voorZicht}}; transition: visibility 0s linear 250ms; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-sizing: border-box; display: flex; flex-direction: column; padding: 10px; border-radius: 18px; background: {{k.kleur}}; color: #F6F3FB; cursor: pointer">
+                    <div style="position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #F6EFDC">
+                      <img src="{{k.cover}}" alt="{{k.alt}}" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover">
+                      <span style="position: absolute; left: 10px; top: 10px; padding: 7px 11px; border-radius: 999px; background: {{k.kleur}}; color: #F6F3FB; font-size: 13px; font-weight: 600; line-height: 1">{{k.niveau}}</span>
+                      <sc-if value="{{k.voorbeeld}}" hint-placeholder-val="{{false}}">
+                        <span style="position: absolute; right: 10px; top: 10px; padding: 7px 11px; border-radius: 999px; background: #14121C; color: #F4D35E; font-size: 13px; font-weight: 600; line-height: 1">Voorbeeld</span>
+                      </sc-if>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 8px 0">
+                      <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.05; letter-spacing: -0.02em">{{k.naam}}</h3>
+                      <p style="margin: 0; font-size: 15px; line-height: 1.45; color: rgba(246, 243, 251, 0.8)">{{k.zin}}</p>
+                      <p style="margin: 4px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.3; font-weight: 600">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4D35E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg>
+                        <span><span style="font-weight: 400; color: rgba(246, 243, 251, 0.78)">Zoekt</span> {{k.zoekt}}</span>
+                      </p>
+                    </div>
+                    <dl style="margin: auto 0 0; padding: 20px 8px 12px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); font-variant-numeric: tabular-nums">
+                      <div style="display: flex; flex-direction: column; gap: 4px; padding-right: 12px">
+                        <dt style="font-size: 13px; color: rgba(246, 243, 251, 0.74)">Bewijs</dt>
+                        <dd style="margin: 0; font-size: 18px; font-weight: 700">{{k.bewijsTekst}}</dd>
+                      </div>
+                      <div style="display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 1px solid rgba(246, 243, 251, 0.2)">
+                        <dt style="font-size: 13px; color: rgba(246, 243, 251, 0.74)">Plekken</dt>
+                        <dd style="margin: 0; font-size: 18px; font-weight: 700">{{k.plekken}}</dd>
+                      </div>
+                    </dl>
+                    <button type="button" class="nf-draai" onClick="{{k.omdraaien}}" aria-pressed="{{k.om}}" style="min-height: 44px; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border: 0; border-radius: 12px; background: rgba(246, 243, 251, 0.1); color: #F6F3FB; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Draai om
+                      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+                    </button>
+                  </div>
+                  <div class="nf-donker" style="grid-area: 1 / 1; min-width: 0; visibility: {{k.achterZicht}}; transition: visibility 0s linear 250ms; transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 18px 16px 10px; border-radius: 18px; background: {{k.kleur}}; color: #F6F3FB">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+                      <div style="display: flex; flex-direction: column; gap: 5px; min-width: 0">
+                        <p style="margin: 0; font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.05; letter-spacing: -0.02em">{{k.naam}}</p>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.3; color: rgba(246, 243, 251, 0.78)">{{k.paspoortRegel}}</p>
+                      </div>
+                      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F4D35E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="4" y="2.5" width="16" height="19" rx="2.5"></rect><circle cx="12" cy="10" r="3.2"></circle><path d="M8.5 17h7"></path></svg>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <p style="margin: 0; font-size: 13px; font-weight: 700; color: #F4D35E">Wat er staat</p>
+                      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+                        <sc-for list="{{k.staat}}" as="x" hint-placeholder-count="2">
+                          <li style="display: flex; gap: 8px; font-size: 14px; line-height: 1.4"><span aria-hidden="true" style="flex: none; margin-top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #F4D35E"></span><span>{{x}}</span></li>
+                        </sc-for>
+                      </ul>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <p style="margin: 0; font-size: 13px; font-weight: 700; color: #F4D35E">Wat ontbreekt</p>
+                      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+                        <sc-for list="{{k.mist}}" as="x" hint-placeholder-count="2">
+                          <li style="display: flex; gap: 8px; font-size: 14px; line-height: 1.4"><span aria-hidden="true" style="flex: none; margin-top: 5px; width: 9px; height: 9px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid rgba(246, 243, 251, 0.6)"></span><span>{{x}}</span></li>
+                        </sc-for>
+                      </ul>
+                    </div>
+                    <ul aria-label="{{k.bewijsLabel}}" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 5px">
+                      <sc-for list="{{k.proofs}}" as="b" hint-placeholder-count="5">
+                        <li style="display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px 4px 5px; border-radius: 999px; border: 1px solid {{b.rand}}; background: {{b.bg}}; color: {{b.fg}}; font-size: 12px; font-weight: 600; line-height: 1">
+                          <sc-if value="{{b.on}}" hint-placeholder-val="{{true}}">
+                            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                          </sc-if>
+                          <sc-if value="{{b.off}}" hint-placeholder-val="{{false}}">
+                            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="7"></circle></svg>
+                          </sc-if>
+                          {{b.label}}<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{b.sr}}</span>
+                        </li>
+                      </sc-for>
+                    </ul>
+                    <dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; font-size: 14px; line-height: 1.35">
+                      <dt style="color: rgba(246, 243, 251, 0.74)">Inleg</dt><dd style="margin: 0; font-weight: 600">{{k.inleg}}</dd>
+                    </dl>
+                    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+                      <sc-if value="{{k.isOpen}}" hint-placeholder-val="{{true}}">
+                        <a class="nf-instap" href="#route" aria-label="Instappen bij {{k.naam}}" style="min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 16px; border-radius: 12px; background: #F4D35E; color: #14121C; text-decoration: none; font-size: 15px; font-weight: 700">Instappen
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                        </a>
+                      </sc-if>
+                      <sc-if value="{{k.isVol}}" hint-placeholder-val="{{false}}">
+                        <button type="button" disabled="disabled" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border-radius: 12px; border: 1.5px dashed rgba(246, 243, 251, 0.5); background: transparent; color: rgba(246, 243, 251, 0.85); font-family: Figtree, sans-serif; font-size: 15px; font-weight: 700; cursor: not-allowed">
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Vol
+                        </button>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.4; color: rgba(246, 243, 251, 0.8)">Eén kandidaat zit in de proefmaand. Vol = vol.</p>
+                      </sc-if>
+                      <sc-if value="{{k.isWeg}}" hint-placeholder-val="{{false}}">
+                        <button type="button" disabled="disabled" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border-radius: 12px; border: 1.5px dashed rgba(246, 243, 251, 0.5); background: transparent; color: rgba(246, 243, 251, 0.85); font-family: Figtree, sans-serif; font-size: 15px; font-weight: 700; cursor: not-allowed">
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg>Overgedragen
+                        </button>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.4; color: rgba(246, 243, 251, 0.8)">Deze venture heeft een nieuwe founder.</p>
+                      </sc-if>
+                      <button type="button" class="nf-draai" onClick="{{k.terugdraaien}}" aria-pressed="{{k.om}}" style="min-height: 44px; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border: 0; border-radius: 12px; background: rgba(246, 243, 251, 0.1); color: #F6F3FB; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Draai om
+                        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center">
+          <sc-for list="{{dots}}" as="d" hint-placeholder-count="6">
+            <button type="button" onClick="{{d.ga}}" aria-label="{{d.label}}" aria-current="{{d.current}}" style="width: 40px; height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; background: transparent; cursor: pointer">
+              <span aria-hidden="true" style="display: block; width: {{d.w}}; height: 8px; border-radius: 999px; background: {{d.kleur}}; transition: width 300ms cubic-bezier(.16, 1, .3, 1)"></span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <p aria-live="polite" style="margin: 0 6px 0 0; font-size: 14px; font-weight: 600; color: #3F3A52; font-variant-numeric: tabular-nums">Kaart {{kaartNr}} van {{kaartTotaal}}</p>
+          <button type="button" class="nf-pijl" onClick="{{vorige}}" aria-label="Vorige kaart" aria-disabled="{{geenVorige}}" style="width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 50%; background: #FBFAFD; color: #14121C; opacity: {{vorigeOp}}; cursor: pointer">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+          </button>
+          <button type="button" class="nf-pijl" onClick="{{volgende}}" aria-label="Volgende kaart" aria-disabled="{{geenVolgende}}" style="width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 50%; background: #FBFAFD; color: #14121C; opacity: {{volgendeOp}}; cursor: pointer">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="collectie" aria-labelledby="col-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 9vw, 128px) clamp(16px, 3vw, 32px) 0">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px">
+    <h2 id="col-kop" style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(38px, 4.6vw, 62px); line-height: 1; letter-spacing: -0.03em">De collectie</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #3F3A52">Elke venture heeft een eigen paspoort en één plek. Draai een kaart om en lees wat er staat en wat er nog ontbreekt.</p>
+  </div>
+  <div style="margin-top: 36px; padding-bottom: 20px; border-bottom: 1px solid #D5CDE6; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px">
+    <div role="group" aria-label="Filter op niveau" style="display: flex; flex-wrap: wrap; gap: 8px">
+      <sc-for list="{{chips}}" as="c" hint-placeholder-count="4">
+        <button type="button" class="nf-chip" onClick="{{c.kies}}" aria-pressed="{{c.aan}}" style="min-height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 7px 0 16px; border-radius: 999px; border: 1.5px solid {{c.rand}}; background: {{c.bg}}; color: {{c.fg}}; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">{{c.label}}
+          <span style="min-width: 30px; height: 30px; padding: 0 8px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: {{c.telBg}}; color: #14121C; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums">{{c.count}}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px">
+      <button type="button" class="nf-seg" onClick="{{wisselOpen}}" aria-pressed="{{alleenOpen}}" style="min-height: 44px; display: inline-flex; align-items: center; gap: 12px; padding: 0 14px 0 8px; border: 0; border-radius: 14px; background: transparent; color: #14121C; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">
+        <span aria-hidden="true" style="position: relative; width: 44px; height: 26px; box-sizing: border-box; border-radius: 999px; background: {{schakel.bg}}; border: 2px solid #14121C; transition: background-color 200ms ease">
+          <span style="position: absolute; top: 2px; left: {{schakel.x}}; width: 18px; height: 18px; border-radius: 50%; background: {{schakel.knop}}; transition: left 220ms cubic-bezier(.16, 1, .3, 1)"></span>
+        </span>
+        Alleen open plekken
+      </button>
+      <div role="group" aria-label="Sorteer" style="display: inline-flex; gap: 4px; padding: 4px; border-radius: 16px; background: #E1DAF0">
+        <sc-for list="{{sorteer}}" as="s" hint-placeholder-count="2">
+          <button type="button" class="nf-seg" onClick="{{s.kies}}" aria-pressed="{{s.aan}}" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: {{s.bg}}; color: {{s.fg}}; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">{{s.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  <p aria-live="polite" style="margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; line-height: 1.4; color: #4F4963"><span style="font-weight: 700; color: #14121C">{{resultaat}}</span><span>Voorbeeld = illustratie, geen echte venture.</span></p>
+  <sc-if value="{{nietLeeg}}" hint-placeholder-val="{{true}}">
+    <ul style="list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(264px, 100%), 1fr)); gap: 28px 20px">
+      <sc-for list="{{collectie}}" as="k" hint-placeholder-count="8">
+        <li style="display: flex; min-width: 0">
+              <article class="nf-kaart" aria-label="{{k.naam}}" style="flex: 1; min-width: 0; display: flex; border-radius: 18px; perspective: 1600px; transform: {{k.lift}}; box-shadow: {{k.schaduw}}">
+                <div style="flex: 1; min-width: 0; display: grid; transform-style: preserve-3d; transition: transform 500ms cubic-bezier(.16, 1, .3, 1); transform: {{k.rot}}">
+                  <div class="nf-donker" onClick="{{k.omdraaien}}" style="grid-area: 1 / 1; min-width: 0; visibility: {{k.voorZicht}}; transition: visibility 0s linear 250ms; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-sizing: border-box; display: flex; flex-direction: column; padding: 10px; border-radius: 18px; background: {{k.kleur}}; color: #F6F3FB; cursor: pointer">
+                    <div style="position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #F6EFDC">
+                      <img src="{{k.cover}}" alt="{{k.alt}}" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover">
+                      <span style="position: absolute; left: 10px; top: 10px; padding: 7px 11px; border-radius: 999px; background: {{k.kleur}}; color: #F6F3FB; font-size: 13px; font-weight: 600; line-height: 1">{{k.niveau}}</span>
+                      <sc-if value="{{k.voorbeeld}}" hint-placeholder-val="{{false}}">
+                        <span style="position: absolute; right: 10px; top: 10px; padding: 7px 11px; border-radius: 999px; background: #14121C; color: #F4D35E; font-size: 13px; font-weight: 600; line-height: 1">Voorbeeld</span>
+                      </sc-if>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 8px 0">
+                      <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.05; letter-spacing: -0.02em">{{k.naam}}</h3>
+                      <p style="margin: 0; font-size: 15px; line-height: 1.45; color: rgba(246, 243, 251, 0.8)">{{k.zin}}</p>
+                      <p style="margin: 4px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.3; font-weight: 600">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4D35E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg>
+                        <span><span style="font-weight: 400; color: rgba(246, 243, 251, 0.78)">Zoekt</span> {{k.zoekt}}</span>
+                      </p>
+                    </div>
+                    <dl style="margin: auto 0 0; padding: 20px 8px 12px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); font-variant-numeric: tabular-nums">
+                      <div style="display: flex; flex-direction: column; gap: 4px; padding-right: 12px">
+                        <dt style="font-size: 13px; color: rgba(246, 243, 251, 0.74)">Bewijs</dt>
+                        <dd style="margin: 0; font-size: 18px; font-weight: 700">{{k.bewijsTekst}}</dd>
+                      </div>
+                      <div style="display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 1px solid rgba(246, 243, 251, 0.2)">
+                        <dt style="font-size: 13px; color: rgba(246, 243, 251, 0.74)">Plekken</dt>
+                        <dd style="margin: 0; font-size: 18px; font-weight: 700">{{k.plekken}}</dd>
+                      </div>
+                    </dl>
+                    <button type="button" class="nf-draai" onClick="{{k.omdraaien}}" aria-pressed="{{k.om}}" style="min-height: 44px; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border: 0; border-radius: 12px; background: rgba(246, 243, 251, 0.1); color: #F6F3FB; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Draai om
+                      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+                    </button>
+                  </div>
+                  <div class="nf-donker" style="grid-area: 1 / 1; min-width: 0; visibility: {{k.achterZicht}}; transition: visibility 0s linear 250ms; transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; padding: 18px 16px 10px; border-radius: 18px; background: {{k.kleur}}; color: #F6F3FB">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+                      <div style="display: flex; flex-direction: column; gap: 5px; min-width: 0">
+                        <p style="margin: 0; font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.05; letter-spacing: -0.02em">{{k.naam}}</p>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.3; color: rgba(246, 243, 251, 0.78)">{{k.paspoortRegel}}</p>
+                      </div>
+                      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F4D35E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="4" y="2.5" width="16" height="19" rx="2.5"></rect><circle cx="12" cy="10" r="3.2"></circle><path d="M8.5 17h7"></path></svg>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <p style="margin: 0; font-size: 13px; font-weight: 700; color: #F4D35E">Wat er staat</p>
+                      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+                        <sc-for list="{{k.staat}}" as="x" hint-placeholder-count="2">
+                          <li style="display: flex; gap: 8px; font-size: 14px; line-height: 1.4"><span aria-hidden="true" style="flex: none; margin-top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #F4D35E"></span><span>{{x}}</span></li>
+                        </sc-for>
+                      </ul>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <p style="margin: 0; font-size: 13px; font-weight: 700; color: #F4D35E">Wat ontbreekt</p>
+                      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+                        <sc-for list="{{k.mist}}" as="x" hint-placeholder-count="2">
+                          <li style="display: flex; gap: 8px; font-size: 14px; line-height: 1.4"><span aria-hidden="true" style="flex: none; margin-top: 5px; width: 9px; height: 9px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid rgba(246, 243, 251, 0.6)"></span><span>{{x}}</span></li>
+                        </sc-for>
+                      </ul>
+                    </div>
+                    <ul aria-label="{{k.bewijsLabel}}" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 5px">
+                      <sc-for list="{{k.proofs}}" as="b" hint-placeholder-count="5">
+                        <li style="display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px 4px 5px; border-radius: 999px; border: 1px solid {{b.rand}}; background: {{b.bg}}; color: {{b.fg}}; font-size: 12px; font-weight: 600; line-height: 1">
+                          <sc-if value="{{b.on}}" hint-placeholder-val="{{true}}">
+                            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                          </sc-if>
+                          <sc-if value="{{b.off}}" hint-placeholder-val="{{false}}">
+                            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="7"></circle></svg>
+                          </sc-if>
+                          {{b.label}}<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{b.sr}}</span>
+                        </li>
+                      </sc-for>
+                    </ul>
+                    <dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; font-size: 14px; line-height: 1.35">
+                      <dt style="color: rgba(246, 243, 251, 0.74)">Inleg</dt><dd style="margin: 0; font-weight: 600">{{k.inleg}}</dd>
+                    </dl>
+                    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+                      <sc-if value="{{k.isOpen}}" hint-placeholder-val="{{true}}">
+                        <a class="nf-instap" href="#route" aria-label="Instappen bij {{k.naam}}" style="min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 16px; border-radius: 12px; background: #F4D35E; color: #14121C; text-decoration: none; font-size: 15px; font-weight: 700">Instappen
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                        </a>
+                      </sc-if>
+                      <sc-if value="{{k.isVol}}" hint-placeholder-val="{{false}}">
+                        <button type="button" disabled="disabled" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border-radius: 12px; border: 1.5px dashed rgba(246, 243, 251, 0.5); background: transparent; color: rgba(246, 243, 251, 0.85); font-family: Figtree, sans-serif; font-size: 15px; font-weight: 700; cursor: not-allowed">
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Vol
+                        </button>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.4; color: rgba(246, 243, 251, 0.8)">Eén kandidaat zit in de proefmaand. Vol = vol.</p>
+                      </sc-if>
+                      <sc-if value="{{k.isWeg}}" hint-placeholder-val="{{false}}">
+                        <button type="button" disabled="disabled" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border-radius: 12px; border: 1.5px dashed rgba(246, 243, 251, 0.5); background: transparent; color: rgba(246, 243, 251, 0.85); font-family: Figtree, sans-serif; font-size: 15px; font-weight: 700; cursor: not-allowed">
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg>Overgedragen
+                        </button>
+                        <p style="margin: 0; font-size: 13px; line-height: 1.4; color: rgba(246, 243, 251, 0.8)">Deze venture heeft een nieuwe founder.</p>
+                      </sc-if>
+                      <button type="button" class="nf-draai" onClick="{{k.terugdraaien}}" aria-pressed="{{k.om}}" style="min-height: 44px; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border: 0; border-radius: 12px; background: rgba(246, 243, 251, 0.1); color: #F6F3FB; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Draai om
+                        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        </li>
+      </sc-for>
+    </ul>
+  </sc-if>
+  <sc-if value="{{leeg}}" hint-placeholder-val="{{false}}">
+    <div style="margin-top: 24px; border-radius: 28px; border: 2px dashed #8D84AA; padding: clamp(32px, 5vw, 64px); display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+      <svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#14121C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="6" width="24" height="34" rx="5" stroke-dasharray="4 4"></rect><path d="M19 23h10"></path></svg>
+      <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em">Geen open plek bij deze keuze.</h3>
+      <p style="margin: 0; max-width: 52ch; font-size: 17px; line-height: 1.5; color: #3F3A52">Elke kaart hier heeft al een kandidaat in de proefmaand of een nieuwe founder. Vol = vol.</p>
+      <button type="button" onClick="{{toonAlles}}" style="min-height: 48px; padding: 0 20px; border: 0; border-radius: 14px; background: #14121C; color: #F6F3FB; font-family: Figtree, sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Toon alle kaarten</button>
+    </div>
+  </sc-if>
+</section>
+
+<section id="route" aria-labelledby="route-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(88px, 10vw, 140px) clamp(16px, 3vw, 32px) 0">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px">
+    <h2 id="route-kop" style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(38px, 4.6vw, 62px); line-height: 1; letter-spacing: -0.03em">De bewijsroute</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #3F3A52">Dertig dagen, twee sporen die gelijk oplopen. De kandidaat bewijst inzet. De makers bewijzen dat wat er staat klopt.</p>
+  </div>
+  <div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px">
+    <span id="route-als" style="font-size: 15px; font-weight: 600; color: #3F3A52">Bekijk de route als</span>
+    <div role="group" aria-labelledby="route-als" style="display: inline-flex; gap: 4px; padding: 4px; border-radius: 16px; background: #E1DAF0">
+      <button type="button" class="nf-seg" onClick="{{kiesKandidaat}}" aria-pressed="{{isKandidaat}}" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: {{segK.bg}}; color: {{segK.fg}}; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Kandidaat</button>
+      <button type="button" class="nf-seg" onClick="{{kiesMaker}}" aria-pressed="{{isMaker}}" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: {{segM.bg}}; color: {{segM.fg}}; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer">Maker</button>
+    </div>
+  </div>
+  <ol aria-label="Vijf momenten van de route" style="list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+    <sc-for list="{{stappen}}" as="s" hint-placeholder-count="5">
+      <li style="display: flex; min-width: 0">
+        <button type="button" class="nf-stap" onClick="{{s.kies}}" aria-pressed="{{s.aan}}" style="flex: 1; min-width: 0; min-height: clamp(88px, 11vw, 136px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 18px 18px 16px; border-radius: 18px; border: 1.5px solid {{s.rand}}; background: {{s.bg}}; color: {{s.fg}}; text-align: left; font-family: Figtree, sans-serif; cursor: pointer">
+          <span style="font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.08; letter-spacing: -0.015em">{{s.titel}}</span>
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: {{s.sub}}">
+            <span aria-hidden="true" style="width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 2px solid {{s.sub}}; background: {{s.stip}}"></span>{{s.dag}}
+          </span>
+        </button>
+      </li>
+    </sc-for>
+  </ol>
+  <div aria-live="polite" style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 16px">
+    <sc-for list="{{sporen}}" as="p" hint-placeholder-count="2">
+      <article style="min-width: 0; box-sizing: border-box; border-radius: 28px; border: 1.5px solid {{p.rand}}; background: {{p.bg}}; color: {{p.fg}}; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 12px">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 700; font-size: clamp(28px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.025em">{{p.titel}}</h3>
+        <p style="margin: 0; font-size: 15px; font-weight: 600; color: {{p.accent}}">{{p.meta}}</p>
+        <p style="margin: 8px 0 0; max-width: 44ch; font-size: 18px; line-height: 1.5; color: {{p.sub}}">{{p.tekst}}</p>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section id="deal" aria-labelledby="deal-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(88px, 10vw, 140px) clamp(16px, 3vw, 32px) 0">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 20px; align-items: stretch">
+    <div class="nf-donker" style="min-width: 0; border-radius: 28px; background: #14121C; color: #F6F3FB; padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; gap: 14px">
+      <h2 id="deal-kop" style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(38px, 4.6vw, 62px); line-height: 1; letter-spacing: -0.03em">De deal</h2>
+      <p style="margin: 0; max-width: 40ch; font-size: 18px; line-height: 1.5; color: rgba(246, 243, 251, 0.8)">Wat je krijgt als de makers ja zeggen, en wat zij houden.</p>
+      <dl style="margin: 14px 0 0; display: flex; flex-direction: column">
+        <sc-for list="{{deal}}" as="d" hint-placeholder-count="5">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; border-top: 1px solid rgba(246, 243, 251, 0.16)">
+            <dt style="flex: 0 0 150px; font-size: 15px; line-height: 1.45; color: rgba(246, 243, 251, 0.74)">{{d.k}}</dt>
+            <dd style="flex: 1 1 220px; margin: 0; font-size: 17px; line-height: 1.45; font-weight: 600">{{d.v}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+    <div id="makers" style="min-width: 0; border-radius: 28px; background: #E1DAF0; padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; align-items: flex-start; gap: 18px">
+      <h2 id="makers-kop" style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.02; letter-spacing: -0.03em">Voor makers</h2>
+      <p style="margin: 0; max-width: 42ch; font-size: 18px; line-height: 1.5; color: #3F3A52">Je bouwde mee in het Huis en pakt het zelf niet door. Zet je venture in de collectie, met een bron bij elke claim, en stem mee over wie hem overneemt.</p>
+      <p style="margin: 0; max-width: 42ch; font-size: 18px; line-height: 1.5; color: #3F3A52">Je beantwoordt vragen binnen 48 uur. In de proefmaand geef je twee uur per week aan de overdracht.</p>
+      <a href="#route" onClick="{{kiesMaker}}" style="margin-top: auto; min-height: 52px; display: inline-flex; align-items: center; gap: 12px; padding: 0 20px; border-radius: 14px; background: #14121C; color: #F6F3FB; text-decoration: none; font-size: 16px; font-weight: 700">Bekijk het spoor voor makers
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="slot-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(104px, 12vw, 168px) clamp(16px, 3vw, 32px) clamp(96px, 11vw, 152px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px">
+  <div aria-hidden="true" style="display: flex; justify-content: center; padding-bottom: 18px">
+    <sc-for list="{{waaier}}" as="w" hint-placeholder-count="8">
+      <span style="flex: none; display: block; width: clamp(46px, 8.6vw, 92px); box-sizing: border-box; margin-left: {{w.ml}}; padding: 4px 4px 14px; border-radius: 10px; background: {{w.kleur}}; transform: translateY({{w.y}}) rotate({{w.rot}})">
+        <img src="{{w.cover}}" alt="{{w.alt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 1 / 1; border-radius: 7px; object-fit: cover; background: #F6EFDC">
+      </span>
+    </sc-for>
+  </div>
+  <h2 id="slot-kop" style="margin: 0; max-width: 15ch; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(42px, 6vw, 84px); line-height: 0.98; letter-spacing: -0.03em; text-wrap: balance">Elk idee is van de hele tafel.</h2>
+  <p style="margin: 0; max-width: 48ch; font-size: 19px; line-height: 1.5; color: #3F3A52; text-wrap: pretty">Tot iemand het oppakt. Per venture zit er één kandidaat in de proefmaand. Haal je de route niet, dan komt de plek terug in de collectie.</p>
+  <p style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 38px); letter-spacing: -0.02em">Vol = vol.</p>
+  <div style="margin-top: 6px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+    <a href="#collectie" style="min-height: 52px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 14px; background: #14121C; color: #F6F3FB; text-decoration: none; font-size: 16px; font-weight: 700">Kies een kaart</a>
+    <a class="nf-knop" href="#makers" style="min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 14px; border: 2px solid #14121C; color: #14121C; text-decoration: none; font-size: 16px; font-weight: 700">Ik lever een venture aan</a>
+  </div>
+</section>
+
+</main>
+
+<footer style="border-top: 1px solid #D5CDE6">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 26px clamp(16px, 3vw, 32px) 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; font-size: 15px; line-height: 1.4; color: #3F3A52">
+    <span><span style="font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-weight: 800; color: #14121C">{{naam}}</span> is een initiatief van House of Founders</span>
+    <span>Een idee telt pas als het gebouwd is.</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":4605}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const naam = this.props.naam ?? 'Next Founder';
+    const rol = st.rol === 'maker' ? 'maker' : 'kandidaat';
+    const isKandidaat = rol === 'kandidaat';
+    const isMaker = rol === 'maker';
+    const om = st.om || {};
+    const filter = st.filter || 'Alle';
+    const sort = st.sort === 'bewijs' ? 'bewijs' : 'nieuw';
+    const alleenOpen = !!st.alleenOpen;
+    const stap = st.stap != null ? st.stap : 0;
+
+    const echtStaat = ['Pitch in Deel II (05-10-2026), met probleem en oplossing uitgewerkt', 'Makers die de overdracht begeleiden'];
+    const echtMist = ['Een eigenaar die fulltime doorpakt en de eerste betalende klant binnenhaalt', 'BV en overdrachtsakte'];
+    const V = [
+      { id: 'exit', naam: 'Exit Buddy', werknaam: false, voorbeeld: false, zin: 'Vindt de juiste begeleider voor de exit van je bedrijf.', niveau: 'Schets', zoekt: 'Commerciële CEO', bewijs: [1, 0, 0, 0, 0], status: 'open', inleg: 'Geen', staat: echtStaat, mist: echtMist, cover: '/_blob/030f9b858efa9239ec8031859206103f', kleur: '#1C2647', alt: 'Een hand geeft een sleutel over aan een andere hand, boven een houten tafel' },
+      { id: 'apk', naam: 'APK Opa', werknaam: true, voorbeeld: false, zin: 'Gepensioneerde monteurs keuren je tweedehands auto voordat je koopt.', niveau: 'Schets', zoekt: 'Operator met netwerk', bewijs: [1, 0, 0, 0, 0], status: 'open', inleg: 'Geen', staat: echtStaat, mist: echtMist, cover: '/_blob/550ccb7bf8e1f51b7e241f4ce993e596', kleur: '#1E3B30', alt: 'Een oudere monteur met een zaklamp kijkt onder de open motorkap van een auto' },
+      { id: 'whoop', naam: 'Whoop Dog', werknaam: false, voorbeeld: false, zin: 'Een tracker die meet hoe je hond slaapt en herstelt.', niveau: 'Schets', zoekt: 'Product-founder', bewijs: [1, 0, 0, 0, 0], status: 'open', inleg: 'Geen', staat: echtStaat, mist: echtMist, cover: '/_blob/02c69cfba373b1bb36c9a8e62f017d38', kleur: '#3A2244', alt: 'Een hond slaapt opgerold op een kussen, met een halsband om' },
+      { id: 'eitje', naam: 'Eitje', werknaam: true, voorbeeld: false, zin: 'Een vruchtbaarheidscheck voor vrouwen.', niveau: 'Schets', zoekt: '[PROFIEL]', bewijs: [1, 0, 0, 0, 0], status: 'open', inleg: 'Geen', staat: echtStaat, mist: echtMist, cover: '/_blob/2bb6d7f673b78896360cc08fbcb10c87', kleur: '#163A40', alt: 'Een ei in een klein gevlochten nest' },
+      { id: 'zonde', naam: 'Zonde', werknaam: true, voorbeeld: false, zin: 'Helpt huishoudens verder als hun zonnepanelen straks niets meer opbrengen.', niveau: 'Schets', zoekt: '[PROFIEL]', bewijs: [1, 0, 0, 0, 0], status: 'open', inleg: 'Geen', staat: echtStaat, mist: echtMist, cover: '/_blob/fbfa3ec5c02ce9459b59ba9c7c6066a9', kleur: '#3E2E1A', alt: 'Een huis met zonnepanelen op het dak in de avond, met een thuisaccu die oplicht aan de muur' },
+      { id: 'tafel', naam: 'Tafel 12', werknaam: false, voorbeeld: true, zin: 'Restaurants verkopen hun lege tafels van vanavond.', niveau: 'Sleutelklaar', zoekt: 'Commerciële CEO', bewijs: [1, 1, 1, 1, 1], status: 'open', inleg: '[BEDRAG], naar de BV', staat: ['Werkend platform met betaalflow en een dashboard voor restaurants', 'BV opgericht, IP in de BV'], mist: ['Alleen de verkoop'], cover: '/_blob/7a9efb0c64f1de6fa2c8c35c81e82fa3', kleur: '#4B1E24', alt: 'Een lege restauranttafel gedekt voor twee onder een hanglamp' },
+      { id: 'klus', naam: 'Kluscheck', werknaam: false, voorbeeld: true, zin: 'Elke verbouwing start met een vergunningscheck van 30 seconden.', niveau: 'Prototype', zoekt: 'Verkoper met lef', bewijs: [1, 1, 1, 0, 0], status: 'vol', inleg: '[BEDRAG], naar de BV', staat: ['Werkende MVP en eerste klantgesprekken'], mist: ['BV en IP-akte'], cover: '/_blob/0107939f73e415f71ed84ee9907547b4', kleur: '#283553', alt: 'Een gevel in de steigers, met een klembord met een checklist ertegenaan' },
+      { id: 'rest', naam: 'Restpartij', werknaam: false, voorbeeld: true, zin: 'Aannemers verkopen overgebleven bouwmateriaal door.', niveau: 'Prototype', zoekt: 'Operator', bewijs: [1, 1, 1, 1, 0], status: 'weg', inleg: '[BEDRAG], naar de BV', staat: ['Werkende MVP en eerste klantgesprekken', 'BV opgericht'], mist: ['IP-akte'], cover: '/_blob/c5e26cee7c83e0f7028ad497de9ab8d5', kleur: '#2A2830', alt: 'Een nette stapel overgebleven bakstenen en planken op een pallet' }
+    ];
+
+    const LABELS = ['Team', 'Product', 'Klant', 'BV', 'IP-akte'];
+    const SCHADUW = '0 20px 36px -22px rgba(20, 18, 28, 0.55)';
+    const telBewijs = (v) => v.bewijs.filter(Boolean).length;
+    const kaart = (v, actief) => {
+      const isOm = !!om[v.id];
+      const n = telBewijs(v);
+      const regel = ['Paspoort', v.niveau];
+      if (v.voorbeeld) regel.push('Voorbeeld');
+      if (v.werknaam) regel.push('werknaam');
+      return {
+        ...v,
+        om: isOm,
+        rot: isOm ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        voorZicht: isOm ? 'hidden' : 'visible',
+        achterZicht: isOm ? 'visible' : 'hidden',
+        lift: actief ? 'translateY(-8px)' : 'none',
+        schaduw: (actief || isOm) ? SCHADUW : 'none',
+        bewijsTekst: n + ' van 5',
+        bewijsLabel: 'Bewijs: ' + n + ' van 5',
+        plekken: v.status === 'open' ? '1 open' : (v.status === 'vol' ? '0 open' : 'Overgedragen'),
+        paspoortRegel: regel.join(' · '),
+        proofs: v.bewijs.map((b, j) => ({
+          label: LABELS[j],
+          on: !!b,
+          off: !b,
+          sr: b ? ', aanwezig' : ', nog niet',
+          bg: b ? '#F4D35E' : 'transparent',
+          fg: b ? '#14121C' : 'rgba(246, 243, 251, 0.82)',
+          rand: b ? '#F4D35E' : 'rgba(246, 243, 251, 0.36)'
+        })),
+        isOpen: v.status === 'open',
+        isVol: v.status === 'vol',
+        isWeg: v.status === 'weg',
+        omdraaien: () => this.setState({ om: { ...om, [v.id]: true } }),
+        terugdraaien: () => this.setState({ om: { ...om, [v.id]: false } })
+      };
+    };
+
+    // Carrousel: alleen ventures met een open plek
+    const open = V.filter((v) => v.status === 'open');
+    const n = open.length;
+    const idx = Math.max(0, Math.min(st.idx || 0, n - 1));
+    const uitgelicht = open.map((v, i) => kaart(v, i === idx));
+    const dots = open.map((v, i) => ({
+      label: 'Toon ' + v.naam,
+      current: i === idx,
+      w: i === idx ? '26px' : '8px',
+      kleur: i === idx ? '#14121C' : '#7A7099',
+      ga: () => this.setState({ idx: i })
+    }));
+
+    // Collectie
+    const basis = alleenOpen ? open : V;
+    const chips = ['Alle', 'Schets', 'Prototype', 'Sleutelklaar'].map((l) => {
+      const aan = filter === l;
+      return {
+        label: l,
+        aan: aan,
+        count: l === 'Alle' ? basis.length : basis.filter((v) => v.niveau === l).length,
+        bg: aan ? '#14121C' : 'transparent',
+        fg: aan ? '#F6F3FB' : '#14121C',
+        rand: aan ? '#14121C' : '#8D84AA',
+        telBg: aan ? '#F4D35E' : '#E1DAF0',
+        kies: () => this.setState({ filter: l })
+      };
+    });
+    let lijst = basis.filter((v) => filter === 'Alle' || v.niveau === filter);
+    if (sort === 'bewijs') {
+      lijst = lijst.map((v, i) => ({ v: v, i: i })).sort((a, b) => (telBewijs(b.v) - telBewijs(a.v)) || (a.i - b.i)).map((x) => x.v);
+    }
+    const collectie = lijst.map((v) => kaart(v, false));
+    const sorteer = [{ id: 'nieuw', label: 'Nieuwste' }, { id: 'bewijs', label: 'Meeste bewijs' }].map((s) => {
+      const aan = sort === s.id;
+      return { label: s.label, aan: aan, bg: aan ? '#14121C' : 'transparent', fg: aan ? '#F6F3FB' : '#14121C', kies: () => this.setState({ sort: s.id }) };
+    });
+
+    // Bewijsroute
+    const K = [
+      { dag: 'Dag 0', titel: 'Pitch het terug', tekst: 'Twee minuten video waarin je uitlegt welk probleem het oplost, en waarom jij en waarom nu.' },
+      { dag: 'Dag 1 tot 7', titel: 'Huiswerk', tekst: 'Gesprekken en toezeggingen die de makers zelf kunnen nalopen.' },
+      { dag: 'Dag 7', titel: 'Skin in the game', tekst: 'Inleg of borg, die naar de BV gaat als runway.' },
+      { dag: 'Dag 8 tot 30', titel: 'Proefmaand', tekst: 'Vooraf vastgelegde doelen, elke week een update aan de makers.' },
+      { dag: 'Dag 30', titel: 'Stemming', tekst: 'De makers stemmen. Ja betekent CEO en meerderheid.' }
+    ];
+    const M = [
+      { dag: 'Dag 0', titel: 'Paspoort', tekst: 'Wat er staat, met bron bij elke claim.' },
+      { dag: 'Dag 1 tot 7', titel: 'Bereikbaar', tekst: 'Vragen van de kandidaat binnen 48 uur beantwoord.' },
+      { dag: 'Dag 7', titel: 'Overdrachtsakte klaar', tekst: 'IP en aandelen liggen klaar voor overdracht.' },
+      { dag: 'Dag 8 tot 30', titel: 'Overdrachtsuren', tekst: 'Twee uur per week sparren en deuren openen.' },
+      { dag: 'Dag 30', titel: 'Stem met reden', tekst: 'Elke stem komt met een onderbouwing.' }
+    ];
+    const eigen = isMaker ? M : K;
+    const s = Math.max(0, Math.min(stap, K.length - 1));
+    const stappen = K.map((k, i) => {
+      const aan = i === s;
+      return {
+        dag: k.dag,
+        titel: eigen[i].titel,
+        aan: aan,
+        bg: aan ? '#14121C' : '#FBFAFD',
+        fg: aan ? '#F6F3FB' : '#14121C',
+        sub: aan ? '#F4D35E' : '#4F4963',
+        stip: aan ? '#F4D35E' : 'transparent',
+        rand: aan ? '#14121C' : '#D5CDE6',
+        kies: () => this.setState({ stap: i })
+      };
+    });
+    const spoor = (stapData, eigenSpoor, wie) => ({
+      titel: stapData.titel,
+      tekst: stapData.tekst,
+      meta: wie + ' · ' + stapData.dag,
+      bg: eigenSpoor ? '#14121C' : 'transparent',
+      fg: eigenSpoor ? '#F6F3FB' : '#14121C',
+      sub: eigenSpoor ? 'rgba(246, 243, 251, 0.82)' : '#3F3A52',
+      accent: eigenSpoor ? '#F4D35E' : '#4F4963',
+      rand: eigenSpoor ? '#14121C' : '#8D84AA'
+    });
+    const sporen = [
+      spoor(K[s], isKandidaat, isKandidaat ? 'Jouw spoor als kandidaat' : 'Spoor van de kandidaat'),
+      spoor(M[s], isMaker, isMaker ? 'Jouw spoor als maker' : 'Spoor van de makers')
+    ];
+
+    const rolStijl = (aan) => ({ bg: aan ? '#14121C' : 'transparent', fg: aan ? '#F6F3FB' : '#14121C' });
+    const kiesKandidaat = () => this.setState({ rol: 'kandidaat' });
+    const kiesMaker = () => this.setState({ rol: 'maker' });
+
+    const waaier = V.map((v, i) => {
+      const d = i - (V.length - 1) / 2;
+      return {
+        cover: v.cover,
+        alt: v.alt,
+        kleur: v.kleur,
+        rot: (d * 4).toFixed(1) + 'deg',
+        y: Math.round(d * d * 1.4) + 'px',
+        ml: i === 0 ? '0px' : 'calc(clamp(46px, 8.6vw, 92px) * -0.3)'
+      };
+    });
+
+    return {
+      naam: naam,
+      heroTekst: isMaker
+        ? 'Bouwde je mee in het Huis en pak je het zelf niet door? Zet je venture in de collectie, met een bron bij elke claim. Jij stemt mee over wie hem overneemt.'
+        : 'In Deel II zijn ventures gebouwd en gepitcht die nog niemand doorzet. Een eigen idee heb je niet nodig. In dertig dagen bewijs je dat jij de volgende founder bent.',
+      heroHint: isMaker
+        ? 'Zo komt jouw venture als kaart in de collectie. Draai er een om voor het paspoort.'
+        : 'Draai een kaart om voor het paspoort: wat er staat en wat er nog ontbreekt.',
+      isKandidaat: isKandidaat,
+      isMaker: isMaker,
+      rolK: rolStijl(isKandidaat),
+      rolM: rolStijl(isMaker),
+      segK: rolStijl(isKandidaat),
+      segM: rolStijl(isMaker),
+      kiesKandidaat: kiesKandidaat,
+      kiesMaker: kiesMaker,
+
+      uitgelicht: uitgelicht,
+      idx: idx,
+      m3: Math.max(0, n - 3),
+      m2: Math.max(0, n - 2),
+      m1: Math.max(0, n - 1),
+      dots: dots,
+      kaartNr: idx + 1,
+      kaartTotaal: n,
+      geenVorige: idx === 0,
+      geenVolgende: idx === n - 1,
+      vorigeOp: idx === 0 ? '0.45' : '1',
+      volgendeOp: idx === n - 1 ? '0.45' : '1',
+      vorige: () => this.setState({ idx: Math.max(0, idx - 1) }),
+      volgende: () => this.setState({ idx: Math.min(n - 1, idx + 1) }),
+
+      chips: chips,
+      sorteer: sorteer,
+      alleenOpen: alleenOpen,
+      schakel: { bg: alleenOpen ? '#14121C' : 'transparent', knop: alleenOpen ? '#F4D35E' : '#14121C', x: alleenOpen ? '20px' : '2px' },
+      wisselOpen: () => this.setState({ alleenOpen: !alleenOpen }),
+      collectie: collectie,
+      leeg: collectie.length === 0,
+      nietLeeg: collectie.length > 0,
+      resultaat: collectie.length + (collectie.length === 1 ? ' kaart' : ' kaarten'),
+      toonAlles: () => this.setState({ filter: 'Alle', alleenOpen: false }),
+
+      stappen: stappen,
+      sporen: sporen,
+
+      deal: [
+        { k: 'Proefmaand', v: '[VERGOEDING] per maand, uit de BV' },
+        { k: 'Na de stemming', v: 'CEO en meerderheid' },
+        { k: 'Vesting', v: '4 jaar, met 1 jaar cliff' },
+        { k: 'Makers houden', v: '[X]%, met uitleg waarom' },
+        { k: 'Inzage', v: 'Code en klantdata na checkpoint 1, cijfers inbegrepen' }
+      ],
+      waaier: waaier
+    };
+  }
+}
+</script>
+</body>
+</html>

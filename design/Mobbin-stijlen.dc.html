@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · vijf stijlen uit Mobbin</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#18388A}a:hover{color:#151515}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 56px 64px; background: #EDEDEA; color: #151515; font-family: Overpass, 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; gap: 36px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <h1 style="margin: 0; font-weight: 900; font-size: 52px; letter-spacing: -0.02em; line-height: 1">Vijf stijlen uit Mobbin</h1>
+    <p style="margin: 0; font-size: 16px; color: #4A4A47">Kies een nummer; die stijl wordt de basis voor ronde 2.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px">
+    <sc-for list="{{stijlen}}" as="s" hint-placeholder-count="5">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+        <img src="{{s.img}}" alt="{{s.alt}}" style="width: 100%; aspect-ratio: 768 / 521; object-fit: cover; object-position: top; display: block; background: #FFFFFF; border-radius: 8px">
+        <figcaption style="display: flex; flex-direction: column; gap: 8px">
+          <span style="display: flex; align-items: baseline; gap: 12px">
+            <span style="font-weight: 900; font-size: 34px; line-height: 1">{{s.nr}}</span>
+            <span style="font-weight: 800; font-size: 22px; line-height: 1.15">{{s.naam}}</span>
+          </span>
+          <span style="font-size: 16px; line-height: 1.5; color: #2E2E2B">{{s.tekst}}</span>
+          <a href="{{s.url}}" style="font-size: 15px; font-weight: 600; text-underline-offset: 4px">Bekijk op Mobbin ({{s.bron}})</a>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stijlen: [
+        { nr: '1', naam: 'Editorial bento', bron: 'Wix Marketplace', img: '/_blob/2934c4dc84a05ea2305382d41f1b36d7', alt: 'Wix Marketplace: grote lichte kop links, mozaïek van gekleurde tegels rechts', url: 'https://mobbin.com/sites/sections/757ad275-3fea-4bc4-87e1-44b1a5edd0da', tekst: 'Grote lichte koppen links en rechts een mozaïek van tegels. Elke venture krijgt een eigen tegel in een eigen kleur.' },
+        { nr: '2', naam: 'Donker dashboard', bron: 'AngelList', img: '/_blob/cf72ebb787a7b03adb6f590a95d48d14', alt: 'AngelList: donker petrol met een producttabel en statuslabels', url: 'https://mobbin.com/sites/sections/544ab60b-31ea-4849-aba2-e90c6a6998ed', tekst: 'Rustig petrol met een echte producttabel als hero. De status staat als label bij elke venture: open, in proefmaand of overgedragen.' },
+        { nr: '3', naam: 'Verzamelkaarten', bron: 'Rarible', img: '/_blob/182e965dd3795d17a2f3404253f9c365', alt: 'Rarible: uitgelichte kaarten met groot beeld en twee kerncijfers', url: 'https://mobbin.com/sites/sections/34ea6949-1f25-49ce-a734-7c5ab7e7b57f', tekst: 'Uitgelichte kaarten met een groot beeld en twee kerncijfers. Je bladert door de ventures als door een collectie.' },
+        { nr: '4', naam: 'Studio-portfolio', bron: 'Metalab', img: '/_blob/c2108a724feeee177a503c57fe39b4f2', alt: 'Metalab: zwarte achtergrond, grote dunne serif en een filmstrip met foto’s', url: 'https://mobbin.com/sites/sections/720c1b55-ad8f-437d-bc7f-bfa39096b161', tekst: 'Zwart, een grote dunne serif en een filmstrip met beelden uit het Huis. Dicht bij de documentaire van Deel I.' },
+        { nr: '5', naam: 'Mensen eerst', bron: 'Vercel', img: '/_blob/27d47d55534e5a0c7cfc9a0b20b279cc', alt: 'Vercel: fijnmazig raster met portretten en namen', url: 'https://mobbin.com/sites/sections/189e7773-bbeb-4af0-970e-78998663ee96', tekst: 'Een fijnmazig raster met portretten. De makers en de volgende founder staan centraal, het product komt daarna.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

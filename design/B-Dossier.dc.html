@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · B · Dossier</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Instrument+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0D0D0B}
+a{color:#D8B56A}a:hover{color:#F1EEE6}
+:focus-visible{outline:2px solid #D8B56A;outline-offset:3px}
+.nf-row{background:none;transition:background-color .2s ease}
+.nf-row:hover{background:#161613}
+.nf-row:focus-visible{outline-offset:-2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+<div style="font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; color: #F1EEE6; background: #0D0D0B; display: flex; flex-direction: column">
+
+<header style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #2C2B27">
+  <a href="#top" style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: #F1EEE6">{{naam}}</a>
+  <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 15px">
+    <a href="#dossiers" style="padding: 12px 14px; text-decoration: none; color: #C9C5BA">Dossiers</a>
+    <a href="#route" style="padding: 12px 14px; text-decoration: none; color: #C9C5BA">Bewijsroute</a>
+    <a href="#niveaus" style="padding: 12px 14px; text-decoration: none; color: #C9C5BA">Voor makers</a>
+    <a href="#start" style="padding: 12px 20px; border: 1px solid #D8B56A; border-radius: 999px; text-decoration: none; color: #D8B56A; font-weight: 500">Vraag toegang aan</a>
+  </nav>
+</header>
+
+<section id="top" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 140px 32px 150px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px">
+  <span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #A39F94">House of Founders · Dossiers</span>
+  <h1 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(64px, 9vw, 140px); line-height: 0.92; letter-spacing: -0.02em; display: flex; flex-direction: column"><span>Het idee is af.</span><span style="font-style: italic; color: #A39F94">De eigenaar nog niet.</span></h1>
+  <p style="margin: 0; max-width: 600px; font-size: 19px; line-height: 1.6; color: #C9C5BA; text-wrap: pretty">Founders en builders hebben deze ventures in één week bedacht en gebouwd, na eigen onderzoek. Nu zoeken ze de volgende founder, en die moet zich eerst bewijzen.</p>
+  <a href="#dossiers" style="padding: 17px 30px; border-radius: 999px; background: #D8B56A; color: #0D0D0B; text-decoration: none; font-weight: 600; font-size: 16px">Bekijk de dossiers</a>
+  <p style="margin: 0; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.06em; color: #A39F94">Per venture één kandidaat tegelijk. Vol = vol.</p>
+</section>
+
+<section id="dossiers" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 0 32px 140px; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px">
+    <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); line-height: 1">Open dossiers</h2>
+    <span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A39F94">8 ventures</span>
+  </div>
+  <div style="overflow-x: auto; border-top: 1px solid #F1EEE6">
+    <div style="min-width: 980px; font-size: 16px">
+      <div aria-hidden="true" style="display: grid; grid-template-columns: 56px minmax(0, 2.4fr) minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 1.5fr) 44px; column-gap: 24px; padding: 16px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">
+        <span>Nº</span><span>Venture</span><span>Niveau</span><span>Gebouwd in</span><span>Status</span><span></span>
+      </div>
+      <ol style="margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #2C2B27">
+        <sc-for list="{{ rijen }}" as="r" hint-placeholder-count="8">
+          <li style="border-top: 1px solid #2C2B27; background: {{ r.bg }}">
+            <button type="button" class="nf-row" aria-expanded="{{ r.exp }}" onClick="{{ r.toggle }}" style="display: grid; grid-template-columns: 56px minmax(0, 2.4fr) minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 1.5fr) 44px; column-gap: 24px; align-items: center; width: 100%; box-sizing: border-box; margin: 0; padding: {{ r.pad }} 16px; border: 0; color: #F1EEE6; font: inherit; text-align: left; cursor: pointer">
+              <span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: {{ r.nrKleur }}">{{ r.nr }}</span>
+              <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: {{ r.titelMaat }}; line-height: 1; color: {{ r.titelKleur }}; text-decoration: {{ r.streep }}">{{ r.naam }}</span><span style="color: {{ r.subKleur }}; font-size: 15px">{{ r.zin }}</span></span>
+              <span style="color: {{ r.celKleur }}">{{ r.niveau }}</span>
+              <span style="color: {{ r.bronKleur }}">{{ r.bron }}</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; color: {{ r.celKleur }}"><sc-if value="{{ r.heeftDot }}" hint-placeholder-val="{{ true }}"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{ r.dot }}"></span></sc-if>{{ r.statusTekst }}</span>
+              <span style="display: flex; justify-content: flex-end">
+                <sc-if value="{{ r.toonSlot }}" hint-placeholder-val="{{ false }}"><span title="Gesloten tot de proefmaand om is" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; color: #A39F94"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span></sc-if>
+                <sc-if value="{{ r.toonPijl }}" hint-placeholder-val="{{ true }}"><span style="display: inline-flex; width: 44px; height: 44px; box-sizing: border-box; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid {{ r.pijlRand }}; color: {{ r.pijlKleur }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transition: transform .2s ease; transform: rotate({{ r.rot }})"><path d="M6 9l6 6 6-6"></path></svg></span></sc-if>
+              </span>
+            </button>
+            <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+              <div role="region" aria-label="Dossier {{ r.naam }}" style="position: sticky; left: 0; box-sizing: border-box; max-width: calc(100vw - 64px); padding: 0 16px 32px">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; padding-top: 24px; border-top: 1px dashed #3A3833">
+                  <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">Venturepaspoort</span>
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+                      <li style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #2C2B27; padding-bottom: 10px"><span style="color: #C9C5BA">Product</span><span>{{ r.product }}</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #2C2B27; padding-bottom: 10px"><span style="color: #C9C5BA">Markt</span><span>[KLANTBEWIJS]</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #2C2B27; padding-bottom: 10px"><span style="color: #C9C5BA">Kosten per maand</span><span>[BEDRAG]</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #C9C5BA">Rechten</span><span>[IP-AKTE]</span></li>
+                    </ul></div>
+                  <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">Waarom de makers stopten</span><p style="margin: 0; font-size: 17px; line-height: 1.55; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: #F1EEE6">"[REDEN VAN DE MAKERS]"</p><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94; margin-top: 8px">Wat ontbreekt</span><p style="margin: 0; font-size: 15px; color: #C9C5BA">{{ r.mist }}</p></div>
+                  <div style="display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">Voorwaarden</span>
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+                      <li style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #C9C5BA">Inleg</span><span>{{ r.inleg }}</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #C9C5BA">Jouw aandelen</span><span>Meerderheid, met vesting</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #C9C5BA">Makers</span><span>[X] uur per week, 90 dagen</span></li>
+                      <li style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #C9C5BA">Doel proefmaand</span><span>{{ r.doel }}</span></li>
+                    </ul>
+                    <sc-if value="{{ r.kanStarten }}" hint-placeholder-val="{{ true }}"><a href="#route" style="margin-top: 8px; align-self: flex-start; padding: 13px 22px; border-radius: 999px; background: #D8B56A; color: #0D0D0B; text-decoration: none; font-weight: 600; font-size: 15px">Start de bewijsroute</a></sc-if>
+                    <sc-if value="{{ r.dicht }}" hint-placeholder-val="{{ false }}"><div style="margin-top: 8px; padding-top: 16px; border-top: 1px solid #2C2B27; display: flex; align-items: flex-start; gap: 14px"><span style="flex: none; display: inline-flex; width: 44px; height: 44px; box-sizing: border-box; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #3A3833; color: #A39F94"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 500; color: #F1EEE6">{{ r.dichtKop }}</span><span style="font-size: 14px; line-height: 1.5; color: #C9C5BA">{{ r.dichtTekst }}</span></span></div></sc-if>
+                  </div>
+                </div>
+                <sc-if value="{{ r.kanStarten }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top: 32px; padding-top: 24px; border-top: 1px dashed #3A3833; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+                    <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 12px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">Vraag toegang</span><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #C9C5BA">Laat je naam en e-mailadres achter. Je eerste checkpoint is een pitchvideo van twee minuten.</p></div>
+                    <div style="flex: 2 1 520px; min-width: 0">
+                      <sc-if value="{{ r.formZichtbaar }}" hint-placeholder-val="{{ true }}">
+                        <div style="display: flex; flex-direction: column; gap: 16px">
+                          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+                            <div style="display: flex; flex-direction: column; gap: 8px"><label for="vt-naam-{{ r.id }}" style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">Naam</label><input id="vt-naam-{{ r.id }}" type="text" autocomplete="name" value="{{ r.fNaam }}" onChange="{{ r.zetNaam }}" style="box-sizing: border-box; width: 100%; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3833; background: #0D0D0B; color: #F1EEE6; font: 400 16px 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif"></div>
+                            <div style="display: flex; flex-direction: column; gap: 8px"><label for="vt-mail-{{ r.id }}" style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39F94">E-mailadres</label><input id="vt-mail-{{ r.id }}" type="email" autocomplete="email" value="{{ r.fMail }}" onChange="{{ r.zetMail }}" style="box-sizing: border-box; width: 100%; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3833; background: #0D0D0B; color: #F1EEE6; font: 400 16px 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif"></div>
+                          </div>
+                          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+                            <label style="display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer; font-size: 15px; color: #F1EEE6"><input type="checkbox" checked="{{ r.fVideo }}" onChange="{{ r.zetVideo }}" style="width: 20px; height: 20px; margin: 0; accent-color: #D8B56A; cursor: pointer">Ik heb de pitchvideo klaar</label>
+                            <button type="button" onClick="{{ r.vraag }}" style="min-height: 48px; padding: 0 24px; border-radius: 999px; border: 0; background: #D8B56A; color: #0D0D0B; font: 600 15px 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; cursor: pointer">Vraag toegang aan</button>
+                          </div>
+                          <sc-if value="{{ r.fout }}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin: 0; font-size: 14px; color: #D8B56A">Vul je naam en een geldig e-mailadres in.</p></sc-if>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ r.verzonden }}" hint-placeholder-val="{{ false }}">
+                        <div role="status" style="display: flex; align-items: flex-start; gap: 16px">
+                          <span style="flex: none; display: inline-flex; width: 44px; height: 44px; box-sizing: border-box; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #D8B56A; color: #D8B56A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+                          <div style="display: flex; flex-direction: column; gap: 8px">
+                            <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: 28px; line-height: 1.15; color: #F1EEE6">{{ r.bevestiging }}</p>
+                            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #C9C5BA">{{ r.videoRegel }}</p>
+                            <button type="button" onClick="{{ r.aanpassen }}" style="align-self: flex-start; min-height: 44px; padding: 0; border: 0; background: none; color: #D8B56A; font: 500 15px 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Gegevens aanpassen</button>
+                          </div>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="route" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 0 32px 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 56px">
+  <div style="display: flex; flex-direction: column; gap: 20px">
+    <span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #A39F94">De bewijsroute</span>
+    <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 5vw, 76px); line-height: 0.98">Niemand krijgt een venture. Je verdient hem.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9C5BA; max-width: 440px">Vier checkpoints, met criteria die vastliggen voordat je begint. Daarna stemmen de makers.</p>
+  </div>
+  <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+    <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-top: 1px solid #2C2B27"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A39F94; padding-top: 10px">01 · DAG 1</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 36px">Pitch het terug</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Twee minuten video: het idee in je eigen woorden, en waarom jij.</p></div></li>
+    <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-top: 1px solid #2C2B27"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A39F94; padding-top: 10px">02 · WEEK 1</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 36px">Huiswerk</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Gesprekken en toezeggingen die de makers zelf kunnen nalopen.</p></div></li>
+    <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-top: 1px solid #2C2B27"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A39F94; padding-top: 10px">03 · WEEK 2</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 36px">Skin in the game</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Een inleg of borg. Die gaat naar de BV als runway, nooit naar de makers.</p></div></li>
+    <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-top: 1px solid #2C2B27"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A39F94; padding-top: 10px">04 · 30 DAGEN</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 36px">Proefmaand</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Dertig dagen vol inzetten op één doel dat vooraf vastligt. Elke week een update.</p></div></li>
+    <li style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-top: 1px solid #D8B56A; border-bottom: 1px solid #D8B56A"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #D8B56A; padding-top: 10px">→ DAARNA</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; font-size: 36px; color: #D8B56A">Overdracht</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">De makers stemmen. Bij een ja word je CEO, met de meerderheid van de aandelen en vesting.</p></div></li>
+  </ol>
+</section>
+
+<section id="niveaus" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 0 32px 140px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); border-top: 1px solid #2C2B27">
+  <div style="padding: 40px 32px 0 0; display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #A39F94">NIVEAU I</span><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 44px">Schets</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Een idee op een one-pager, met een eerste validatie. Hier zoeken de makers een bouwer-founder, zonder inleg.</p></div>
+  <div style="padding: 40px 32px 0; border-left: 1px solid #2C2B27; display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #A39F94">NIVEAU II</span><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 44px">Prototype</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Werkende MVP en eerste klantgesprekken. Voor iemand die valideert en doorbouwt; de borg is [BEDRAG].</p></div>
+  <div style="padding: 40px 0 0 32px; border-left: 1px solid #2C2B27; display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #D8B56A">NIVEAU III</span><h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 44px; color: #D8B56A">Sleutelklaar</h3><p style="margin: 0; color: #C9C5BA; font-size: 16px; line-height: 1.55">Compleet platform, alleen de verkoop ontbreekt. Zoekt een commerciële CEO. Inleg [BEDRAG].</p></div>
+</section>
+
+<section id="start" style="border-top: 1px solid #2C2B27">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 140px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+    <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; font-size: clamp(72px, 11vw, 168px); line-height: 0.9">Vol = vol.</h2>
+    <p style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.6; color: #C9C5BA">Heeft een venture een kandidaat in de proefmaand, dan gaat de deur dicht tot die maand voorbij is.</p>
+    <a href="#dossiers" style="padding: 17px 30px; border-radius: 999px; background: #D8B56A; color: #0D0D0B; text-decoration: none; font-weight: 600; font-size: 16px">Vraag toegang aan</a>
+  </div>
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 32px 40px; border-top: 1px solid #2C2B27; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #A39F94"><span>{{naam}} · een initiatief van House of Founders</span><a href="#niveaus" style="color: #A39F94">Lever als maker een venture aan</a></div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":4500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const naam = this.props.naam ?? 'Next Founder';
+    const open = st.open === undefined ? 'exit-buddy' : st.open;
+    const sent = st.sent || {};
+    const fNaam = st.fNaam || '';
+    const fMail = st.fMail || '';
+    const fVideo = !!st.fVideo;
+    const fout = !!st.fout;
+
+    const echt = 'Deel II, Marokko';
+    const echtMist = 'Een eigenaar die doorpakt en de eerste klant binnenhaalt. De BV moet nog worden opgericht.';
+    const V = [
+      { id: 'exit-buddy', naam: 'Exit Buddy', zin: 'Vindt de juiste begeleider voor de exit van je bedrijf', niveau: 'Schets', bron: echt, status: 'open' },
+      { id: 'apk-opa', naam: 'APK Opa', zin: 'Monteurs met pensioen keuren je occasion', niveau: 'Schets', bron: echt, status: 'open' },
+      { id: 'whoop-dog', naam: 'Whoop Dog', zin: 'Tracker voor slaap en herstel van je hond', niveau: 'Schets', bron: echt, status: 'open' },
+      { id: 'eitje', naam: 'Eitje', zin: 'Een vruchtbaarheidscheck voor vrouwen', niveau: 'Schets', bron: echt, status: 'open' },
+      { id: 'zonde', naam: 'Zonde', zin: 'Helpt huishoudens verder als hun zonnepanelen straks niets meer opbrengen', niveau: 'Schets', bron: echt, status: 'open' },
+      { id: 'tafel-12', naam: 'Tafel 12', zin: 'Restaurants verkopen hun lege tafels', niveau: 'Sleutelklaar', bron: 'Voorbeeld', status: 'open', product: 'Platform live, inclusief betaalflow', mist: 'Alleen de verkoop.', inleg: '[BEDRAG], naar de BV' },
+      { id: 'kluscheck', naam: 'Kluscheck', zin: 'Elke verbouwing start met een vergunningscheck van 30 seconden', niveau: 'Prototype', bron: 'Voorbeeld', status: 'proef', product: 'Klikbaar prototype', mist: 'Een verkoper met lef.', inleg: '[BEDRAG]' },
+      { id: 'restpartij', naam: 'Restpartij', zin: 'Restpartijen bouwmateriaal doorverkopen', niveau: 'Prototype', bron: 'Voorbeeld', status: 'over', product: 'Werkende MVP en eerste klantgesprekken', mist: 'Niets meer. [NAAM] heeft het overgenomen.', inleg: '[BEDRAG]' }
+    ];
+    const STATUS = {
+      open: { statusTekst: 'Open', heeftDot: true, dot: '#8CC37A' },
+      proef: { statusTekst: 'Proefmaand · dag 12 van 30', heeftDot: true, dot: '#D8B56A' },
+      over: { statusTekst: 'Overgedragen aan [NAAM]', heeftDot: false, dot: 'transparent' }
+    };
+    const DICHT = {
+      proef: { dichtKop: 'Gesloten tot de proefmaand om is', dichtTekst: 'Heeft een venture een kandidaat in de proefmaand, dan gaat de deur dicht tot die maand voorbij is.' },
+      over: { dichtKop: 'Overgedragen aan [NAAM]', dichtTekst: 'De makers stemden ja. Dit dossier is gesloten.' }
+    };
+    const voornaam = fNaam.trim().split(/\s+/)[0];
+    const geldig = fNaam.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fMail.trim());
+
+    const rijen = V.map((v, i) => {
+      const isOpen = open === v.id;
+      const echtV = v.bron === echt;
+      const over = v.status === 'over';
+      const kanStarten = v.status === 'open';
+      const verzonden = kanStarten && !!sent[v.id];
+      return {
+        ...STATUS[v.status],
+        ...(DICHT[v.status] || { dichtKop: '', dichtTekst: '' }),
+        id: v.id,
+        nr: String(i + 1).padStart(3, '0'),
+        naam: v.naam, zin: v.zin, niveau: v.niveau, bron: v.bron,
+        open: isOpen,
+        exp: isOpen ? 'true' : 'false',
+        bg: isOpen ? '#161613' : 'transparent',
+        pad: isOpen ? '26px' : '24px',
+        nrKleur: isOpen ? '#D8B56A' : '#A39F94',
+        titelMaat: isOpen ? '34px' : '30px',
+        titelKleur: over ? '#A39F94' : '#F1EEE6',
+        streep: over ? 'line-through' : 'none',
+        subKleur: over ? '#A39F94' : '#C9C5BA',
+        celKleur: over ? '#A39F94' : '#F1EEE6',
+        bronKleur: over ? '#A39F94' : '#C9C5BA',
+        toonSlot: v.status === 'proef' && !isOpen,
+        toonPijl: !(v.status === 'proef' && !isOpen),
+        pijlRand: isOpen ? '#D8B56A' : '#3A3833',
+        pijlKleur: isOpen ? '#D8B56A' : (over ? '#A39F94' : '#F1EEE6'),
+        rot: isOpen ? '180deg' : '0deg',
+        product: echtV ? 'Pitch en concept' : v.product,
+        mist: echtV ? echtMist : v.mist,
+        inleg: echtV ? 'Geen' : v.inleg,
+        doel: echtV ? 'Eerste betalende klant' : '[DOEL]',
+        kanStarten: kanStarten,
+        dicht: !kanStarten,
+        formZichtbaar: kanStarten && !verzonden,
+        verzonden: verzonden,
+        fNaam: fNaam,
+        fMail: fMail,
+        fVideo: fVideo,
+        fout: fout,
+        bevestiging: 'Dank je, ' + voornaam + '. Je aanvraag voor ' + v.naam + ' is binnen.',
+        videoRegel: fVideo ? 'Je pitchvideo is klaar. Dat is checkpoint 01.' : 'Neem de tijd voor je pitchvideo. Dat is checkpoint 01.',
+        toggle: () => this.setState({ open: isOpen ? null : v.id, fout: false }),
+        zetNaam: (e) => this.setState({ fNaam: e.target.value, fout: false }),
+        zetMail: (e) => this.setState({ fMail: e.target.value, fout: false }),
+        zetVideo: (e) => this.setState({ fVideo: e.target.checked }),
+        vraag: () => (geldig ? this.setState({ fout: false, sent: { ...sent, [v.id]: true } }) : this.setState({ fout: true })),
+        aanpassen: () => this.setState({ sent: { ...sent, [v.id]: false } })
+      };
+    });
+
+    return { naam: naam, rijen: rijen };
+  }
+}
+</script>
+</body>
+</html>

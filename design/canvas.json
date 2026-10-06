@@ -1,0 +1,124 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "B-Dossier.dc.html": {
+      "expand": "fill",
+      "h": 4500,
+      "title": "B · Dossier (donker, exclusief)",
+      "w": 1440,
+      "x": 1520,
+      "y": 0,
+      "is_interactive": true
+    },
+    "C-Vertrekbord.dc.html": {
+      "expand": "fill",
+      "h": 5000,
+      "is_interactive": true,
+      "title": "C · Vertrekbord (split-flap)",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "D-Bouwbord.dc.html": {
+      "expand": "fill",
+      "h": 6150,
+      "title": "D · Bouwbord (bouwplaats)",
+      "w": 1440,
+      "x": 4560,
+      "y": 0,
+      "is_interactive": true
+    },
+    "E-Player2.dc.html": {
+      "expand": "fill",
+      "h": 4400,
+      "is_interactive": true,
+      "title": "E · Player 2 (arcade)",
+      "w": 1440,
+      "x": 6080,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 4100,
+      "title": "A · Huisstijl House of Founders",
+      "w": 1440,
+      "x": 0,
+      "y": 0,
+      "is_interactive": true
+    },
+    "Stijlbord.dc.html": {
+      "h": 1980,
+      "title": "Stijlbord · alle richtingen naast elkaar (A tot G)",
+      "w": 1440,
+      "x": 7600,
+      "y": 0
+    },
+    "Mobbin-stijlen.dc.html": {
+      "x": 7600,
+      "y": 2100,
+      "w": 1440,
+      "h": 1240,
+      "title": "Vijf stijlen uit Mobbin (kies er één)"
+    },
+    "F-Bento.dc.html": {
+      "expand": "fill",
+      "h": 6360,
+      "is_interactive": true,
+      "title": "F · Editorial bento (gekozen, ronde 4)",
+      "w": 1440,
+      "x": 9120,
+      "y": 0
+    },
+    "G-Verzamelkaarten.dc.html": {
+      "expand": "fill",
+      "h": 4605,
+      "is_interactive": true,
+      "title": "G · Verzamelkaarten (Mobbin 3)",
+      "w": 1440,
+      "x": 10640,
+      "y": 0
+    },
+    "F-Makers.dc.html": {
+      "expand": "fill",
+      "h": 6080,
+      "is_interactive": true,
+      "title": "F2 · Voor makers",
+      "w": 1440,
+      "x": 9120,
+      "y": 6510
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-05T10:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "kop": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Next Founder · brandingronde 1",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "B-Dossier.dc.html",
+    "C-Vertrekbord.dc.html",
+    "D-Bouwbord.dc.html",
+    "E-Player2.dc.html",
+    "F-Bento.dc.html",
+    "F-Makers.dc.html",
+    "G-Verzamelkaarten.dc.html",
+    "Stijlbord.dc.html",
+    "Mobbin-stijlen.dc.html"
+  ],
+  "pages": [],
+  "title": "Next Founder · mock-ups"
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · stijlbord</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Halant:wght@500&amp;family=Inter:wght@400;600&amp;family=Instrument+Serif&amp;family=IBM+Plex+Mono:wght@400&amp;family=Azeret+Mono:wght@600;700&amp;family=Overpass:wght@400;800;900&amp;family=Archivo:wdth,wght@62..125,400..900&amp;family=Saira+Stencil+One&amp;family=Press+Start+2P&amp;family=Pixelify+Sans:wght@400;600&amp;family=Funnel+Display:wght@300..500&amp;family=Funnel+Sans:wght@400..600&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600..800&amp;family=Figtree:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1980px; box-sizing: border-box; padding: 56px 64px; background: #EDEDEA; color: #151515; font-family: 'Overpass', 'Helvetica Neue', sans-serif; display: flex; flex-direction: column; gap: 28px">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <h1 style="margin: 0; font-weight: 900; font-size: 52px; letter-spacing: -0.02em; line-height: 1">Stijlbord · ronde 1 en 2</h1>
+    <p style="margin: 0; font-size: 16px; color: #4A4A47">Naam: {{naam}} · afzender: by House of Founders</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; padding-bottom: 10px; border-bottom: 2px solid #151515; font-size: 14px; font-weight: 800">
+    <span>Woordmerk</span><span>Kleur</span><span>Letters</span><span>Knop en status</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #E8E8E8; display: flex; flex-direction: column; justify-content: center; padding: 0 32px; gap: 8px; border-radius: 28px">
+      <span style="font-family: Halant, Georgia, serif; font-weight: 500; font-size: 48px; letter-spacing: -0.03em; line-height: 1">{{naam}}</span>
+      <span style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #356A28">by House of Founders</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">A · Huisstijl House of Founders</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #437C34"></span><span style="flex: 1; height: 64px; background: #A8CDA0"></span><span style="flex: 1; height: 64px; background: #E8F2E6"></span><span style="flex: 1; height: 64px; background: #E8E8E8; box-shadow: inset 0 0 0 1px #C9C9C4"></span><span style="flex: 1; height: 64px; background: #101010"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#437C34 · #A8CDA0 · #E8F2E6 · #E8E8E8 · #101010</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Halant, Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1">Aa Halant</span>
+      <span style="font-family: Inter, sans-serif; font-size: 18px">Inter voor tekst</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+      <span style="padding: 14px 22px; border-radius: 999px; background: #437C34; color: #FFFFFF; font-family: Inter, sans-serif; font-weight: 600; font-size: 15px">Start je bewijsroute</span>
+      <span style="padding: 6px 12px; border-radius: 999px; background: #E8F2E6; color: #2F5E24; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600">Open</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #0D0D0B; display: flex; flex-direction: column; justify-content: center; padding: 0 32px; gap: 8px">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 54px; line-height: 1; color: #F1EEE6">{{naam}}</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #D8B56A">by House of Founders</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">B · Dossier</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #0D0D0B"></span><span style="flex: 1; height: 64px; background: #161613"></span><span style="flex: 1; height: 64px; background: #D8B56A"></span><span style="flex: 1; height: 64px; background: #F1EEE6; box-shadow: inset 0 0 0 1px #C9C9C4"></span><span style="flex: 1; height: 64px; background: #8CC37A"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#0D0D0B · #161613 · #D8B56A · #F1EEE6 · #8CC37A</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1">Aa Instrument</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px">IBM Plex Mono</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px; background: #0D0D0B">
+      <span style="padding: 13px 22px; border-radius: 999px; background: #D8B56A; color: #0D0D0B; font-family: Inter, sans-serif; font-weight: 600; font-size: 15px">Start de bewijsroute</span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; color: #F1EEE6; font-size: 14px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8CC37A"></span>Open</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #FFC800; display: flex; align-items: center; padding: 0 32px; gap: 14px">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 70px; border-radius: 6px; background: linear-gradient(#262624 0 calc(50% - 1px), #0B0B0A calc(50% - 1px) calc(50% + 1px), #1D1D1B calc(50% + 1px)); color: #FFC800; font-family: 'Azeret Mono', monospace; font-weight: 700; font-size: 40px">N</span>
+      <span style="display: flex; flex-direction: column; gap: 4px; color: #111110">
+        <span style="font-weight: 900; font-size: 36px; letter-spacing: -0.02em; line-height: 1">{{naam}}</span>
+        <span style="font-size: 14px; font-weight: 600">by House of Founders</span>
+      </span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">C · Vertrekbord</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #0F0F0E"></span><span style="flex: 1; height: 64px; background: #1C1C1A"></span><span style="flex: 1; height: 64px; background: #FFC800"></span><span style="flex: 1; height: 64px; background: #EDEBE4; box-shadow: inset 0 0 0 1px #C9C9C4"></span><span style="flex: 1; height: 64px; background: #FF8A64"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#0F0F0E · #1C1C1A · #FFC800 · #EDEBE4 · #FF8A64</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Azeret Mono', monospace; font-weight: 600; font-size: 40px; line-height: 1">Aa Azeret</span>
+      <span style="font-family: Overpass, sans-serif; font-weight: 800; font-size: 20px">Overpass voor borden</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px; background: #0F0F0E">
+      <span style="padding: 14px 22px; border-radius: 4px; background: #FFC800; color: #111110; font-weight: 800; font-size: 15px">Instappen</span>
+      <span style="display: flex; gap: 2px">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 21px; height: 30px; border-radius: 3px; background: #1C1C1A; font-family: 'Azeret Mono', monospace; font-weight: 700; font-size: 16px; color: #FFC800">V</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 21px; height: 30px; border-radius: 3px; background: #1C1C1A; font-family: 'Azeret Mono', monospace; font-weight: 700; font-size: 16px; color: #FFC800">O</span><span style="display: inline-flex; align-items: center; justify-content: center; width: 21px; height: 30px; border-radius: 3px; background: #1C1C1A; font-family: 'Azeret Mono', monospace; font-weight: 700; font-size: 16px; color: #FFC800">L</span>
+      </span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #D9DAD5; display: flex; align-items: center; padding: 0 32px; gap: 14px">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 66px; height: 56px; background: #18388A; color: #FFFFFF; font-family: 'Saira Stencil One', sans-serif; font-size: 30px">NF</span>
+      <span style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: Archivo, sans-serif; font-weight: 900; font-stretch: 72%; font-size: 40px; text-transform: uppercase; line-height: 0.9">{{naam}}</span>
+        <span style="font-family: Archivo, sans-serif; font-size: 14px; font-weight: 600">by House of Founders</span>
+      </span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">D · Bouwbord</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #18388A"></span><span style="flex: 1; height: 64px; background: #FF5A1F"></span><span style="flex: 1; height: 64px; background: #D9DAD5; box-shadow: inset 0 0 0 1px #B9BDC3"></span><span style="flex: 1; height: 64px; background: #7D828A"></span><span style="flex: 1; height: 64px; background: repeating-linear-gradient(-45deg, #D52B1E 0 12px, #FFFFFF 12px 24px)"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#18388A · #FF5A1F · #D9DAD5 · #7D828A · afzetlint #D52B1E</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Archivo, sans-serif; font-weight: 900; font-stretch: 68%; font-size: 48px; line-height: 1; text-transform: uppercase">Aa Archivo</span>
+      <span style="font-family: 'Saira Stencil One', sans-serif; font-size: 22px">SAIRA STENCIL</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px">
+      <span style="padding: 14px 22px; background: #FF5A1F; color: #14171C; font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px">Werk overnemen</span>
+      <span style="padding: 5px 12px; background: #FF5A1F; color: #14171C; font-family: 'Saira Stencil One', sans-serif; font-size: 20px; transform: rotate(-2deg)">GEZOCHT</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #07070F; display: flex; flex-direction: column; justify-content: center; padding: 0 32px; gap: 12px">
+      <span style="font-family: 'Press Start 2P', monospace; font-size: 24px; line-height: 1.3; color: #FFD23F; text-shadow: 3px 3px 0 #F0368F">{{naam}}</span>
+      <span style="font-family: 'Press Start 2P', monospace; font-size: 9px; color: #8A8FB0">BY HOUSE OF FOUNDERS</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">E · Player 2</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #07070F"></span><span style="flex: 1; height: 64px; background: #2B59FF"></span><span style="flex: 1; height: 64px; background: #FFD23F"></span><span style="flex: 1; height: 64px; background: #35E0F0"></span><span style="flex: 1; height: 64px; background: #F0368F"></span><span style="flex: 1; height: 64px; background: #3BE07A"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#07070F · #2B59FF · #FFD23F · #35E0F0 · #F0368F · #3BE07A</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-family: 'Press Start 2P', monospace; font-size: 26px; line-height: 1.2">Aa P2</span>
+      <span style="font-family: 'Pixelify Sans', monospace; font-size: 22px">Pixelify Sans</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px; background: #07070F">
+      <span style="padding: 14px 18px; background: #2B59FF; border: 4px solid #35E0F0; color: #F4F4FF; font-family: 'Press Start 2P', monospace; font-size: 11px">START</span>
+      <span style="font-family: 'Pixelify Sans', monospace; font-size: 16px; font-weight: 600; color: #3BE07A">1 SLOT OPEN</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #C9C9C4">
+    <div style="height: 200px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #E2E2DE; border-radius: 24px; display: flex; align-items: center; padding: 0 32px; gap: 16px">
+      <span style="display: grid; grid-template-columns: 22px 22px; gap: 4px; flex: none"><span style="height: 22px; background: #C6F05A; border-radius: 6px"></span><span style="height: 22px; background: #1F2E9A; border-radius: 6px"></span><span style="height: 22px; background: #FF7552; border-radius: 6px"></span><span style="height: 22px; background: #6EC0FF; border-radius: 6px"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 36px; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; color: #101012">{{naam}}</span><span style="font-family: 'Funnel Sans', sans-serif; font-size: 13px; color: #4A4A50">by House of Founders</span></span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">F · Bento (Mobbin 1)</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #101012"></span><span style="flex: 1; height: 64px; background: #C6F05A"></span><span style="flex: 1; height: 64px; background: #1F2E9A"></span><span style="flex: 1; height: 64px; background: #FF7552"></span><span style="flex: 1; height: 64px; background: #6EC0FF"></span><span style="flex: 1; height: 64px; background: #FFCD3C"></span><span style="flex: 1; height: 64px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #C9C9C4"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#101012 · #C6F05A · #1F2E9A · #FF7552 · #6EC0FF · #FFCD3C · #FFFFFF</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: 44px; letter-spacing: -0.03em; line-height: 1">Aa Funnel</span>
+      <span style="font-family: 'Funnel Sans', sans-serif; font-size: 18px">Funnel Sans voor tekst</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+      <span style="padding: 14px 22px; border-radius: 999px; background: #101012; color: #FFFFFF; font-family: 'Funnel Sans', sans-serif; font-weight: 600; font-size: 15px">Kies een venture</span>
+      <span style="padding: 8px 14px; border-radius: 14px; background: #C6F05A; color: #101012; font-family: 'Funnel Sans', sans-serif; font-size: 13px; font-weight: 600">Schets · Open</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 380px minmax(0, 1fr) 280px 300px; gap: 28px; align-items: center">
+    <div style="height: 200px; background: #E1DAF0; border-radius: 28px; display: flex; align-items: center; padding: 0 32px; gap: 16px">
+      <span style="width: 34px; height: 44px; flex: none; background: #14121C; border-radius: 7px; box-shadow: 5px -5px 0 #F4D35E; transform: rotate(-6deg)"></span>
+      <span style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; color: #14121C">{{naam}}</span><span style="font-family: Figtree, sans-serif; font-size: 13px; color: #3F3A52">by House of Founders</span></span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-weight: 800; font-size: 20px">G · Kaarten (Mobbin 3)</p>
+      <div style="display: flex; gap: 8px">
+        <span style="flex: 1; height: 64px; background: #14121C"></span><span style="flex: 1; height: 64px; background: #E1DAF0"></span><span style="flex: 1; height: 64px; background: #F6F3FB; box-shadow: inset 0 0 0 1px #C9C9C4"></span><span style="flex: 1; height: 64px; background: #F4D35E"></span><span style="flex: 1; height: 64px; background: #F6EFDC"></span><span style="flex: 1; height: 64px; background: #3F3A52"></span>
+      </div>
+      <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4A47">#14121C · #E1DAF0 · #F6F3FB · #F4D35E · #F6EFDC · #3F3A52 · plus een eigen kaartkleur en riso-cover per venture</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; line-height: 1">Aa Bricolage</span>
+      <span style="font-family: Figtree, sans-serif; font-size: 18px">Figtree voor tekst</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+      <span style="padding: 14px 22px; border-radius: 12px; background: #14121C; color: #FFFFFF; font-family: Figtree, sans-serif; font-weight: 700; font-size: 15px">Ik wil instappen</span>
+      <span style="padding: 6px 12px; border-radius: 999px; background: #14121C; color: #F4D35E; font-family: Figtree, sans-serif; font-size: 13px; font-weight: 700">Schets</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":1980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { naam: this.props.naam ?? 'Next Founder' };
+  }
+}
+</script>
+</body>
+</html>

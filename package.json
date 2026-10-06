@@ -1,0 +1,15 @@
+{
+  "name": "next-founder",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "dev": "node tools/build.mjs && npx wrangler dev",
+    "check": "node tools/build.mjs && node tools/check.mjs",
+    "deploy": "node tools/build.mjs && npx wrangler deploy"
+  },
+  "devDependencies": {
+    "playwright": "1.62.0",
+    "wrangler": "^4.40.0"
+  }
+}

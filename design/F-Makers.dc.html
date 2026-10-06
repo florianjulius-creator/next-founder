@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · F2 Voor makers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..500&amp;family=Funnel+Sans:wght@400..600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+html{scrollbar-color:#101012 #FFFFFF}
+a{text-underline-offset:4px}
+::selection{background:#C6F05A;color:#101012}
+:focus-visible{outline:3px solid #101012;outline-offset:3px}
+[data-tone="donker"] :focus-visible{outline-color:#FFFFFF}
+input{caret-color:#101012}
+input::placeholder{color:#6E6E74}
+.nf-navlink:hover{text-decoration:underline}
+.nm-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:stretch}
+.nm-pas{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(150px,auto));grid-template-areas:"te te pr pr" "te te kl pp" "ip bv kl pp"}
+.nm-tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 24px}
+.nm-form{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:start}
+.nm-preview{position:sticky;top:24px}
+.nm-tegel{transition:background-color 480ms cubic-bezier(.16,1,.3,1),color 480ms cubic-bezier(.16,1,.3,1)}
+.nm-vak{transition:background-color 260ms ease-out}
+.nm-keuze:hover{border-color:#101012}
+.nm-input{transition:border-color 160ms ease-out}
+.nm-input:hover{border-color:#8A8A90}
+.nm-input[aria-invalid="true"]{border-color:#B3261E!important;box-shadow:0 0 0 1px #B3261E}
+.nm-swatch:hover{transform:scale(1.08)}
+@media (max-width:1080px){.nm-hero{grid-template-columns:minmax(0,1fr);gap:48px}.nm-form{grid-template-columns:minmax(0,1fr);gap:40px}.nm-preview{position:static;order:-1}}
+@media (max-width:900px){.nm-tl{grid-template-columns:minmax(0,1fr);gap:0}}
+@media (max-width:640px){.nf-navtekst{display:none}.nm-pas{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(140px,auto);grid-template-areas:"te te" "pr pr" "kl bv" "kl ip" "pp pp"}}
+.nm-pas>*{animation:nm-in 900ms cubic-bezier(.16,1,.3,1) backwards}
+.nm-pas>*:nth-child(2){animation-delay:70ms}.nm-pas>*:nth-child(3){animation-delay:140ms}.nm-pas>*:nth-child(4){animation-delay:210ms}.nm-pas>*:nth-child(5){animation-delay:280ms}.nm-pas>*:nth-child(6){animation-delay:350ms}
+@keyframes nm-in{from{transform:translateY(28px) scale(.94);filter:saturate(.35)}}
+@keyframes nm-op{from{transform:translateY(10px);filter:blur(4px)}}
+@keyframes nm-teken{from{stroke-dashoffset:24}}
+.nm-vak path{stroke-dasharray:24;animation:nm-teken 380ms cubic-bezier(.16,1,.3,1) backwards}
+.nm-klaar{animation:nm-op 640ms cubic-bezier(.16,1,.3,1) backwards}
+.nm-klaar path{stroke-dasharray:24;animation:nm-teken 520ms cubic-bezier(.16,1,.3,1) backwards 260ms}
+.nm-antwoord,.nm-melding{animation:nm-op 480ms cubic-bezier(.16,1,.3,1) backwards}
+.nm-swatch{transition:transform 260ms cubic-bezier(.16,1,.3,1),box-shadow 260ms cubic-bezier(.16,1,.3,1)}
+.nm-tafel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
+.nm-persoon{position:sticky;top:24px;transition:background-color 480ms cubic-bezier(.16,1,.3,1),color 480ms cubic-bezier(.16,1,.3,1)}
+.nm-gezicht img{transition:transform 320ms cubic-bezier(.16,1,.3,1),box-shadow 260ms cubic-bezier(.16,1,.3,1)}
+@keyframes nm-wa{from{transform:translateY(14px);filter:blur(5px)}}
+@keyframes nm-wb{from{transform:translateY(14px);filter:blur(5px)}}
+@keyframes nm-pop{40%{transform:scale(1.25)}}
+@keyframes nm-av{from{transform:scale(.3) translateY(6px)}}
+.nm-maker[aria-checked="true"] img{animation:nm-pop 420ms cubic-bezier(.16,1,.3,1)}
+.nm-av{animation:nm-av 460ms cubic-bezier(.16,1,.3,1) backwards}
+@media (max-width:1080px){.nm-tafel{grid-template-columns:minmax(0,1fr)}.nm-persoon{position:relative;min-height:0!important}}
+html,body{cursor:url(/_blob/35c037913f0d87e6c0108d4b5be171d4) 4 3,auto}
+a,button,label,[role="checkbox"]{cursor:url(/_blob/e14c733792ec9aa1daea7955f3739002) 16 16,pointer!important}
+a.nf-tile{cursor:url(/_blob/c61c329c8d15e78156264f8c3ead171a) 20 20,pointer!important}
+a.nf-tile[data-tone="donker"]{cursor:url(/_blob/59b91facd83be556a3d9e37f0aebd4d2) 20 20,pointer!important}
+input,textarea{cursor:text!important}
+button:disabled,[aria-disabled="true"]{cursor:not-allowed!important}
+img{outline:1px solid rgba(16,16,18,.08);outline-offset:-1px}
+a>svg:last-child{transition:transform 260ms cubic-bezier(.16,1,.3,1)}
+a:hover>svg:last-child{transform:translateX(4px)}
+.nf-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@supports (animation-timeline: view()){.nf-sv{animation:nf-sv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}}
+@keyframes nf-sv{from{translate:0 56px;scale:.95;filter:saturate(.3)}}
+.nf-w{display:inline-block;animation:nf-woord 900ms cubic-bezier(.16,1,.3,1) backwards}
+@keyframes nf-woord{from{transform:translateY(.55em);filter:blur(8px);clip-path:inset(0 0 100% 0)}}
+.nf-mark{background:linear-gradient(#C6F05A,#C6F05A) no-repeat 0 90%/100% .34em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:nf-streep 900ms cubic-bezier(.16,1,.3,1) 1000ms backwards}
+@keyframes nf-streep{from{background-size:0% .34em}}
+
+.nm-persoon{isolation:isolate}
+.nm-wipe{position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;animation-duration:820ms;animation-timing-function:cubic-bezier(.65,0,.35,1);animation-fill-mode:backwards}
+@keyframes nm-wipa{from{clip-path:circle(0% at 100% 40%)}to{clip-path:circle(150% at 100% 40%)}}
+@keyframes nm-wipb{from{clip-path:circle(0% at 100% 40%)}to{clip-path:circle(150% at 100% 40%)}}
+@media (max-width:1080px){@keyframes nm-wipa{from{clip-path:circle(0% at 50% 100%)}to{clip-path:circle(150% at 50% 100%)}}@keyframes nm-wipb{from{clip-path:circle(0% at 50% 100%)}to{clip-path:circle(150% at 50% 100%)}}}
+.nm-gezicht:hover img{transform:translateY(-4px) rotate(-2deg)}
+.nm-gezicht:active img{transform:scale(.96)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition-property:background-color,color,border-color,box-shadow!important}a:hover>svg:last-child,.nf-ingang:hover .nf-cirkel,.nf-band li:hover,.nf-band li:hover .nf-port img,.nm-gezicht:hover img{transform:none!important}.nm-swatch:hover{transform:none}}
+</style>
+</helmet>
+<div style="font-family: 'Funnel Sans', 'Helvetica Neue', sans-serif; color: #101012; background: #FFFFFF; font-size: 16px; line-height: 1.5; overflow-x: clip">
+
+<header style="border-bottom: 1px solid #E2E2DE">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+    <a href="F-Bento.dc.html" style="display: flex; align-items: center; gap: 12px; color: #101012; text-decoration: none; min-height: 44px">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 30 30"><rect x="0" y="0" width="14" height="14" rx="4" fill="#C6F05A"></rect><rect x="16" y="0" width="14" height="14" rx="4" fill="#1F2E9A"></rect><rect x="0" y="16" width="14" height="14" rx="4" fill="#FF7552"></rect><rect x="16" y="16" width="14" height="14" rx="4" fill="#6EC0FF"></rect></svg>
+      <span style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 10px">
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 500; font-size: 23px; letter-spacing: -0.02em; line-height: 1">{{naam}}</span>
+        <span style="font-size: 14px; color: #5C5C62; line-height: 1">by House of Founders</span>
+      </span>
+    </a>
+    <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
+      <a href="F-Bento.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
+      <a href="#belofte" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Wat je belooft</a>
+      <a href="#top" aria-current="page" style="padding: 11px 14px; color: #101012; text-decoration: underline; text-decoration-thickness: 2px">Voor makers</a>
+      <a href="#aanmelden" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Meld je venture aan</a>
+    </nav>
+  </div>
+</header>
+
+<section id="top" aria-labelledby="hero-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 56px 32px 40px">
+  <div class="nm-hero">
+    <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 48px; min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <h1 id="hero-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(42px, 4.7vw, 68px); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance"><span style="display: block"><span class="nf-w" style="animation-delay: 120ms">Je</span> <span class="nf-w" style="animation-delay: 190ms">bouwde</span> <span class="nf-w" style="animation-delay: 260ms">het.</span></span><span style="display: block"><span class="nf-w" style="animation-delay: 330ms">Geef</span> <span class="nf-w" style="animation-delay: 400ms">het</span> <span class="nf-w" style="animation-delay: 470ms">door</span> <span class="nf-w" style="animation-delay: 540ms">aan</span> <span class="nf-w" style="animation-delay: 610ms">wie</span> <span class="nf-mark"><span class="nf-w" style="animation-delay: 680ms">doorpakt.</span></span></span></h1>
+        <p style="margin: 0; max-width: 36ch; font-size: 19px; line-height: 1.45; color: #4A4A50">Zet je venture in de etalage met een paspoort. Een kandidaat bewijst zich dertig dagen, en jij stemt mee wie hem overneemt.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#aanmelden" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Meld je venture aan
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+          </a>
+          <a href="F-Bento.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1.5px solid #101012; color: #101012; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de etalage</a>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #5C5C62">Elk idee is van de hele tafel. Daarom tekenen alle makers mee.</p>
+      </div>
+    </div>
+
+    <div class="nm-pas" role="list" aria-label="Het paspoort: vijf bewijzen" style="min-width: 0">
+      <sc-for list="{{pas}}" as="t" hint-placeholder-count="5">
+        <div role="listitem" data-tone="{{t.tone}}" style="grid-area: {{t.area}}; border-radius: 20px; background: {{t.bg}}; color: {{t.fg}}; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0">
+          <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: {{t.fs}}; line-height: 1; letter-spacing: -0.03em">{{t.naam}}</span>
+          <span style="margin-top: auto; font-size: {{t.zs}}; line-height: 1.4; color: {{t.sub}}; max-width: 30ch; overflow-wrap: break-word; hyphens: manual">{{t.bron}}</span>
+        </div>
+      </sc-for>
+      <div role="listitem" style="grid-area: pp; border-radius: 20px; background: #EEEEE9; color: #101012; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0">
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em">Het paspoort</span>
+        <span style="margin-top: auto; font-size: 15px; line-height: 1.4; color: #4A4A50">Vijf bewijzen, elk met een bron. Wat open staat, laat de kandidaat zien waar het werk zit.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tafel" aria-labelledby="tafel-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 40px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px">
+    <h2 id="tafel-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Aan tafel in Deel II.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">Zeventien founders en acht builders bouwden vijf dagen in Marokko. Wie meebouwde, is maker van wat er ontstond.</p>
+  </div>
+  <div class="nm-tafel">
+    <div class="nm-persoon" data-tone="{{pk.tone}}" aria-live="polite" style="border-radius: 20px; background: {{pk.bg}}; color: {{pk.fg}}; padding: clamp(22px, 3vw, 32px); min-height: 440px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+      <span aria-hidden="true" class="nm-wipe" style="background: {{pk.bg}}; animation-name: {{pWipe}}"></span>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; animation: {{pAnim}} 560ms cubic-bezier(.16,1,.3,1) backwards">
+        <img src="{{pk.foto}}" alt="" width="140" height="140" style="width: 140px; height: 140px; border-radius: 22px; object-fit: cover; display: block; background: #EEEEE9">
+        <span style="padding: 2px 10px; border-radius: 999px; border: 1px solid {{pk.fg}}; font-size: 13px; font-weight: 500">{{pk.groep}}</span>
+      </div>
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; animation: {{pAnim}} 560ms cubic-bezier(.16,1,.3,1) backwards 80ms">
+        <p style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: clamp(34px, 3.2vw, 46px); line-height: 1; letter-spacing: -0.03em; overflow-wrap: break-word">{{pk.naam}}</p>
+        <p style="margin: 0; font-size: 16px; font-weight: 500">{{pk.bedrijf}} · {{pk.plaats}}</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.45; color: {{pk.sub}}; max-width: 40ch">{{pk.zin}}</p>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+      <div role="group" aria-label="Filter de tafel" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{tafelChips}}" as="c" hint-placeholder-count="3">
+          <button type="button" class="nm-keuze" onClick="{{c.kies}}" aria-pressed="{{c.aan}}" style="appearance: none; margin: 0; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid {{c.rand}}; background: {{c.bg}}; color: {{c.fg}}; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">{{c.label}}<span style="font-variant-numeric: tabular-nums; font-weight: 400; color: {{c.telKleur}}">{{c.n}}</span></button>
+        </sc-for>
+      </div>
+      <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(88px, 100%), 1fr)); gap: 20px 14px">
+        <sc-for list="{{tafelGrid}}" as="t" hint-placeholder-count="12">
+          <li class="nf-sv" style="min-width: 0">
+            <button type="button" class="nm-gezicht" onClick="{{t.kies}}" aria-pressed="{{t.aan}}" style="appearance: none; margin: 0; padding: 0; border: 0; background: transparent; color: #101012; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 8px; width: 100%">
+              <img src="{{t.foto}}" alt="" width="100" height="100" style="width: 100%; height: auto; aspect-ratio: 1; border-radius: 16px; object-fit: cover; display: block; background: #EEEEE9; box-shadow: {{t.ring}}">
+              <span style="font-size: 15px; font-weight: 600; line-height: 1.2">{{t.naam}}</span>
+              <span style="font-size: 13px; line-height: 1.3; color: #5C5C62">{{t.bedrijf}}</span>
+            </button>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="belofte" aria-labelledby="belofte-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 40px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px">
+    <h2 id="belofte-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Wat jij belooft.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">De kandidaat bewijst inzet. Jij bewijst dat wat er staat klopt. Vijf afspraken, van dag 0 tot de stemming.</p>
+  </div>
+  <ol class="nm-tl" style="margin: 0; padding: 0; list-style: none">
+    <sc-for list="{{belofte}}" as="b" hint-placeholder-count="5">
+      <li style="display: flex; flex-direction: column; gap: 10px; padding: 18px 0 28px; border-top: 2px solid #101012; min-width: 0">
+        <span style="display: flex; align-items: center; gap: 10px">
+          <span aria-hidden="true" style="flex: none; width: 14px; height: 14px; border-radius: 4px; background: {{b.kleur}}"></span>
+          <span style="font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; color: #4A4A50">{{b.dag}}</span>
+        </span>
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance">{{b.titel}}</span>
+        <span style="font-size: 16px; line-height: 1.5; color: #3A3A40; max-width: 34ch">{{b.tekst}}</span>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
+<section id="aanmelden" aria-labelledby="aanmelden-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 40px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px">
+    <h2 id="aanmelden-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Zet je venture in de etalage.</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #4A4A50">Je ziet meteen hoe hij in de etalage komt te staan.</p>
+  </div>
+
+  <div class="nm-form">
+    <sc-if value="{{formulier}}" hint-placeholder-val="{{true}}">
+      <form onSubmit="{{verstuur}}" novalidate style="margin: 0; display: flex; flex-direction: column; gap: 32px; min-width: 0">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label for="f-naam" style="font-size: 16px; font-weight: 600">Naam van de venture</label>
+            <input id="f-naam" class="nm-input" type="text" autocomplete="off" value="{{fNaam}}" onChange="{{zetNaam}}" aria-invalid="{{naamFout}}" placeholder="Bijvoorbeeld Exit Buddy" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border-radius: 14px; border: 1px solid #C9C9C4; background: #FFFFFF; color: #101012; font: inherit; font-size: 17px">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label for="f-zin" style="font-size: 16px; font-weight: 600">Wat het doet, in één zin</label>
+            <input id="f-zin" class="nm-input" type="text" autocomplete="off" maxlength="90" value="{{fZin}}" onChange="{{zetZin}}" placeholder="Wie heeft er last van, en wat los je op?" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border-radius: 14px; border: 1px solid #C9C9C4; background: #FFFFFF; color: #101012; font: inherit; font-size: 17px">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px">
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span id="l-editie" style="font-size: 16px; font-weight: 600">Gebouwd in</span>
+            <div role="group" aria-labelledby="l-editie" style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{edities}}" as="e" hint-placeholder-count="2">
+                <button type="button" class="nm-keuze" onClick="{{e.kies}}" aria-pressed="{{e.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid {{e.rand}}; background: {{e.bg}}; color: {{e.fg}}; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">{{e.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span id="l-niveau" style="font-size: 16px; font-weight: 600">Niveau</span>
+            <div role="group" aria-labelledby="l-niveau" style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{niveaus}}" as="n" hint-placeholder-count="3">
+                <button type="button" class="nm-keuze" onClick="{{n.kies}}" aria-pressed="{{n.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid {{n.rand}}; background: {{n.bg}}; color: {{n.fg}}; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">{{n.label}}</button>
+              </sc-for>
+            </div>
+            <p aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.45; color: #4A4A50">{{niveauUitleg}}</p>
+          </div>
+        </div>
+
+        <fieldset style="margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <legend style="padding: 0; margin-bottom: 4px; font-size: 16px; font-weight: 600">Wat er staat</legend>
+          <p style="margin: 0 0 4px; font-size: 15px; color: #4A4A50">Vink alleen aan wat je met een bron kunt laten zien.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 10px">
+            <sc-for list="{{bewijzen}}" as="b" hint-placeholder-count="5">
+              <button type="button" class="nm-keuze" role="checkbox" onClick="{{b.wissel}}" aria-checked="{{b.aan}}" style="appearance: none; margin: 0; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 4px 14px; align-items: start; padding: 14px 16px; border-radius: 14px; border: 1px solid {{b.rand}}; background: {{b.bg}}; color: #101012; font: inherit; text-align: left; cursor: pointer">
+                <span aria-hidden="true" class="nm-vak" style="grid-row: span 2; margin-top: 1px; width: 22px; height: 22px; box-sizing: border-box; border-radius: 6px; border: 2px solid #101012; background: {{b.vak}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center">
+                  <sc-if value="{{b.aan}}" hint-placeholder-val="{{false}}">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
+                  </sc-if>
+                </span>
+                <span style="font-size: 17px; font-weight: 600; line-height: 1.3">{{b.label}}</span>
+                <span style="font-size: 14px; line-height: 1.4; color: #4A4A50">Bron: {{b.bron}}</span>
+              </button>
+            </sc-for>
+          </div>
+        </fieldset>
+
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span id="l-kleur" style="font-size: 16px; font-weight: 600">Kleur in de etalage</span>
+          <div role="group" aria-labelledby="l-kleur" style="display: flex; flex-wrap: wrap; gap: 10px">
+            <sc-for list="{{kleuren}}" as="k" hint-placeholder-count="8">
+              <button type="button" class="nm-swatch" onClick="{{k.kies}}" aria-pressed="{{k.aan}}" aria-label="Kleur {{k.label}}" style="appearance: none; margin: 0; width: 44px; height: 44px; border-radius: 12px; border: 0; background: {{k.bg}}; cursor: pointer; box-shadow: {{k.ring}}"></button>
+            </sc-for>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: #4A4A50">Gekozen: {{kleurNaam}}</p>
+        </div>
+
+        <fieldset style="margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <legend style="padding: 0; margin-bottom: 4px; font-size: 16px; font-weight: 600">Wie bouwde mee</legend>
+          <p style="margin: 0 0 4px; font-size: 15px; color: #4A4A50">Tik aan wie meebouwde. Iedereen die je kiest, tekent mee.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{kiezer}}" as="k" hint-placeholder-count="8">
+              <button type="button" class="nm-keuze nm-maker" role="checkbox" onClick="{{k.wissel}}" aria-checked="{{k.aan}}" style="appearance: none; margin: 0; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px 4px 4px; border-radius: 999px; border: 1px solid {{k.rand}}; background: {{k.bg}}; color: {{k.fg}}; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer"><img src="{{k.foto}}" alt="" width="34" height="34" loading="lazy" style="width: 34px; height: 34px; border-radius: 999px; object-fit: cover; display: block; background: #EEEEE9">{{k.voornaam}}</button>
+            </sc-for>
+          </div>
+        </fieldset>
+
+        <div style="display: grid; grid-template-columns: minmax(0, 420px); gap: 24px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label for="f-mail" style="font-size: 16px; font-weight: 600">Jouw e-mailadres</label>
+            <input id="f-mail" class="nm-input" type="email" autocomplete="email" value="{{fMail}}" onChange="{{zetMail}}" aria-invalid="{{mailFout}}" placeholder="naam@voorbeeld.nl" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border-radius: 14px; border: 1px solid #C9C9C4; background: #FFFFFF; color: #101012; font: inherit; font-size: 17px">
+          </div>
+        </div>
+
+        <button type="button" class="nm-keuze" role="checkbox" onClick="{{wisselAkkoord}}" aria-checked="{{akkoord}}" style="appearance: none; margin: 0; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 4px 14px; align-items: start; padding: 16px; border-radius: 14px; border: 1px solid {{akkoordRand}}; background: {{akkoordBg}}; color: #101012; font: inherit; text-align: left; cursor: pointer">
+          <span aria-hidden="true" class="nm-vak" style="grid-row: span 2; margin-top: 1px; width: 22px; height: 22px; box-sizing: border-box; border-radius: 6px; border: 2px solid #101012; background: {{akkoordVak}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center">
+            <sc-if value="{{akkoord}}" hint-placeholder-val="{{false}}">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
+            </sc-if>
+          </span>
+          <span style="font-size: 17px; font-weight: 600; line-height: 1.3">Alle gekozen makers zijn akkoord met overdracht</span>
+          <span style="font-size: 15px; line-height: 1.45; color: #4A4A50">Iedereen die meebouwde tekent vooraf. Zo kan niemand de overdracht later blokkeren.</span>
+        </button>
+
+        <sc-if value="{{heeftFouten}}" hint-placeholder-val="{{false}}">
+          <div role="alert" class="nm-melding" style="display: flex; gap: 14px; padding: 16px 18px; border-radius: 14px; background: #FCEBEA; color: #5C1410">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M12 8v5M12 16.5v.5M10.3 3.9L2.4 17.6A2 2 0 0 0 4.1 20.6h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg>
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <p style="margin: 0; font-weight: 600">Nog niet compleet</p>
+              <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 16px; line-height: 1.45">
+                <sc-for list="{{fouten}}" as="f" hint-placeholder-count="1">
+                  <li>{{f}}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+          <button type="submit" style="appearance: none; margin: 0; display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; border: 0; background: #101012; color: #FFFFFF; font: inherit; font-weight: 600; font-size: 17px; cursor: pointer">Zet in de etalage
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </button>
+          <p style="margin: 0; max-width: 40ch; font-size: 15px; line-height: 1.45; color: #4A4A50">Je venture komt eerst als concept binnen. Pas als elke claim een bron heeft, gaat hij de etalage in.</p>
+        </div>
+      </form>
+    </sc-if>
+
+    <sc-if value="{{verzonden}}" hint-placeholder-val="{{false}}">
+      <div role="status" class="nm-klaar" style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: clamp(24px, 4vw, 40px); border-radius: 20px; background: #F4F4F1; min-width: 0">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 999px; background: #101012; color: #FFFFFF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
+        </span>
+        <h3 style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.05; letter-spacing: -0.03em; overflow-wrap: break-word">{{klaarKop}}</h3>
+        <p style="margin: 0; max-width: 48ch; font-size: 18px; line-height: 1.5; color: #3A3A40">Je aanmelding is binnen. {{makersKlaar}} Het paspoort heeft nu {{bewijsTel}} van de 5 bewijzen. Pas als elke claim een bron heeft, gaat de venture de etalage in.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+          <a href="F-Bento.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de etalage
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+          <button type="button" onClick="{{opnieuw}}" style="appearance: none; margin: 0; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #101012; background: transparent; color: #101012; font: inherit; font-weight: 500; font-size: 17px; cursor: pointer">Nog een venture aanmelden</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <div class="nm-preview" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <p style="margin: 0; font-size: 15px; font-weight: 500; color: #4A4A50">Zo staat hij in de etalage</p>
+      <div aria-live="polite" style="display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #E2E2DE; overflow: hidden; background: #FFFFFF">
+        <div class="nm-tegel" data-tone="{{pv.tone}}" style="background: {{pv.bg}}; color: {{pv.fg}}; padding: 20px; min-height: 196px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px">
+          <span style="align-self: flex-start; padding: 2px 10px; border-radius: 999px; border: 1px solid {{pv.fg}}; font-size: 13px; font-weight: 500">{{pStatus}}</span>
+          <span style="margin-top: auto; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: clamp(32px, 3vw, 42px); line-height: 1; letter-spacing: -0.03em; overflow-wrap: break-word; opacity: {{pNaamOp}}">{{pNaam}}</span>
+        </div>
+        <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font-size: 16px; line-height: 1.45; color: {{pZinKleur}}; overflow-wrap: break-word">{{pZin}}</p>
+          <p style="margin: 0; font-size: 15px; line-height: 1.4; color: #5C5C62">Zoekt <span style="color: #101012; font-weight: 500">{{pZoekt}}</span></p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+            <span role="img" aria-label="{{pBewijsLabel}}" style="display: inline-flex; gap: 4px">
+              <sc-for list="{{pBew}}" as="b" hint-placeholder-count="5">
+                <span class="nm-vak" style="width: 14px; height: 14px; box-sizing: border-box; border-radius: 4px; border: 1.5px solid {{b.rand}}; background: {{b.vul}}"></span>
+              </sc-for>
+            </span>
+            <span style="font-size: 14px; color: #5C5C62; font-variant-numeric: tabular-nums">{{bewijsTel}} van 5 bewijzen</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; min-height: 34px">
+            <sc-if value="{{pMakersHeeft}}" hint-placeholder-val="{{false}}">
+              <span style="display: inline-flex">
+                <sc-for list="{{pMakers}}" as="a" hint-placeholder-count="3">
+                  <img class="nm-av" src="{{a.foto}}" alt="" width="32" height="32" style="width: 32px; height: 32px; border-radius: 999px; object-fit: cover; display: block; margin-left: {{a.ml}}; box-shadow: 0 0 0 2px #FFFFFF; background: #EEEEE9">
+                </sc-for>
+              </span>
+            </sc-if>
+            <span style="font-size: 14px; line-height: 1.35; color: #5C5C62">{{pMakersZin}}</span>
+          </div>
+          <p style="margin: 0; padding-top: 12px; border-top: 1px solid #E2E2DE; font-size: 14px; font-weight: 500">{{pNiveau}} · {{pEditie}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="terug-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 32px 72px; align-items: start">
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <h2 id="terug-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Wat je ervoor terugkrijgt.</h2>
+      <p style="margin: 0; max-width: 36ch; font-size: 19px; line-height: 1.5; color: #4A4A50">Je venture blijft niet liggen, en jij blijft aan tafel.</p>
+    </div>
+    <dl style="margin: 0; display: flex; flex-direction: column">
+      <sc-for list="{{terug}}" as="r" hint-placeholder-count="4">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 6px 24px; padding: 22px 0; border-top: 1px solid #E2E2DE">
+          <dt style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em">{{r.term}}</dt>
+          <dd style="margin: 0; font-size: 17px; line-height: 1.5; color: #3A3A40">{{r.tekst}}</dd>
+        </div>
+      </sc-for>
+    </dl>
+  </div>
+</section>
+
+<section aria-labelledby="vragen-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 32px 72px; align-items: start">
+    <h2 id="vragen-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Vragen van makers.</h2>
+    <div style="display: flex; flex-direction: column; border-bottom: 1px solid #E2E2DE">
+      <sc-for list="{{vragen}}" as="v" hint-placeholder-count="3">
+        <div style="border-top: 1px solid #E2E2DE">
+          <h3 style="margin: 0">
+            <button type="button" onClick="{{v.wissel}}" aria-expanded="{{v.open}}" aria-controls="{{v.id}}" style="appearance: none; margin: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; border: 0; background: transparent; color: #101012; font: inherit; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; text-align: left; cursor: pointer">{{v.vraag}}
+              <span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; box-sizing: border-box; border-radius: 999px; border: 1px solid #101012; background: {{v.knopBg}}; color: {{v.knopFg}}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="{{v.icoon}}"></path></svg>
+              </span>
+            </button>
+          </h3>
+          <sc-if value="{{v.open}}" hint-placeholder-val="{{false}}">
+            <p id="{{v.id}}" class="nm-antwoord" style="margin: 0; padding: 0 56px 24px 0; max-width: 60ch; font-size: 17px; line-height: 1.55; color: #3A3A40">{{v.antwoord}}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="slot-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(88px, 10vw, 136px) 32px clamp(72px, 9vw, 120px)">
+  <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 28px; padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid #E2E2DE">
+    <h2 id="slot-kop" style="margin: 0; max-width: 16ch; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(44px, 6vw, 88px); line-height: 1; letter-spacing: -0.035em; text-wrap: balance">Een idee telt pas als het gebouwd is.</h2>
+    <p style="margin: 0; max-width: 54ch; font-size: 18px; line-height: 1.5; color: #4A4A50">Jij bouwde het. Iemand anders kan het nu afmaken, met jou aan tafel.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+      <a href="#aanmelden" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Meld je venture aan
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+      </a>
+      <a href="F-Bento.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1.5px solid #101012; color: #101012; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de etalage</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top: 1px solid #E2E2DE">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 15px; color: #4A4A50">
+    <span>{{naam}} is een initiatief van House of Founders</span>
+    <span>Gebouwd in het Huis. Overgedragen op bewijs.</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":6080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const naam = this.props.naam ?? 'Next Founder';
+    const INK = '#101012';
+    const WIT = '#FFFFFF';
+    const TAFEL = [
+      {"id": "barbara-van-erp", "naam": "Barbara van Erp", "voornaam": "Barbara", "groep": "Founder", "bedrijf": "Saar Magazine", "plaats": "Amsterdam", "zin": "Bouwde Saar uit tot een magazine voor vrouwen van 50+ met 20.000 abonnees.", "foto": "/_blob/a7a9968eb4b68149d664c6401e4b3a08"},
+      {"id": "bas-blokhuis", "naam": "Bas Blokhuis", "voornaam": "Bas", "groep": "Founder", "bedrijf": "Dharma", "plaats": "Amersfoort", "zin": "Leidt al 17 jaar softwarebureau Dharma, voor zorg en impactorganisaties.", "foto": "/_blob/b829aeb864af9ea75382c5f08dade4cb"},
+      {"id": "emilie-oostenbroek", "naam": "Emilie Oostenbroek", "voornaam": "Emilie", "groep": "Founder", "bedrijf": "AIM", "plaats": "Amsterdam", "zin": "Was Head of Growth & Experience bij Adyen en runt nu haar eigen CX-bureau AIM.", "foto": "/_blob/b3022682ae6bd72658e804c44a1b8bfd"},
+      {"id": "florian-julius", "naam": "Florian Julius", "voornaam": "Florian", "groep": "Founder", "bedrijf": "Breinpro AI", "plaats": "Texel", "zin": "Webdeveloper van Texel die AI-bouwer werd: praktische AI voor kleine bedrijven.", "foto": "/_blob/0f617b04bd5151ee23adb844f4dd842d"},
+      {"id": "hugo-hemmen", "naam": "Hugo Hemmen", "voornaam": "Hugo", "groep": "Founder", "bedrijf": "Gapstars", "plaats": "Dubai", "zin": "Bouwde Gapstars uit tot zo'n 300 mensen in tech- en financeteams op afstand.", "foto": "/_blob/6395fa5076a163a90bf23d4e7892c992"},
+      {"id": "jeroen-derwort", "naam": "Jeroen Derwort", "voornaam": "Jeroen", "groep": "Founder", "bedrijf": "Dutch Games Association", "plaats": "Zoetermeer", "zin": "Maakte in 2001 Online Soccer Manager op zolder en is nu voorzitter van de Dutch Games Association.", "foto": "/_blob/4f2aed476ef73780eb35651652a62083"},
+      {"id": "joachim-de-boer", "naam": "Joachim de Boer", "voornaam": "Joachim", "groep": "Founder", "bedrijf": "De Online Drogist", "plaats": "Amsterdam", "zin": "Richtte in 2007 De Online Drogist mee op, nu de grootste online drogist van Nederland.", "foto": "/_blob/82bcba0fb651d3888cadb44ff6b5e296"},
+      {"id": "lenneke-van-ingen", "naam": "Lenneke van Ingen", "voornaam": "Lenneke", "groep": "Founder", "bedrijf": "A Million Faces", "plaats": "Amsterdam", "zin": "Serieel ondernemer achter casting- en talentbureau A Million Faces.", "foto": "/_blob/b80e4d0b2774caffc1dae576f938b50a"},
+      {"id": "lisa-wals", "naam": "Lisa Wals", "voornaam": "Lisa", "groep": "Founder", "bedrijf": "Iconic Design Objects", "plaats": "Amsterdam", "zin": "Maakt van de beeldwereld van kunstenaars en merken verzamelobjecten en art toys.", "foto": "/_blob/001bac2cf7f4d0847a749f608310d85e"},
+      {"id": "marco-nobel", "naam": "Marco Nobel", "voornaam": "Marco", "groep": "Founder", "bedrijf": "Fuse", "plaats": "Londen", "zin": "Oprichter van studentenhuisvester Fuse, angel investor en DJ met meer dan 100 miljoen streams.", "foto": "/_blob/4774fa1c1f8b7ed0b72c512c5ce39262"},
+      {"id": "marleen-evertsz", "naam": "Marleen Evertsz", "voornaam": "Marleen", "groep": "Founder", "bedrijf": "GoldRepublic", "plaats": "Amsterdam", "zin": "Was directeur bij Optiver en werd serieel fintech-founder: GoldRepublic, Nxchange en Digital Notary.", "foto": "/_blob/f54ca917ea9bff4dee03f81527f3c8ee"},
+      {"id": "mike-van-klaveren", "naam": "Mike van Klaveren", "voornaam": "Mike", "groep": "Founder", "bedrijf": "Elektramat", "plaats": "Enschede", "zin": "Leidt Elektramat, de online elektrogroothandel die groeide naar zo'n 300 mensen.", "foto": "/_blob/185e00bb8f03ccfbb085b75a292ed584"},
+      {"id": "nick-velten", "naam": "Nick Velten", "voornaam": "Nick", "groep": "Founder", "bedrijf": "Hello World", "plaats": "Amsterdam", "zin": "Twee exits (Stimmt, Fangage). Investeert nu en zoekt een DTC-merk om over te nemen.", "foto": "/_blob/bcad47d69bf218ed140fce305f1a5158"},
+      {"id": "niels-verwij", "naam": "Niels Verwij", "voornaam": "Niels", "groep": "Founder", "bedrijf": "Dekbed Discounter", "plaats": "Gouda", "zin": "Begon Dekbed Discounter met 5.000 euro van zijn ouders. Het groeide voorbij 100 miljoen omzet.", "foto": "/_blob/9b388bc5b52ad601deb027ba88626572"},
+      {"id": "pepijn-meddens", "naam": "Pepijn Meddens", "voornaam": "Pepijn", "groep": "Founder", "bedrijf": "Billink", "plaats": "Brummen", "zin": "Medeoprichter van achterafbetaler Billink en venture builder bij TMM Ventures.", "foto": "/_blob/c2c3203f65e91fa754ca756494056d14"},
+      {"id": "stefan-witkamp", "naam": "Stefan Witkamp", "voornaam": "Stefan", "groep": "Founder", "bedrijf": "Homey", "plaats": "Utrecht", "zin": "Medeoprichter en CEO van smart-homeplatform Homey, sinds 2024 voor de meerderheid van LG.", "foto": "/_blob/92b05257b0e4fbf8533881202ba6d050"},
+      {"id": "timothy-scheek", "naam": "Timothy Scheek", "voornaam": "Timothy", "groep": "Founder", "bedrijf": "Saef", "plaats": "Amsterdam", "zin": "Verkocht Mayht aan Sonos en bouwt nu Saef: onzichtbare diefstalbeveiliging voor luxe horloges.", "foto": "/_blob/7d2056f7b52a9ca02842242211a2dd43"},
+      {"id": "alex-butter", "naam": "Alex Butter", "voornaam": "Alex", "groep": "Builder", "bedrijf": "GoldRepublic", "plaats": "Amsterdam", "zin": "CTO van GoldRepublic en Nxchange, en eerder al bij House of Founders.", "foto": "/_blob/b914104089b03c9cb75a05aaa31ee906"},
+      {"id": "giorgio-orsucci", "naam": "Giorgio Orsucci", "voornaam": "Giorgio", "groep": "Builder", "bedrijf": "Builders", "plaats": "Amsterdam", "zin": "Product- en systeemontwerper bij startupstudio Builders. Denkt na over hoe AI-native software eruitziet.", "foto": "/_blob/99679d73604fec54606d8abe34e4e72d"},
+      {"id": "sander-belaen", "naam": "Sander Belaen", "voornaam": "Sander", "groep": "Builder", "bedrijf": "Century", "plaats": "Amsterdam", "zin": "Indie-appbouwer achter Century, een Whoop-alternatief voor het horloge dat je al draagt.", "foto": "/_blob/5ff6098293287075e18ad64b491e64be"},
+      {"id": "wouter-van-den-hoven", "naam": "Wouter van den Hoven", "voornaam": "Wouter", "groep": "Builder", "bedrijf": "Vesper", "plaats": "Amsterdam", "zin": "CTO van Vesper vanaf dag een: een AI-platform voor grondstoffenmarkten in food en landbouw.", "foto": "/_blob/f8f930337787426e4d8241b5d3d5eff8"},
+      {"id": "ruben-maas", "naam": "Ruben Maas", "voornaam": "Ruben", "groep": "Builder", "bedrijf": "Seatchamp", "plaats": "Rotterdam", "zin": "CTO van Seatchamp, dat complete sportreizen verkoopt, met AI in de kern van het team.", "foto": "/_blob/a7cf806fac01120b1a6deaae9daba86f"},
+      {"id": "guido-schmitz", "naam": "Guido Schmitz", "voornaam": "Guido", "groep": "Builder", "bedrijf": "Oneteam", "plaats": "Rotterdam", "zin": "Richtte Oneteam op zijn negentiende op: de app voor medewerkers in de frontlinie.", "foto": "/_blob/393b82b3aada54152ab22e7521aa8a5c"},
+      {"id": "martin-deumens", "naam": "Martin Deumens", "voornaam": "Martin", "groep": "Builder", "bedrijf": "BLEACH", "plaats": "Maastricht", "zin": "Merkontwerper uit de Maastrichtse scene die net creatief bureau BLEACH begon.", "foto": "/_blob/4e98c3cc2084380dde93303ee955ad2b"},
+      {"id": "gwen", "naam": "Gwen Nijs", "voornaam": "Gwen", "groep": "Builder", "bedrijf": "BLEACH", "plaats": "Amsterdam", "zin": "Merk- en digitaal ontwerper, medeoprichter van BLEACH met Martin Deumens.", "foto": "/_blob/9a0ce25011246a4d773b119f5b496e60"}
+    ];
+    const SH = '­';
+    const waarde = (e) => (e && e.target !== undefined) ? e.target.value : (e == null ? '' : String(e));
+
+    const fNaam = st.fNaam ?? '';
+    const fZin = st.fZin ?? '';
+    const makersSel = st.makersSel ?? [];
+    const persoon = st.persoon ?? 0;
+    const tafelFilter = st.tafelFilter ?? 'alle';
+    const ptik = st.ptik || 0;
+    const fMail = st.fMail ?? '';
+    const editie = st.editie ?? 'II';
+    const niveau = st.niveau ?? 'Schets';
+    const kleur = st.kleur ?? 0;
+    const bew = st.bew ?? [true, false, false, false, false];
+    const akkoord = !!st.akkoord;
+    const poging = !!st.poging;
+    const verzonden = !!st.verzonden;
+    const vraag = st.vraag ?? 0;
+
+    const PAL = [
+      { label: 'Limoen', bg: '#C6F05A', fg: INK, sub: '#2E3A12', tone: 'licht' },
+      { label: 'Nachtblauw', bg: '#1F2E9A', fg: WIT, sub: '#D3D9FA', tone: 'donker' },
+      { label: 'Koraal', bg: '#FF7552', fg: INK, sub: '#3A160C', tone: 'licht' },
+      { label: 'Lucht', bg: '#6EC0FF', fg: INK, sub: '#0E3550', tone: 'licht' },
+      { label: 'Lavendel', bg: '#A98DFF', fg: INK, sub: '#24164F', tone: 'licht' },
+      { label: 'Zon', bg: '#FFCD3C', fg: INK, sub: '#3D3006', tone: 'licht' },
+      { label: 'Zeegroen', bg: '#007265', fg: WIT, sub: '#E3F6F2', tone: 'donker' },
+      { label: 'Bes', bg: '#B0246F', fg: WIT, sub: '#FBE3EF', tone: 'donker' }
+    ];
+    const BEWIJS = [
+      { label: 'Team', bron: 'wie bouwde mee, en in welke rol' },
+      { label: 'Product', bron: 'een link of demo van wat werkt' },
+      { label: 'Klant', bron: 'gesprekken of toezeggingen die te checken zijn' },
+      { label: 'BV', bron: 'KvK-nummer of oprichtingsakte' },
+      { label: 'IP-akte', bron: 'akte die code, merk en domein in de BV legt' }
+    ];
+
+    const pas = [
+      { naam: 'Team', bron: 'Wie bouwde mee, en in welke rol. Met naam en contact.', area: 'te', fs: 'clamp(38px, 3.6vw, 54px)', zs: '18px', p: 0 },
+      { naam: 'Product', bron: 'Een link of demo van wat er werkt.', area: 'pr', fs: '30px', zs: '15px', p: 1 },
+      { naam: 'Klant', bron: 'Gesprekken en toe' + SH + 'zeggingen die de kandidaat zelf kan nalopen.', area: 'kl', fs: '26px', zs: '15px', p: 2 },
+      { naam: 'BV', bron: 'KvK-nummer of akte.', area: 'bv', fs: '26px', zs: '15px', p: 3 },
+      { naam: 'IP-akte', bron: 'Code, merk en domein in de BV.', area: 'ip', fs: '26px', zs: '15px', p: 4 }
+    ].map((t) => ({ ...t, bg: PAL[t.p].bg, fg: PAL[t.p].fg, sub: PAL[t.p].sub, tone: PAL[t.p].tone }));
+
+    const belofte = [
+      { dag: 'Dag 0', titel: 'Paspoort', tekst: 'Wat er staat, met een bron bij elke claim.', kleur: PAL[0].bg },
+      { dag: 'Dag 1 tot 7', titel: 'Bereikbaar', tekst: 'Vragen van de kandidaat binnen 48 uur beantwoord.', kleur: PAL[1].bg },
+      { dag: 'Dag 7', titel: 'Overdrachts' + SH + 'akte klaar', tekst: 'IP en aandelen liggen klaar voor overdracht.', kleur: PAL[2].bg },
+      { dag: 'Dag 8 tot 30', titel: 'Overdrachts' + SH + 'uren', tekst: 'Twee uur per week sparren en deuren openen.', kleur: PAL[3].bg },
+      { dag: 'Dag 30', titel: 'Stem met reden', tekst: 'Elke stem komt met een onderbouwing.', kleur: PAL[4].bg }
+    ];
+
+    const pil = (aan) => ({ bg: aan ? INK : WIT, fg: aan ? WIT : INK, rand: aan ? INK : '#D5D5D0' });
+    const edities = [
+      { key: 'I', label: 'Deel I · Kaapstad' },
+      { key: 'II', label: 'Deel II · Marokko' }
+    ].map((e) => ({ ...e, aan: editie === e.key, ...pil(editie === e.key), kies: () => this.setState({ editie: e.key }) }));
+    const niveaus = ['Schets', 'Prototype', 'Sleutelklaar'].map((n) => ({ label: n, aan: niveau === n, ...pil(niveau === n), kies: () => this.setState({ niveau: n }) }));
+    const uitleg = {
+      Schets: 'Een gepitcht idee met een eerste validatie. Je zoekt een bouwer-founder, zonder inleg. De makers houden samen 5%.',
+      Prototype: 'Werkende MVP en eerste klantgesprekken. Je zoekt iemand die valideert en doorbouwt. Inleg [BEDRAG]. De makers houden samen 10%.',
+      Sleutelklaar: 'Compleet platform, alleen de verkoop ontbreekt. Je zoekt een commerciële CEO. Inleg [BEDRAG]. De makers houden samen 15%.'
+    };
+    const zoekt = { Schets: 'Bouwer-founder', Prototype: 'Iemand die valideert en doorbouwt', Sleutelklaar: 'Commerciële CEO' };
+
+    const bewijzen = BEWIJS.map((b, i) => ({
+      ...b,
+      aan: !!bew[i],
+      rand: bew[i] ? INK : '#D5D5D0',
+      bg: bew[i] ? '#F4F4F1' : WIT,
+      vak: bew[i] ? INK : WIT,
+      wissel: () => {
+        const cur = ((this.state && this.state.bew) || bew).slice();
+        cur[i] = !cur[i];
+        this.setState({ bew: cur });
+      }
+    }));
+    const bewijsTel = bew.filter(Boolean).length;
+
+    const kleuren = PAL.map((k, i) => ({
+      label: k.label,
+      bg: k.bg,
+      aan: i === kleur,
+      ring: i === kleur ? '0 0 0 3px #FFFFFF, 0 0 0 5px #101012' : 'inset 0 0 0 1px rgba(16, 16, 18, 0.12)',
+      kies: () => this.setState({ kleur: i })
+    }));
+    const pv = PAL[kleur] || PAL[0];
+
+    const mailGoed = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fMail.trim());
+    const fouten = [];
+    if (!fNaam.trim()) fouten.push('Geef je venture een naam.');
+    if (!makersSel.length) fouten.push('Kies wie er meebouwde.');
+    if (!mailGoed) fouten.push('Vul een geldig e-mailadres in, zodat we je kunnen bereiken.');
+    if (!akkoord) fouten.push('Vink aan dat alle makers akkoord zijn. Zonder dat gaat de venture niet de etalage in.');
+    const toonFouten = poging && fouten.length > 0;
+
+    const vragenData = [
+      { vraag: 'Wat als niet alle makers willen overdragen?', antwoord: 'Dan gaat de venture niet de etalage in. Alle makers tekenen vooraf dat hij overgedragen mag worden, zodat niemand later alles kan blokkeren.' },
+      { vraag: 'Hoeveel tijd kost het mij?', antwoord: 'In de proefmaand twee uur per week om te sparren en deuren te openen, en vragen van de kandidaat beantwoord je binnen 48 uur. Wat daarna komt, spreek je af met de nieuwe founder.' },
+      { vraag: 'Wie ziet mijn paspoort?', antwoord: 'De etalage is voor iedereen zichtbaar. Code en klantdata ziet alleen de kandidaat, en pas na checkpoint 1.' }
+    ];
+    const vragen = vragenData.map((v, i) => {
+      const open = i === vraag;
+      return {
+        ...v,
+        open: open,
+        id: 'antwoord-' + i,
+        knopBg: open ? INK : 'transparent',
+        knopFg: open ? WIT : INK,
+        icoon: open ? 'M5 12h14' : 'M12 5v14M5 12h14',
+        wissel: () => this.setState({ vraag: open ? -1 : i })
+      };
+    });
+
+    const tafelChips = [
+      { key: 'alle', label: 'Iedereen', n: TAFEL.length },
+      { key: 'Founder', label: 'Founders', n: TAFEL.filter((t) => t.groep === 'Founder').length },
+      { key: 'Builder', label: 'Builders', n: TAFEL.filter((t) => t.groep === 'Builder').length }
+    ].map((c) => ({ ...c, aan: tafelFilter === c.key, ...pil(tafelFilter === c.key), telKleur: tafelFilter === c.key ? '#C8C8CE' : '#5C5C62', kies: () => this.setState({ tafelFilter: c.key }) }));
+    const tafelGrid = TAFEL.map((t, i) => ({ ...t, i: i }))
+      .filter((t) => tafelFilter === 'alle' || t.groep === tafelFilter)
+      .map((t) => ({ ...t, aan: t.i === persoon, ring: t.i === persoon ? '0 0 0 3px #FFFFFF, 0 0 0 6px #101012' : 'none', kies: () => this.setState({ persoon: t.i, ptik: ((this.state && this.state.ptik) || 0) + 1 }) }));
+    const pkPal = PAL[persoon % PAL.length];
+    const pk = { ...TAFEL[persoon], bg: pkPal.bg, fg: pkPal.fg, sub: pkPal.sub, tone: pkPal.tone };
+    const kiezer = TAFEL.map((t) => {
+      const aan = makersSel.includes(t.id);
+      return {
+        ...t,
+        aan: aan,
+        bg: aan ? INK : WIT,
+        fg: aan ? WIT : INK,
+        rand: aan ? INK : '#D5D5D0',
+        wissel: () => {
+          const cur = ((this.state && this.state.makersSel) || makersSel).slice();
+          const k = cur.indexOf(t.id);
+          if (k >= 0) cur.splice(k, 1); else cur.push(t.id);
+          this.setState({ makersSel: cur });
+        }
+      };
+    });
+    const gekozen = makersSel.map((id) => TAFEL.find((t) => t.id === id)).filter(Boolean);
+    const voornamen = gekozen.map((t) => t.voornaam);
+    const opsomming = voornamen.length < 2 ? voornamen.join('') : voornamen.slice(0, -1).join(', ') + ' en ' + voornamen[voornamen.length - 1];
+
+    return {
+      naam: naam,
+      pas: pas,
+      tafelChips: tafelChips,
+      tafelGrid: tafelGrid,
+      pk: pk,
+      pAnim: ptik % 2 ? 'nm-wa' : 'nm-wb',
+      pWipe: ptik % 2 ? 'nm-wipa' : 'nm-wipb',
+      kiezer: kiezer,
+      pMakers: gekozen.slice(0, 6).map((t, i) => ({ foto: t.foto, ml: i ? '-10px' : '0' })),
+      pMakersHeeft: gekozen.length > 0,
+      pMakersZin: gekozen.length === 0 ? 'Nog geen makers gekozen' : gekozen.length === 1 ? 'Gebouwd door ' + opsomming : gekozen.length <= 3 ? 'Gebouwd door ' + opsomming : 'Gebouwd door ' + voornamen.slice(0, 2).join(', ') + ' en nog ' + (gekozen.length - 2),
+      makersKlaar: gekozen.length === 1 ? opsomming + ' tekent mee.' : opsomming + ' tekenen mee.',
+      belofte: belofte,
+      formulier: !verzonden,
+      verzonden: verzonden,
+      fNaam: fNaam,
+      fZin: fZin,
+      fMail: fMail,
+      zetNaam: (e) => this.setState({ fNaam: waarde(e) }),
+      zetZin: (e) => this.setState({ fZin: waarde(e) }),
+      zetMail: (e) => this.setState({ fMail: waarde(e) }),
+      naamFout: poging && !fNaam.trim(),
+      mailFout: poging && !mailGoed,
+      edities: edities,
+      niveaus: niveaus,
+      niveauUitleg: uitleg[niveau],
+      bewijzen: bewijzen,
+      kleuren: kleuren,
+      kleurNaam: pv.label,
+      akkoord: akkoord,
+      akkoordRand: akkoord ? INK : (poging ? '#B3261E' : '#D5D5D0'),
+      akkoordBg: akkoord ? '#F4F4F1' : WIT,
+      akkoordVak: akkoord ? INK : WIT,
+      wisselAkkoord: () => this.setState({ akkoord: !(this.state && this.state.akkoord) }),
+      heeftFouten: toonFouten,
+      fouten: fouten,
+      verstuur: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (fouten.length > 0) this.setState({ poging: true });
+        else this.setState({ verzonden: true, poging: false });
+      },
+      opnieuw: () => this.setState({ verzonden: false, poging: false, fNaam: '', fZin: '', makersSel: [], fMail: '', akkoord: false, bew: [true, false, false, false, false] }),
+      klaarKop: (fNaam.trim() || 'Je venture') + ' staat als concept klaar.',
+      pv: pv,
+      pStatus: verzonden ? 'Concept · ingediend' : 'Concept',
+      pNaam: fNaam.trim() || 'Jouw venture',
+      pNaamOp: fNaam.trim() ? '1' : '0.55',
+      pZin: fZin.trim() || 'Wat het doet, in één zin.',
+      pZinKleur: fZin.trim() ? INK : '#6E6E74',
+      pZoekt: zoekt[niveau],
+      pBew: bew.map((b) => ({ vul: b ? INK : 'transparent', rand: b ? INK : '#8A8A90' })),
+      pBewijsLabel: 'Bewijs: ' + bew.map((b, j) => BEWIJS[j].label + (b ? ' aanwezig' : ' nog niet')).join(', '),
+      bewijsTel: bewijsTel,
+      pNiveau: niveau,
+      pEditie: editie === 'I' ? 'Deel I · Kaapstad' : 'Deel II · Marokko',
+      terug: [
+        { term: 'Een eigen belang', tekst: 'Met de andere makers houd je samen 5 tot 15%, gebundeld in een STAK. Hoe verder de venture is, hoe groter dat belang. De nieuwe founder krijgt de meerderheid, met 4 jaar vesting.' },
+        { term: 'Een founder die het meent', tekst: 'Niemand krijgt je venture zonder dertig dagen bewijs.' },
+        { term: 'De laatste stem', tekst: 'Op dag 30 stemmen de makers, elk met een reden.' },
+        { term: 'Een vangnet', tekst: 'Haalt de kandidaat de route niet, dan gaat de venture terug in de etalage.' }
+      ],
+      vragen: vragen
+    };
+  }
+}
+</script>
+</body>
+</html>
