@@ -17,7 +17,6 @@ a{text-underline-offset:4px}
 :focus-visible{outline:3px solid #101012;outline-offset:3px}
 [data-tone="donker"] :focus-visible{outline-color:#FFFFFF}
 .nf-navlink:hover{text-decoration:underline}
-@media (max-width:640px){.nf-navtekst{display:none}}
 .nt-hero{position:relative;isolation:isolate}
 .nt-art{position:absolute;top:0;right:0;bottom:0;width:64%;z-index:-1;overflow:hidden}
 .nt-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block;outline:0}
@@ -74,6 +73,7 @@ a:hover>svg:last-child{transform:translateX(4px)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition-property:background-color,color,border-color,box-shadow!important}a:hover>svg:last-child,.nt-afltile:hover,.nt-knop:hover,.nt-knop:active{transform:none!important}.nt-mark{background-size:100% .14em}}
 .nt-founder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:center}
 @media (max-width:900px){.nt-founder{grid-template-columns:minmax(0,1fr)}}
+/* sync-nav */@media (max-width:640px){.nf-nav{width:100%;gap:2px 0!important}.nf-nav>a{padding:10px 9px!important}.nf-nav>.nf-navcta{margin:6px 0 0!important;flex-basis:100%;justify-content:center}}/* /sync-nav */
 </style>
 </helmet>
 <div style="font-family: 'Funnel Sans', 'Helvetica Neue', sans-serif; color: #101012; background: #FFFFFF; font-size: 16px; line-height: 1.5; overflow-x: clip">
@@ -87,11 +87,13 @@ a:hover>svg:last-child{transform:translateX(4px)}
         <span style="font-size: 14px; color: #5C5C62; line-height: 1">by House of Founders</span>
       </span>
     </a>
-    <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
-      <a href="F-Bento.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
+    <nav aria-label="Hoofdmenu" class="nf-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
+      <a href="F-Bento.dc.html#tafel" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">De tafel</a>
+      <a href="F-Bento.dc.html#etalage" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
+      <a href="F-Bento.dc.html#route" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Bewijsroute</a>
       <a href="#top" aria-current="page" style="padding: 11px 14px; color: #101012; text-decoration: underline; text-decoration-thickness: 2px">Op tv</a>
-      <a href="F-Makers.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Voor makers</a>
-      <a href="#casting" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Meld je aan</a>
+      <a href="F-Makers.dc.html" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Voor makers</a>
+      <a class="nf-navcta" href="#casting" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Meld je aan</a>
     </nav>
   </div>
 </header>

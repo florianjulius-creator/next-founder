@@ -25,7 +25,6 @@ a{text-underline-offset:4px}
 .nf-tile:hover{transform:scale(1.02)}
 .nf-tile[aria-current="true"]{transform:scale(1.03);z-index:1}
 .nf-navlink:hover{text-decoration:underline}
-@media (max-width:640px){.nf-navtekst{display:none}}
 .nf-dossier{transition:background-color 480ms cubic-bezier(.16,1,.3,1),color 480ms cubic-bezier(.16,1,.3,1)}
 .nf-step{transition:flex-grow 520ms cubic-bezier(.16,1,.3,1),background-color 320ms ease-out,color 320ms ease-out}
 .nf-bento>*{animation:nf-in 900ms cubic-bezier(.16,1,.3,1) backwards}
@@ -101,6 +100,7 @@ input::placeholder{color:#6E6E74}
 .nf-lid{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(200px,auto));grid-template-areas:"dl pg" "dl ht"}
 @media (max-width:640px){.nf-lid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"dl" "pg" "ht"}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition-property:background-color,color,border-color,box-shadow!important}a:hover>svg:last-child,.nf-ingang:hover .nf-cirkel,.nf-band li:hover,.nf-band li:hover .nf-port img,.nm-gezicht:hover img{transform:none!important}.nf-tile:hover{transform:none}}
+/* sync-nav */@media (max-width:640px){.nf-nav{width:100%;gap:2px 0!important}.nf-nav>a{padding:10px 9px!important}.nf-nav>.nf-navcta{margin:6px 0 0!important;flex-basis:100%;justify-content:center}}/* /sync-nav */
 </style>
 </helmet>
 <div style="font-family: 'Funnel Sans', 'Helvetica Neue', sans-serif; color: #101012; background: #FFFFFF; font-size: 16px; line-height: 1.5; overflow-x: clip">
@@ -114,13 +114,13 @@ input::placeholder{color:#6E6E74}
         <span style="font-size: 14px; color: #5C5C62; line-height: 1">by House of Founders</span>
       </span>
     </a>
-    <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
-      <a href="#tafel" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">De tafel</a>
-      <a href="#etalage" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
-      <a href="#route" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Bewijsroute</a>
-      <a href="F-TV.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Op tv</a>
+    <nav aria-label="Hoofdmenu" class="nf-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
+      <a href="#tafel" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">De tafel</a>
+      <a href="#etalage" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
+      <a href="#route" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Bewijsroute</a>
+      <a href="F-TV.dc.html" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Op tv</a>
       <a href="F-Makers.dc.html" class="nf-navlink" style="padding: 11px 14px; color: #101012; text-decoration: none">Voor makers</a>
-      <a href="#etalage" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Kies een venture</a>
+      <a class="nf-navcta" href="#etalage" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Kies een venture</a>
     </nav>
   </div>
 </header>

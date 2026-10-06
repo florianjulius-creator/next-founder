@@ -45,6 +45,9 @@ Een `.dc.html`-bestand heeft drie delen:
 3. Een `class Component extends DCLogic` met `renderVals()`. Die levert alle waarden en functies voor de
    gaten. Toestand gaat via `this.state` en `this.setState({...})`.
 
+Het hoofdmenu is op elke pagina hetzelfde en komt uit `tools/sync-nav.mjs`. Pas een menu-item daar aan
+en draai `node tools/sync-nav.mjs`; `tools/check-nav.mjs` faalt als een pagina een item verliest of verbergt.
+
 Werkwijze: pas het bestand in `design/` aan, draai `npm run check` en open een pull request.
 Florian zet wijzigingen terug op het canvas en zet de site live.
 

@@ -54,7 +54,7 @@ async function open(route, width) {
   await page.screenshot({ path: path.join(shots, 'tv-desktop.png'), fullPage: true });
 
   const nav = page.locator('header nav');
-  ok('tv: nav links to Ventures, Voor makers and Meld je aan', (await nav.locator('a[href="/"]').count()) === 1
+  ok('tv: nav links to Ventures, Voor makers and Meld je aan', (await nav.locator('a[href="/#etalage"]').count()) === 1
     && (await nav.locator('a[href="/makers/"]').count()) === 1 && (await nav.locator('a[href="#casting"]').count()) === 1);
   ok('tv: Op tv is the current page', (await nav.locator('a[aria-current="page"]').innerText()).trim() === 'Op tv');
 
