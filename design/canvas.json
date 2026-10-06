@@ -63,7 +63,7 @@
     },
     "F-Bento.dc.html": {
       "expand": "fill",
-      "h": 8630,
+      "h": 9890,
       "is_interactive": true,
       "title": "F · Editorial bento (gekozen, ronde 4)",
       "w": 1440,
@@ -86,7 +86,16 @@
       "title": "F2 · Voor makers",
       "w": 1440,
       "x": 9120,
-      "y": 8780
+      "y": 10040
+    },
+    "F-TV.dc.html": {
+      "expand": "fill",
+      "h": 5910,
+      "is_interactive": true,
+      "title": "F3 · Op tv: Founder zoekt Founder",
+      "w": 1440,
+      "x": 9120,
+      "y": 16500
     }
   },
   "createdOnFiles": {

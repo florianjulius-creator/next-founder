@@ -14,6 +14,8 @@ const PAGES = [
     description: 'Ventures uit het Huis zoeken hun volgende founder.' },
   { src: 'F-Makers.dc.html', file: 'makers/index.html', route: '/makers/', title: 'Voor makers · Next Founder',
     description: 'Lever je venture aan bij Next Founder en kies mee wie hem overneemt.' },
+  { src: 'F-TV.dc.html', file: 'tv/index.html', route: '/tv/', title: 'Founder zoekt Founder · Next Founder',
+    description: 'Een tv-format van House of Founders: een founder geeft zijn idee weg aan de kandidaat die het beste pitcht.' },
 ];
 
 // Canvas assets live at /_blob/<id>; locally they are named files in assets/.

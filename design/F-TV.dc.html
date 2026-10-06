@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Next Founder · F3 Op tv</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..500&amp;family=Funnel+Sans:wght@400..600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+html{scrollbar-color:#101012 #FFFFFF}
+a{text-underline-offset:4px}
+::selection{background:#C6F05A;color:#101012}
+:focus-visible{outline:3px solid #101012;outline-offset:3px}
+[data-tone="donker"] :focus-visible{outline-color:#FFFFFF}
+.nf-navlink:hover{text-decoration:underline}
+@media (max-width:640px){.nf-navtekst{display:none}}
+.nt-hero{position:relative;isolation:isolate}
+.nt-art{position:absolute;top:0;right:0;bottom:0;width:64%;z-index:-1;overflow:hidden}
+.nt-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block;outline:0}
+.nt-art::before{content:"";position:absolute;top:0;bottom:0;left:-4px;right:0;background:linear-gradient(90deg,#101012 0%,#101012 8%,rgba(16,16,18,.88) 26%,rgba(16,16,18,.5) 48%,rgba(16,16,18,0) 68%),linear-gradient(180deg,rgba(16,16,18,.12) 0%,rgba(16,16,18,0) 40%,#101012 100%)}
+.nt-live{position:absolute;top:24px;right:max(32px,calc(78.125% - 608px));z-index:1}
+.nt-mark{background:linear-gradient(#C6F05A,#C6F05A) no-repeat 0 94%/100% .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:nf-streep 900ms cubic-bezier(.16,1,.3,1) 900ms backwards}
+.nt-herotekst{max-width:704px;min-height:560px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.nt-meta>span+span::before{content:"·";margin-right:12px;color:#5C5C62}
+.nt-chip{display:grid;grid-template-columns:128px minmax(0,1fr);gap:4px 16px;align-items:baseline}
+.nt-kaart:hover{border-color:#5C5C62}
+@media (max-width:1080px){.nt-art{position:relative;width:100%;aspect-ratio:16 / 9;border-radius:20px;z-index:0;margin-bottom:36px}.nt-art::before{left:0;background:linear-gradient(180deg,rgba(16,16,18,0) 60%,rgba(16,16,18,.6) 100%)}.nt-live{top:14px;right:auto;left:14px}.nt-herotekst{min-height:0;max-width:none}}
+@media (max-width:640px){.nt-chip{grid-template-columns:minmax(0,1fr);gap:6px}}
+@media (max-width:480px){.nt-meta{flex-direction:column;align-items:flex-start;gap:4px}.nt-meta>span+span::before{content:none}}
+.nt-demo{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
+.nt-rondes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.nt-twee{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 72px;align-items:start}
+.nt-sporen{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.nt-afl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(272px,100%),1fr));gap:16px}
+@media (max-width:1080px){.nt-hero{grid-template-columns:minmax(0,1fr);gap:40px}.nt-demo{grid-template-columns:minmax(0,1fr)}.nt-rondes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.nt-twee{grid-template-columns:minmax(0,1fr);gap:32px}.nt-sporen{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.nt-rondes{grid-template-columns:minmax(0,1fr)}}
+.nt-knop{transition:transform 260ms cubic-bezier(.16,1,.3,1),background-color 200ms ease-out}
+.nt-knop:hover{transform:translateY(-2px)}
+.nt-knop:active{transform:scale(.97)}
+.nt-kaart{transition:border-color 200ms ease-out}
+.nt-balk{transition:width 640ms cubic-bezier(.16,1,.3,1)}
+@keyframes nt-puls{0%,100%{opacity:1}50%{opacity:.3}}
+.nt-dot{animation:nt-puls 1.6s ease-in-out infinite}
+@keyframes nt-chip{0%,36%,100%{background:#26262B;color:#C8C8CE;border-color:#3A3A40}8%,28%{background:#C6F05A;color:#101012;border-color:#C6F05A}}
+.nt-chip{animation:nt-chip 4.5s ease-in-out infinite}
+@keyframes nt-op{from{transform:translateY(10px);filter:blur(4px)}}
+.nt-uitslag{animation:nt-op 480ms cubic-bezier(.16,1,.3,1) backwards}
+.nt-afltile{transition:transform 420ms cubic-bezier(.16,1,.3,1),box-shadow 420ms cubic-bezier(.16,1,.3,1)}
+.nt-afltile:hover{transform:translateY(-4px);box-shadow:0 22px 44px -24px rgba(16,16,18,.35)}
+.nt-rondes>*{animation:nt-in 900ms cubic-bezier(.16,1,.3,1) backwards}
+.nt-rondes>*:nth-child(2){animation-delay:70ms}.nt-rondes>*:nth-child(3){animation-delay:140ms}.nt-rondes>*:nth-child(4){animation-delay:210ms}
+@keyframes nt-in{from{transform:translateY(28px) scale(.94);filter:saturate(.35)}}
+html,body{cursor:url(/_blob/35c037913f0d87e6c0108d4b5be171d4) 4 3,auto}
+a,button,label,[role="checkbox"]{cursor:url(/_blob/e14c733792ec9aa1daea7955f3739002) 16 16,pointer!important}
+a.nf-tile{cursor:url(/_blob/c61c329c8d15e78156264f8c3ead171a) 20 20,pointer!important}
+a.nf-tile[data-tone="donker"]{cursor:url(/_blob/59b91facd83be556a3d9e37f0aebd4d2) 20 20,pointer!important}
+input,textarea{cursor:text!important}
+button:disabled,[aria-disabled="true"]{cursor:not-allowed!important}
+img{outline:1px solid rgba(16,16,18,.08);outline-offset:-1px}
+a>svg:last-child{transition:transform 260ms cubic-bezier(.16,1,.3,1)}
+a:hover>svg:last-child{transform:translateX(4px)}
+.nf-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@supports (animation-timeline: view()){.nf-sv{animation:nf-sv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}}
+@keyframes nf-sv{from{translate:0 56px;scale:.95;filter:saturate(.3)}}
+.nf-w{display:inline-block;animation:nf-woord 900ms cubic-bezier(.16,1,.3,1) backwards}
+@keyframes nf-woord{from{transform:translateY(.55em);filter:blur(8px);clip-path:inset(0 0 100% 0)}}
+.nf-mark{background:linear-gradient(#C6F05A,#C6F05A) no-repeat 0 90%/100% .34em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:nf-streep 900ms cubic-bezier(.16,1,.3,1) 1000ms backwards}
+@keyframes nf-streep{from{background-size:0% .34em}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition-property:background-color,color,border-color,box-shadow!important}a:hover>svg:last-child,.nt-afltile:hover,.nt-knop:hover,.nt-knop:active{transform:none!important}.nt-mark{background-size:100% .14em}}
+.nt-founder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:900px){.nt-founder{grid-template-columns:minmax(0,1fr)}}
+</style>
+</helmet>
+<div style="font-family: 'Funnel Sans', 'Helvetica Neue', sans-serif; color: #101012; background: #FFFFFF; font-size: 16px; line-height: 1.5; overflow-x: clip">
+
+<header style="border-bottom: 1px solid #E2E2DE">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+    <a href="F-Bento.dc.html" style="display: flex; align-items: center; gap: 12px; color: #101012; text-decoration: none; min-height: 44px">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 30 30"><rect x="0" y="0" width="14" height="14" rx="4" fill="#C6F05A"></rect><rect x="16" y="0" width="14" height="14" rx="4" fill="#1F2E9A"></rect><rect x="0" y="16" width="14" height="14" rx="4" fill="#FF7552"></rect><rect x="16" y="16" width="14" height="14" rx="4" fill="#6EC0FF"></rect></svg>
+      <span style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 10px">
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 500; font-size: 23px; letter-spacing: -0.02em; line-height: 1">{{naam}}</span>
+        <span style="font-size: 14px; color: #5C5C62; line-height: 1">by House of Founders</span>
+      </span>
+    </a>
+    <nav aria-label="Hoofdmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 16px">
+      <a href="F-Bento.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Ventures</a>
+      <a href="#top" aria-current="page" style="padding: 11px 14px; color: #101012; text-decoration: underline; text-decoration-thickness: 2px">Op tv</a>
+      <a href="F-Makers.dc.html" class="nf-navlink nf-navtekst" style="padding: 11px 14px; color: #101012; text-decoration: none">Voor makers</a>
+      <a href="#casting" style="margin-left: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500">Meld je aan</a>
+    </nav>
+  </div>
+</header>
+
+<section id="top" aria-labelledby="hero-kop" data-tone="donker" style="background: #101012; color: #FFFFFF">
+  <div class="nt-hero">
+    <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(40px, 5vw, 64px) 32px clamp(56px, 7vw, 96px)">
+      <div class="nt-art">
+        <img src="{{poster}}" alt="Studio van Founder zoekt Founder: een founder op de vloer, de tafel aan de lange eikenhouten tafel, publiek dat applaudisseert" width="1600" height="893">
+        <span class="nt-live" style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: #DC2E29; color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: 0.06em"><span aria-hidden="true" class="nt-dot" style="width: 8px; height: 8px; border-radius: 999px; background: #FFFFFF"></span>LIVE</span>
+      </div>
+      <div class="nt-herotekst">
+        <p style="margin: 0; font-size: 15px; font-weight: 500; color: #C8C8CE">Een format van House of Founders × Next Founder · In ontwikkeling</p>
+        <h1 id="hero-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(52px, 6.9vw, 100px); line-height: 0.95; letter-spacing: -0.04em"><span style="display: block"><span class="nf-w" style="animation-delay: 120ms">Founder</span> <span class="nf-w" style="animation-delay: 220ms">zoekt</span></span><span style="display: block"><span class="nt-mark"><span class="nf-w" style="animation-delay: 320ms">Founder</span></span></span></h1>
+        <p style="margin: 0; max-width: 44ch; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: #E2E2DE; text-wrap: pretty">Elke aflevering geeft een founder zijn idee weg. Drie kandidaten pitchen waarom zij het moeten krijgen. De tafel kijkt mee, en blijft daarna achter de winnaar staan.</p>
+        <p class="nt-meta" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 15px; font-weight: 500; color: #C8C8CE">
+          <span>Seizoen 1</span><span>8 afleveringen</span><span>Live op [OMROEP]</span>
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+          <a href="#demo" class="nt-knop" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: #C6F05A; color: #101012; text-decoration: none; font-weight: 600; font-size: 17px">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"></path></svg>Bekijk de demo
+          </a>
+          <a href="#casting" class="nt-knop" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: #FFFFFF; color: #101012; text-decoration: none; font-weight: 500; font-size: 17px">Meld je aan als kandidaat
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+          </a>
+          <a href="F-Makers.dc.html" class="nt-knop" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Breng je idee in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder" aria-labelledby="founder-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px 0; scroll-margin-top: 16px">
+  <div class="nt-founder">
+    <figure style="margin: 0; position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 5; background: #EEEEE9; min-width: 0">
+      <img src="{{founderFoto}}" alt="Sanne de Wit op de bank in de studio" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      <figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 4px 10px; border-radius: 999px; background: rgba(16, 16, 18, 0.72); color: #FFFFFF; font-size: 13px; font-weight: 500">Fictieve founder uit de demo</figcaption>
+    </figure>
+    <div style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
+      <p style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4A50">De founder van deze aflevering</p>
+      <h2 id="founder-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(44px, 5.2vw, 76px); line-height: 1; letter-spacing: -0.035em">Sanne de Wit</h2>
+      <blockquote style="margin: 0; padding-left: 22px; border-left: 4px solid #C6F05A; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; letter-spacing: -0.02em; text-wrap: balance">“Ik wil dat het groot wordt, ook zonder mij.”</blockquote>
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 52ch; font-size: 18px; line-height: 1.55; color: #3A3A40">
+        <p style="margin: 0">Drie jaar bouwde Sanne aan Kluscheck, elke avond na haar werk. Haar vader was aannemer en liep altijd vast op de vergunning. Dus maakte ze een check die in dertig seconden zegt of je mag bouwen.</p>
+        <p style="margin: 0">Het werkt. Maar Sanne is maker, geen verkoper. In de uitzending kiest ze zelf aan wie ze haar idee toevertrouwt.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+        <a href="#demo" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg>Bekijk haar aflevering</a>
+        <a href="F-Makers.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1.5px solid #101012; color: #101012; text-decoration: none; font-weight: 500; font-size: 17px">Zelf een idee overdragen?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo" aria-labelledby="demo-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px 0; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="demo-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">De demo-aflevering.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Sanne bouwde Kluscheck en geeft het weg. Drie kandidaten willen het. Kijk mee en stem alvast, zoals het publiek in de studio.</p>
+  </div>
+  <div class="nt-demo">
+    <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <div style="position: relative; border-radius: 20px; overflow: hidden; background: #101012; aspect-ratio: 16 / 9">
+        <sc-if value="{{heeftVideo}}" hint-placeholder-val="{{false}}">
+          <video controls="" playsinline="" preload="none" poster="{{poster}}" src="{{video}}" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; background: #101012"></video>
+        </sc-if>
+        <sc-if value="{{geenVideo}}" hint-placeholder-val="{{true}}">
+          <img src="{{poster}}" alt="" width="1600" height="893" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; outline: 0; filter: brightness(0.55)">
+          <div data-tone="donker" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #FFFFFF; text-align: center; padding: 24px">
+            <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 999px; border: 1.5px solid #FFFFFF">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"></path></svg>
+            </span>
+            <p style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.1; letter-spacing: -0.02em">Demo-aflevering volgt</p>
+          </div>
+        </sc-if>
+      </div>
+      <p style="margin: 0; font-size: 15px; color: #5C5C62">Demo-aflevering · Kluscheck · fictieve founder en kandidaten</p>
+    </div>
+
+    <div data-tone="donker" aria-labelledby="poll-kop" style="border-radius: 20px; background: #101012; color: #FFFFFF; padding: 22px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+        <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: #DC2E29; color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: 0.06em"><span aria-hidden="true" class="nt-dot" style="width: 8px; height: 8px; border-radius: 999px; background: #FFFFFF"></span>LIVE</span>
+        <span style="font-size: 15px; color: #C8C8CE; font-variant-numeric: tabular-nums">Demo · live meekijken</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h3 id="poll-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em">Wie zou jij kiezen?</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #C8C8CE">Elke verbouwing start met een vergunningscheck van 30 seconden.</p>
+      </div>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+        <sc-for list="{{kandidaten}}" as="k" hint-placeholder-count="3">
+          <li class="nt-kaart" style="border-radius: 14px; border: 1.5px solid {{k.rand}}; padding: 12px; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+            <div style="display: flex; align-items: center; gap: 12px">
+              <sc-if value="{{k.heeftFoto}}" hint-placeholder-val="{{false}}">
+                <img src="{{k.foto}}" alt="" width="44" height="44" style="flex: none; width: 44px; height: 44px; border-radius: 999px; object-fit: cover; display: block; background: #26262B">
+              </sc-if>
+              <sc-if value="{{k.geenFoto}}" hint-placeholder-val="{{true}}">
+                <span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: {{k.bg}}; color: {{k.fg}}; font-family: 'Funnel Display', sans-serif; font-weight: 500; font-size: 20px">{{k.initiaal}}</span>
+              </sc-if>
+              <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+                <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px"><span style="font-size: 17px; font-weight: 600; line-height: 1.2">{{k.naam}}</span><span style="font-size: 14px; color: #C8C8CE">{{k.meta}}</span></span>
+                <span style="font-size: 14px; line-height: 1.35; color: #E2E2DE">{{k.pitch}}</span>
+              </div>
+            </div>
+            <sc-if value="{{nietGestemd}}" hint-placeholder-val="{{true}}">
+              <button type="button" class="nt-knop" onClick="{{k.kies}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #FFFFFF; background: transparent; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer">{{k.stemLabel}}</button>
+            </sc-if>
+            <sc-if value="{{gestemd}}" hint-placeholder-val="{{false}}">
+              <div class="nt-uitslag" style="display: flex; align-items: center; gap: 12px">
+                <span role="img" aria-label="{{k.balkLabel}}" style="flex: 1; height: 10px; border-radius: 999px; background: #26262B; overflow: hidden; display: block">
+                  <span class="nt-balk" style="display: block; height: 100%; width: {{k.breedte}}; border-radius: 999px; background: {{k.bg}}"></span>
+                </span>
+                <span style="flex: none; min-width: 3.4ch; text-align: right; font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums">{{k.pct}}</span>
+                <sc-if value="{{k.mijn}}" hint-placeholder-val="{{false}}">
+                  <span style="flex: none; padding: 2px 9px; border-radius: 999px; background: {{k.bg}}; color: {{k.fg}}; font-size: 12px; font-weight: 600">Jouw stem</span>
+                </sc-if>
+              </div>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ul>
+      <sc-if value="{{nietGestemd}}" hint-placeholder-val="{{true}}">
+        <p style="margin: 0; font-size: 14px; color: #C8C8CE; font-variant-numeric: tabular-nums">{{stemmenZin}}</p>
+      </sc-if>
+      <sc-if value="{{gestemd}}" hint-placeholder-val="{{false}}">
+        <div class="nt-uitslag" role="status" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding-top: 14px; border-top: 1px solid #3A3A40">
+          <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #E2E2DE; max-width: 30ch">Je stem is geteld. In de uitzending kiest Sanne zelf.</p>
+          <button type="button" onClick="{{opnieuw}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Stem opnieuw</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="rondes" aria-labelledby="rondes-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="rondes-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Zo werkt een aflevering.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Vier rondes en één sleutel. Elke aflevering heeft dezelfde vorm, zodat de kijker weet wat er komt.</p>
+  </div>
+  <ol class="nt-rondes" style="margin: 0; padding: 0; list-style: none">
+    <sc-for list="{{rondes}}" as="r" hint-placeholder-count="4">
+      <li data-tone="{{r.tone}}" style="border-radius: 20px; background: {{r.bg}}; color: {{r.fg}}; padding: 22px; min-height: 280px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: 54px; line-height: 0.9; letter-spacing: -0.04em; font-variant-numeric: tabular-nums">{{r.nr}}</span>
+        <span style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.02; letter-spacing: -0.03em">{{r.naam}}</span>
+          <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; border: 1px solid {{r.fg}}; font-size: 13px; font-weight: 500">{{r.duur}}</span>
+          <span style="font-size: 15px; line-height: 1.45; color: {{r.sub}}">{{r.tekst}}</span>
+        </span>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
+<section id="achter-je" aria-labelledby="achter-kop" data-tone="donker" style="margin-top: clamp(80px, 10vw, 128px); background: #101012; color: #FFFFFF">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px">
+    <div class="nt-twee">
+      <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+        <p style="margin: 0; font-size: 15px; font-weight: 500; color: #C8C8CE">Wat de tafel zegt</p>
+        <h2 id="achter-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(42px, 5.4vw, 76px); line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance">Ik sta achter je.</h2>
+        <p style="margin: 0; max-width: 48ch; font-size: 18px; line-height: 1.5; color: #E2E2DE">Aan tafel zitten founders die het zelf deden. Wie na de match zijn hand opsteekt, zegt het hardop. Dat is geen applaus maar een afspraak voor de dertig dagen die volgen.</p>
+        <p style="margin: 0; max-width: 48ch; font-size: 16px; line-height: 1.5; color: #C8C8CE">Op het platform werkt het net zo. De tafel kiest de ventures, en blijft erachter staan als een kandidaat ze overneemt.</p>
+        <a href="F-Bento.dc.html#tafel" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; color: #FFFFFF; text-decoration: underline; font-weight: 500; font-size: 17px">De tafel blijft achter je staan.
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+      <ul aria-label="Wat een lid van de tafel toezegt" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; align-self: center; min-width: 0">
+        <sc-for list="{{toezeggingen}}" as="t" hint-placeholder-count="3">
+          <li class="nt-chip" style="padding: 20px 24px; border-radius: 20px; border: 1.5px solid #C6F05A; background: #C6F05A; color: #101012; animation-delay: {{t.delay}}">
+            <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 28px; line-height: 1; letter-spacing: -0.02em">{{t.label}}</span>
+            <span style="font-size: 16px; line-height: 1.4">{{t.tekst}}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="daarna" aria-labelledby="daarna-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; scroll-margin-top: 16px">
+  <div class="nt-twee">
+    <div style="border-radius: 20px; background: #EEEEE9; padding: 24px; min-height: 300px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px; min-width: 0">
+      <span style="font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(96px, 11vw, 160px); line-height: 0.85; letter-spacing: -0.05em; font-variant-numeric: tabular-nums">30</span>
+      <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em">dagen bewijsroute</span>
+      <span style="margin-top: auto; padding-top: 24px; font-size: 15px; line-height: 1.45; color: #55555A; max-width: 38ch">Dezelfde route als op het platform. Doelen vooraf, elke week een update, op dag 30 de stemming.</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+      <h2 id="daarna-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Na de uitzending.</h2>
+      <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">De sleutel is het begin. De nieuwe founder krijgt dertig dagen om te laten zien dat het idee bij hem in goede handen is, met de tafel erbij. Een vervolgaflevering laat zien of het gelukt is.</p>
+      <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">De uitzending is de etalage. Het platform is waar het hele jaar door gematcht wordt.</p>
+      <a href="F-Bento.dc.html#route" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de bewijsroute
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="afleveringen" aria-labelledby="afl-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-size: 15px; font-weight: 500; color: #4A4A50">Seizoen 1</p>
+      <h2 id="afl-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Afleveringen</h2>
+    </div>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">De eerste aflevering is een demo met fictieve mensen. De ideeën voor de volgende komen uit de etalage van het platform.</p>
+  </div>
+  <ul class="nt-afl" style="margin: 0; padding: 0; list-style: none">
+    <sc-for list="{{afleveringen}}" as="a" hint-placeholder-count="6">
+      <li class="nt-afltile nf-sv" style="display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #E2E2DE; overflow: hidden; background: #FFFFFF; min-width: 0">
+        <div style="position: relative; aspect-ratio: 16 / 9; background: {{a.bg}}; color: {{a.fg}}; overflow: hidden">
+          <sc-if value="{{a.heeftBeeld}}" hint-placeholder-val="{{false}}">
+            <img src="{{a.beeld}}" alt="" width="1600" height="893" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; outline: 0">
+          </sc-if>
+          <sc-if value="{{a.geenBeeld}}" hint-placeholder-val="{{true}}">
+            <span aria-hidden="true" style="position: absolute; top: 16px; left: 18px; display: inline-flex; gap: 5px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #C6F05A"></span><span style="width: 12px; height: 12px; border-radius: 3px; background: #1F2E9A"></span><span style="width: 12px; height: 12px; border-radius: 3px; background: #FF7552"></span><span style="width: 12px; height: 12px; border-radius: 3px; background: #6EC0FF"></span></span>
+            <span aria-hidden="true" style="position: absolute; left: 18px; bottom: 14px; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: 56px; line-height: 0.9; letter-spacing: -0.04em; color: #FFFFFF">{{a.nr}}</span>          </sc-if>
+          <sc-if value="{{a.demo}}" hint-placeholder-val="{{true}}">
+            <span style="position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px; background: #C6F05A; color: #101012; font-size: 12px; font-weight: 600">Demo</span>
+          </sc-if>
+        </div>
+        <div style="flex: 1; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; font-size: 14px; color: #5C5C62; font-variant-numeric: tabular-nums"><span style="font-weight: 500; color: #101012">{{a.code}}</span><span>{{a.duur}}</span></p>
+          <h3 style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; overflow-wrap: break-word">{{a.titel}}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #4A4A50">{{a.tekst}}</p>
+        </div>
+      </li>
+    </sc-for>
+    <li class="nt-afltile nf-sv" style="display: flex; min-width: 0">
+      <a href="F-Makers.dc.html" style="flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 20px; background: #C6F05A; color: #101012; text-decoration: none; min-width: 0">
+        <span style="font-size: 14px; font-weight: 500; color: #2E3A12">Seizoen 1 · open plek</span>
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 3.6vw, 52px); line-height: 0.98; letter-spacing: -0.035em">Jouw idee?</span>
+        <span style="font-size: 15px; line-height: 1.45; color: #2E3A12; max-width: 30ch">Bouwde je iets dat je niet verder brengt? Breng het in en de redactie kijkt mee.</span>
+        <span style="margin-top: auto; padding-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; text-decoration: underline">Breng je idee in<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section id="casting" aria-labelledby="casting-kop" style="margin-top: clamp(80px, 10vw, 128px); background: #F4F4F1; scroll-margin-top: 16px">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+      <h2 id="casting-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Meld je aan.</h2>
+      <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Twee manieren om aan tafel te komen. Allebei beginnen ze op het platform, niet in de studio.</p>
+    </div>
+    <div class="nt-sporen">
+      <sc-for list="{{sporen}}" as="s" hint-placeholder-count="2">
+        <div style="border-radius: 20px; background: #FFFFFF; border: 1px solid #E2E2DE; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 24px; min-width: 0">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 14px; font-weight: 500; color: #4A4A50">{{s.eyebrow}}</span>
+            <h3 style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance">{{s.titel}}</h3>
+          </div>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+            <sc-for list="{{s.stappen}}" as="p" hint-placeholder-count="3">
+              <li style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 16px; padding: 16px 0; border-top: 1px solid #E2E2DE">
+                <span aria-hidden="true" style="grid-row: span 2; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: 34px; line-height: 1; letter-spacing: -0.03em; color: #101012; font-variant-numeric: tabular-nums">{{p.nr}}</span>
+                <span style="font-size: 17px; font-weight: 600; line-height: 1.3">{{p.titel}}</span>
+                <span style="font-size: 15px; line-height: 1.45; color: #4A4A50">{{p.tekst}}</span>
+              </li>
+            </sc-for>
+          </ol>
+          <a href="{{s.href}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">{{s.knop}}
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top: 1px solid #E2E2DE">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 15px; color: #4A4A50">
+    <span>{{naam}} is een initiatief van House of Founders</span>
+    <span>Gebouwd in het Huis. Overgedragen op bewijs.</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":5910}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const VIDEO = '';
+    const POSTER = '/_blob/be341cea66cf81205af30622438b8d28';
+    const FOUNDER_FOTO = '/_blob/f41fdadf6147421e0b5a22acf0722952';
+    const st = this.state || {};
+    const naam = this.props.naam ?? 'Next Founder';
+    const INK = '#101012';
+    const WIT = '#FFFFFF';
+    const stem = (st.stem !== undefined && st.stem !== null) ? st.stem : -1;
+    const gestemd = stem >= 0;
+
+    const KAND = [
+      { naam: 'Yara', leeftijd: 31, rol: 'oud-makelaar', pitch: 'Weet uit de praktijk waar vergunningen vastlopen.', basis: 412, bg: '#C6F05A', fg: INK, foto: '/_blob/0a97bf0d9e7a142450e4f45c05ba2d6d' },
+      { naam: 'Daan', leeftijd: 28, rol: 'accountmanager bij een bouwmarkt', pitch: 'Spreekt elke week honderd klussers aan de balie.', basis: 236, bg: '#1F2E9A', fg: WIT, foto: '/_blob/1960fda30b6cbb231f1bf3d7d4f6e6aa' },
+      { naam: 'Joost', leeftijd: 52, rol: 'aannemer', pitch: 'Dertig jaar bouwen. Kent de check van de andere kant.', basis: 151, bg: '#FF7552', fg: INK, foto: '/_blob/378c1cdf1130d259c1749c2d664fa73c' }
+    ];
+    const tellen = KAND.map((k, i) => k.basis + (stem === i ? 1 : 0));
+    const totaal = tellen.reduce((a, b) => a + b, 0);
+    const ruw = tellen.map((n) => n * 100 / totaal);
+    const pct = ruw.map(Math.floor);
+    const rest = 100 - pct.reduce((a, b) => a + b, 0);
+    const volgorde = ruw.map((r, i) => ({ i: i, frac: r - Math.floor(r) })).sort((a, b) => b.frac - a.frac);
+    for (let j = 0; j < rest; j++) pct[volgorde[j].i]++;
+    const kandidaten = KAND.map((k, i) => ({
+      ...k,
+      initiaal: k.naam.charAt(0),
+      heeftFoto: k.foto !== '',
+      geenFoto: k.foto === '',
+      meta: k.leeftijd + ', ' + k.rol,
+      pct: pct[i] + '%',
+      breedte: pct[i] + '%',
+      balkLabel: k.naam + ': ' + tellen[i] + ' stemmen, ' + pct[i] + ' procent',
+      mijn: stem === i,
+      rand: stem === i ? k.bg : '#3A3A40',
+      stemLabel: 'Stem op ' + k.naam,
+      kies: () => this.setState({ stem: i })
+    }));
+
+    const rondes = [
+      { nr: '01', naam: 'Het idee', duur: '60 seconden', tekst: 'De founder vertelt wat er staat en waarom het bij een ander verder moet. Kort, met bron.', bg: '#C6F05A', fg: INK, sub: '#2E3A12', tone: 'licht' },
+      { nr: '02', naam: 'De pitch', duur: '90 seconden per kandidaat', tekst: 'Drie kandidaten vertellen wat zij ermee gaan doen. Niet wie ze zijn, maar wat ze als eerste doen.', bg: '#1F2E9A', fg: WIT, sub: '#D3D9FA', tone: 'donker' },
+      { nr: '03', naam: 'Het gesprek', duur: 'De tafel vraagt door', tekst: 'Geen jury achter een desk, maar een gesprek op de bank. Wie is je eerste klant, wat doe je op dag een? Rustig, maar scherp.', bg: '#FF7552', fg: INK, sub: '#3A160C', tone: 'licht' },
+      { nr: '04', naam: 'De match', duur: 'De founder kiest', tekst: 'De founder kiest en geeft de sleutel. Wie aan tafel achter de winnaar staat, zegt het hardop: Ik sta achter je.', bg: '#6EC0FF', fg: INK, sub: '#0E3550', tone: 'licht' }
+    ];
+
+    const toezeggingen = [
+      { label: 'Uren', tekst: 'Twee uur per week sparren, dertig dagen lang.', delay: '0ms' },
+      { label: 'Intro’s', tekst: 'Een warme introductie bij wie de nieuwe founder nodig heeft.', delay: '1500ms' },
+      { label: 'Netwerk', tekst: 'Het adresboek van de hele tafel, niet van één persoon.', delay: '3000ms' }
+    ];
+
+    const afl = [
+      { nr: 'E1', titel: 'Kluscheck', tekst: 'Sanne geeft haar vergunningscheck weg. Yara, Daan en Joost pitchen. Demo met fictieve mensen.', duur: '8 min', demo: true, beeld: POSTER },
+      { nr: 'E2', titel: 'Tafel 12', tekst: 'Restaurants verkopen hun lege tafels van vanavond.', duur: 'Binnenkort', demo: false, beeld: '' },
+      { nr: 'E3', titel: 'Restpartij', tekst: 'Aannemers verkopen overgebleven bouwmateriaal door.', duur: 'Binnenkort', demo: false, beeld: '' },
+      { nr: 'E4', titel: '[IDEE]', tekst: 'Een idee uit de etalage van het platform.', duur: 'Binnenkort', demo: false, beeld: '' },
+      { nr: 'E5', titel: '[IDEE]', tekst: 'Een idee uit de etalage van het platform.', duur: 'Binnenkort', demo: false, beeld: '' },
+      { nr: 'E6', titel: '[IDEE]', tekst: 'Een idee uit de etalage van het platform.', duur: 'Binnenkort', demo: false, beeld: '' }
+    ].map((a) => ({ ...a, code: 'S1 ' + a.nr, bg: a.beeld !== '' ? INK : '#16161A', fg: WIT, heeftBeeld: a.beeld !== '', geenBeeld: a.beeld === '' }));
+
+    const stappen = (lijst) => lijst.map((p, i) => ({ nr: '0' + (i + 1), titel: p[0], tekst: p[1] }));
+    const sporen = [
+      { eyebrow: 'Voor makers', titel: 'Ik heb een idee dat ik wil overdragen', href: 'F-Makers.dc.html', knop: 'Meld je venture aan', stappen: stappen([
+        ['Meld je venture aan met een paspoort', 'Wat er staat, met een bron bij elke claim.'],
+        ['Gesprek met de redactie', 'We kijken of het idee op tv past en wat er nog mist.'],
+        ['Opname in de studio', 'Jij vertelt het in zestig seconden. De tafel doet de rest.']
+      ]) },
+      { eyebrow: 'Voor kandidaten', titel: 'Ik wil een idee overnemen', href: 'F-Bento.dc.html#etalage', knop: 'Bekijk de etalage', stappen: stappen([
+        ['Stuur een video van twee minuten', 'Welk idee je wilt, en waarom jij de juiste bent.'],
+        ['Koffie met de maker', 'Je spreekt de founder voordat je aan tafel komt.'],
+        ['Pitchen aan tafel', 'Negentig seconden voor de tafel, daarna het gesprek.']
+      ]) }
+    ];
+
+    return {
+      founderFoto: FOUNDER_FOTO,
+      naam: naam,
+      video: VIDEO,
+      poster: POSTER,
+      heeftVideo: VIDEO !== '',
+      geenVideo: VIDEO === '',
+      kandidaten: kandidaten,
+      gestemd: gestemd,
+      nietGestemd: !gestemd,
+      stemmenZin: totaal + ' stemmen in de demo',
+      opnieuw: () => this.setState({ stem: -1 }),
+      rondes: rondes,
+      toezeggingen: toezeggingen,
+      afleveringen: afl,
+      sporen: sporen
+    };
+  }
+}
+</script>
+</body>
+</html>

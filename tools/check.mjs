@@ -96,7 +96,9 @@ async function previewHeight(page, file) {
   await koffie.click();
   ok('home: koffie button shows the confirmation', (await page.getByText('Je koffieverzoek voor Whoop Dog staat klaar.', { exact: false }).count()) === 1 && (await koffie.count()) === 0);
   await page.locator('a.nf-tile', { hasText: 'Kluscheck' }).click();
-  ok('home: no koffie button on a full venture', (await koffie.count()) === 0 && /\[NAMEN MAKERS\]\. Hier komen de makers/.test(await page.locator('#dossier').innerText()));
+  ok('home: no koffie button on a full venture', (await koffie.count()) === 0 && /Het idee van\s+Sanne de Wit/.test(await page.locator('#dossier').innerText()));
+  const fdr = await page.locator('.nf-fdr').count();
+  ok('home: every tile shows the founder behind the idea', fdr === 10, `(saw ${fdr})`);
   ok('home: no errors or missing files', problems.length === 0, problems.join(' | '));
   await page.screenshot({ path: path.join(shots, 'home-desktop.png'), fullPage: true });
   await page.close();
