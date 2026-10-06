@@ -27,9 +27,10 @@ function localize(html, src) {
     if (!blobMap[id]) throw new Error(`${src}: asset ${id} has no entry in assets/blob-map.json`);
     return '/assets/' + blobMap[id];
   });
-  return html.replace(/href="([\w-]+\.dc\.html)(#[^"]*)?"/g, (m, file, hash = '') => {
+  // Also links kept in component data (href: 'F-Makers.dc.html'), not only literal href="…" in the markup.
+  return html.replace(/(["'])([\w-]+\.dc\.html)(#[^"']*)?\1/g, (m, q, file, hash = '') => {
     if (!routes[file]) throw new Error(`${src}: links to ${file}, which is not a page in PAGES`);
-    return `href="${routes[file]}${hash}"`;
+    return `${q}${routes[file]}${hash}${q}`;
   });
 }
 

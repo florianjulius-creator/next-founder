@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node tools/build.mjs",
     "dev": "node tools/build.mjs && npx wrangler dev",
-    "check": "node tools/build.mjs && node tools/check.mjs && node tools/check-tv.mjs && node tools/check-nav.mjs",
+    "check": "node tools/build.mjs && node tools/check.mjs && node tools/check-tv.mjs && node tools/check-nav.mjs && node tools/check-links.mjs",
     "deploy": "node tools/build.mjs && npx wrangler deploy"
   },
   "devDependencies": {

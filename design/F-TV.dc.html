@@ -73,6 +73,43 @@ a:hover>svg:last-child{transform:translateX(4px)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition-property:background-color,color,border-color,box-shadow!important}a:hover>svg:last-child,.nt-afltile:hover,.nt-knop:hover,.nt-knop:active{transform:none!important}.nt-mark{background-size:100% .14em}}
 .nt-founder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:center}
 @media (max-width:900px){.nt-founder{grid-template-columns:minmax(0,1fr)}}
+.nt-streep{background:linear-gradient(#C6F05A,#C6F05A) no-repeat 0 92%/100% .26em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@supports (animation-timeline: view()){.nt-streep{animation:nt-streep linear both;animation-timeline:view();animation-range:entry 30% cover 45%}}
+@keyframes nt-streep{from{background-size:0% .26em}}
+.nt-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.nt-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.nt-vgl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 20px;padding:14px 0;border-top:1px solid #E2E2DE}
+.nt-vgl>div>dt{grid-column:1 / -1}
+.nt-tijdlijn{display:flex;gap:3px;height:44px}
+@supports (animation-timeline: view()){.nt-tijdlijn{animation:nt-groei linear both;animation-timeline:view();animation-range:entry 15% cover 40%}}
+@keyframes nt-groei{from{clip-path:inset(0 100% 0 0)}}
+.nt-seg{min-width:0;border-radius:8px;transition:opacity 320ms ease-out,transform 420ms cubic-bezier(.16,1,.3,1)}
+.nt-tijdlijn[data-open="true"] .nt-seg{opacity:.28}
+.nt-tijdlijn .nt-seg[data-actief="true"]{opacity:1;transform:scaleY(1.16)}
+.nt-blokknop{display:grid;grid-template-columns:64px 14px minmax(0,1fr) auto;gap:2px 14px;align-items:center}
+.nt-blokknop:hover .nt-bloktitel{text-decoration:underline;text-decoration-thickness:1.5px}
+.nt-vert{transform-box:fill-box;transform-origin:center;transition:transform 320ms cubic-bezier(.16,1,.3,1)}
+.nt-blokknop[aria-expanded="true"] .nt-vert{transform:scaleY(0)}
+.nt-blokinhoud{padding:0 0 24px 92px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px 40px}
+@media (max-width:640px){.nt-blokknop{grid-template-columns:50px 12px minmax(0,1fr) auto;gap:2px 10px}.nt-blokinhoud{padding:0 0 22px}}
+@keyframes nt-ra{from{transform:translateY(10px);filter:blur(4px)}}
+@keyframes nt-rb{from{transform:translateY(10px);filter:blur(4px)}}
+.nt-legenda{display:flex;flex-wrap:wrap;gap:8px 20px}
+.nt-momenten{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:1080px){.nt-momenten{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.nt-momenten{grid-template-columns:minmax(0,1fr)}.nt-momenten>li{min-height:200px!important}}
+.nt-moment{transition:transform 420ms cubic-bezier(.16,1,.3,1),box-shadow 420ms cubic-bezier(.16,1,.3,1)}
+.nt-moment:hover{transform:translateY(-4px);box-shadow:0 22px 44px -24px rgba(16,16,18,.35)}
+.nt-moment svg{transition:transform 420ms cubic-bezier(.16,1,.3,1)}
+.nt-moment:hover svg{transform:rotate(-8deg) scale(1.08)}
+.nt-seizoen{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1080px){.nt-seizoen{grid-template-columns:repeat(2,minmax(0,1fr))}.nt-seizoen>:first-child{grid-column:1 / -1}}
+@media (max-width:560px){.nt-seizoen{grid-template-columns:minmax(0,1fr)}}
+.nt-zes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.nt-zorg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1080px){.nt-zorg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.nt-zorg{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion: reduce){.nt-moment:hover,.nt-moment:hover svg{transform:none!important}.nt-streep{background-size:100% .26em}.nt-tijdlijn{clip-path:none}}
 /* sync-nav */@media (max-width:640px){.nf-nav{width:100%;gap:2px 0!important}.nf-nav>a{padding:10px 9px!important}.nf-nav>.nf-navcta{margin:6px 0 0!important;flex-basis:100%;justify-content:center}}/* /sync-nav */
 </style>
 </helmet>
@@ -122,6 +159,39 @@ a:hover>svg:last-child{transform:translateX(4px)}
           <a href="F-Makers.dc.html" class="nt-knop" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Breng je idee in</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="format" aria-labelledby="format-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px 0; scroll-margin-top: 16px">
+  <div class="nt-twee">
+    <div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+      <p style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4A4A50">Het format in één zin</p>
+      <h2 id="format-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 50px); line-height: 1.08; letter-spacing: -0.03em; text-wrap: pretty">Elke aflevering geeft een founder een zelfgebouwd bedrijf aan één van drie kandidaten. <span class="nt-streep">De tafel blijft daarna achter de winnaar staan.</span></h2>
+      <dl class="nt-stats" style="margin: 0">
+        <sc-for list="{{formatStats}}" as="f" hint-placeholder-count="4">
+          <div class="nf-sv" style="display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 6px; padding: 16px 16px 18px; border-radius: 20px; background: {{f.bg}}; color: {{f.fg}}; min-width: 0">
+            <dt style="font-size: 14px; line-height: 1.35; color: {{f.sub}}">{{f.label}}</dt>
+            <dd style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(40px, 4vw, 56px); line-height: 0.9; letter-spacing: -0.04em; font-variant-numeric: tabular-nums">{{f.n}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+      <h3 style="margin: 0 0 6px; font-size: 17px; font-weight: 600">Anders dan een pitchshow</h3>
+      <div aria-hidden="true" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 20px; font-size: 14px; font-weight: 500">
+        <span style="color: #5C5C62">Een klassieke pitchshow</span>
+        <span><span style="padding: 2px 10px; border-radius: 999px; background: #C6F05A; color: #101012">Founder zoekt Founder</span></span>
+      </div>
+      <dl class="nt-vgl" style="margin: 0">
+        <sc-for list="{{vergelijking}}" as="v" hint-placeholder-count="6">
+          <div class="nf-sv">
+            <dt style="font-size: 14px; font-weight: 600; color: #4A4A50">{{v.term}}</dt>
+            <dd style="margin: 0; font-size: 16px; line-height: 1.4; color: #5C5C62"><span class="nf-sr">Een klassieke pitchshow: </span>{{v.oud}}</dd>
+            <dd style="margin: 0; font-size: 16px; line-height: 1.4; font-weight: 500"><span class="nf-sr">Founder zoekt Founder: </span>{{v.nieuw}}</dd>
+          </div>
+        </sc-for>
+      </dl>
     </div>
   </div>
 </section>
@@ -245,6 +315,82 @@ a:hover>svg:last-child{transform:translateX(4px)}
   </ol>
 </section>
 
+<section id="draaiboek" aria-labelledby="draaiboek-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px 0; display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="draaiboek-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">45 minuten, minuut voor minuut.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Elk blok hoort bij een stap van de bewijsroute. Kies een blok en zie wat er gebeurt.</p>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <div class="nt-tijdlijn" data-open="{{blokOpen}}" aria-hidden="true">
+      <sc-for list="{{blokken}}" as="b" hint-placeholder-count="12">
+        <span class="nt-seg" data-actief="{{b.open}}" style="flex: {{b.duur}} 1 0px; background: {{b.bg}}; box-shadow: inset 0 0 0 1px {{b.rand}}"></span>
+      </sc-for>
+    </div>
+    <div aria-hidden="true" style="position: relative; height: 20px; font-size: 13px; color: #5C5C62; font-variant-numeric: tabular-nums">
+      <span style="position: absolute; left: 0; top: 0">00:00</span>
+      <span style="position: absolute; left: 33.333%; top: 0; transform: translateX(-50%)">15:00</span>
+      <span style="position: absolute; left: 66.667%; top: 0; transform: translateX(-50%)">30:00</span>
+      <span style="position: absolute; right: 0; top: 0">45:00</span>
+    </div>
+    <ul class="nt-legenda" aria-label="Kleuren in de tijdlijn" style="margin: 4px 0 0; padding: 0; list-style: none; font-size: 14px; color: #4A4A50">
+      <sc-for list="{{fases}}" as="f" hint-placeholder-count="5">
+        <li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 3px; background: {{f.bg}}; box-shadow: inset 0 0 0 1px {{f.rand}}"></span>{{f.naam}}</li>
+      </sc-for>
+    </ul>
+  </div>
+  <ol aria-label="Draaiboek van een aflevering" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-bottom: 1px solid #E2E2DE">
+    <sc-for list="{{blokken}}" as="b" hint-placeholder-count="12">
+      <li style="border-top: 1px solid #E2E2DE">
+        <button type="button" class="nt-blokknop" onClick="{{b.kies}}" aria-expanded="{{b.open}}" aria-controls="{{b.id}}" style="appearance: none; margin: 0; border: 0; background: transparent; color: #101012; font: inherit; text-align: left; cursor: pointer; width: 100%; min-height: 64px; box-sizing: border-box; padding: 12px 0">
+          <span style="grid-row: span 2; font-size: 15px; font-weight: 500; color: #4A4A50; font-variant-numeric: tabular-nums">{{b.start}}</span>
+          <span aria-hidden="true" style="grid-row: span 2; width: 14px; height: 14px; border-radius: 4px; background: {{b.bg}}; box-shadow: inset 0 0 0 1px {{b.rand}}"></span>
+          <span class="nt-bloktitel" style="font-size: 18px; font-weight: 600; line-height: 1.25; overflow-wrap: break-word">{{b.titel}}</span>
+          <span aria-hidden="true" style="grid-row: span 2; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: #5C5C62; font-variant-numeric: tabular-nums; white-space: nowrap">{{b.duurLabel}}<span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; box-sizing: border-box; border-radius: 999px; border: 1px solid #101012; color: #101012"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"></path><path class="nt-vert" d="M12 5v14"></path></svg></span></span>
+          <span style="font-size: 14px; line-height: 1.3; color: #5C5C62">{{b.fase}}<span class="nf-sr">, {{b.duurLabel}}</span></span>
+        </button>
+        <sc-if value="{{b.open}}" hint-placeholder-val="{{false}}">
+          <div id="{{b.id}}" class="nt-blokinhoud" style="animation: {{rAnim}} 520ms cubic-bezier(.16,1,.3,1) backwards">
+            <p style="margin: 0; max-width: 54ch; font-size: 17px; line-height: 1.5; color: #3A3A40">{{b.wat}}</p>
+            <dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 16px; align-content: start; font-size: 15px; line-height: 1.4">
+              <dt style="color: #5C5C62">Bewijsroute</dt>
+              <dd style="margin: 0; font-weight: 600">{{b.route}}</dd>
+              <sc-if value="{{b.heeftMoment}}" hint-placeholder-val="{{true}}">
+                <dt style="color: #5C5C62">Vast moment</dt>
+                <dd style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px">
+                  <sc-for list="{{b.momenten}}" as="m" hint-placeholder-count="1">
+                    <a href="#momenten" style="padding: 2px 10px; border-radius: 999px; background: #C6F05A; color: #101012; font-size: 14px; font-weight: 600; text-decoration: none">{{m}}</a>
+                  </sc-for>
+                </dd>
+              </sc-if>
+            </dl>
+          </div>
+        </sc-if>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
+<section id="momenten" aria-labelledby="momenten-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="momenten-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Acht vaste momenten.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Elke aflevering heeft dezelfde rituelen, elk met een eigen naam. De kijker herkent ze en kan erover meepraten.</p>
+  </div>
+  <ol class="nt-momenten" style="margin: 0; padding: 0; list-style: none">
+    <sc-for list="{{momenten}}" as="m" hint-placeholder-count="8">
+      <li class="nt-moment nf-sv" data-tone="{{m.tone}}" style="border-radius: 20px; background: {{m.bg}}; color: {{m.fg}}; border: 1px solid {{m.rand}}; padding: 20px 22px 22px; min-height: 260px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <span style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+          <span style="font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; color: {{m.sub}}">{{m.wanneer}}</span>
+          <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{m.icoon}}"></path></svg>
+        </span>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.02; letter-spacing: -0.025em; overflow-wrap: break-word">{{m.naam}}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.45; color: {{m.sub}}">{{m.tekst}}</p>
+        </div>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
 <section id="achter-je" aria-labelledby="achter-kop" data-tone="donker" style="margin-top: clamp(80px, 10vw, 128px); background: #101012; color: #FFFFFF">
   <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px">
     <div class="nt-twee">
@@ -287,6 +433,41 @@ a:hover>svg:last-child{transform:translateX(4px)}
   </div>
 </section>
 
+<section id="seizoen" aria-labelledby="seizoen-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="seizoen-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Het seizoen.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Acht afleveringen en een special. Elke match krijgt een vervolg in beeld, ook als het op dag 30 niet doorgaat.</p>
+  </div>
+  <ol class="nt-seizoen" style="margin: 0; padding: 0; list-style: none">
+    <li class="nf-sv" style="border-radius: 20px; background: #EEEEE9; color: #101012; padding: 22px; min-height: 280px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+      <span style="font-size: 14px; font-weight: 500; color: #4A4A50">Afleveringen 1 tot 6</span>
+      <span aria-hidden="true" class="nt-zes">
+        <sc-for list="{{zesMatches}}" as="z" hint-placeholder-count="6">
+          <span style="aspect-ratio: 1 / 1; border-radius: 10px; background: {{z.bg}}; color: {{z.fg}}; display: flex; align-items: flex-end; padding: 6px 8px; box-sizing: border-box; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(20px, 2vw, 28px); line-height: 1; font-variant-numeric: tabular-nums">{{z.nr}}</span>
+        </sc-for>
+      </span>
+      <span style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.02; letter-spacing: -0.03em">Zes ideeën, zes matches</span>
+        <span style="font-size: 15px; line-height: 1.45; color: #4A4A50; max-width: 52ch">Elke aflevering één founder, drie kandidaten en één sleutel. Vanaf aflevering 2 opent elke aflevering met dag 30 van de vorige match.</span>
+      </span>
+    </li>
+    <sc-for list="{{seizoenRest}}" as="s" hint-placeholder-count="3">
+      <li class="nf-sv" data-tone="{{s.tone}}" style="border-radius: 20px; background: {{s.bg}}; color: {{s.fg}}; border: 1.5px {{s.lijn}} {{s.rand}}; padding: 22px; min-height: 280px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <span style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px">
+          <span style="font-size: 14px; font-weight: 500; color: {{s.sub}}">{{s.label}}</span>
+          <sc-if value="{{s.live}}" hint-placeholder-val="{{false}}">
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: {{s.sub}}"><span style="display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; background: #DC2E29; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.06em"><span aria-hidden="true" class="nt-dot" style="width: 7px; height: 7px; border-radius: 999px; background: #FFFFFF"></span>LIVE</span>optie</span>
+          </sc-if>
+        </span>
+        <span style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.02; letter-spacing: -0.03em">{{s.titel}}</span>
+          <span style="font-size: 15px; line-height: 1.45; color: {{s.sub}}">{{s.tekst}}</span>
+        </span>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
 <section id="afleveringen" aria-labelledby="afl-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 16px">
   <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
     <div style="display: flex; flex-direction: column; gap: 12px">
@@ -327,6 +508,45 @@ a:hover>svg:last-child{transform:translateX(4px)}
   </ul>
 </section>
 
+<section id="thuis" aria-labelledby="thuis-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; scroll-margin-top: 16px">
+  <div class="nt-twee">
+    <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+      <h2 id="thuis-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em">Meedoen vanaf de bank.</h2>
+      <p style="margin: 0; max-width: 46ch; font-size: 18px; line-height: 1.5; color: #4A4A50">Je stem telt niet mee voor de keuze. Hij laat zien wie Nederland zou kiezen, naast de keuze van de founder.</p>
+      <p style="margin: 0; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 14px; background: #101012; color: #FFFFFF; font-size: 15px; font-weight: 500"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6F05A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Alleen de makers beslissen</p>
+    </div>
+    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; min-width: 0">
+      <sc-for list="{{thuis}}" as="t" hint-placeholder-count="4">
+        <li class="nf-sv" style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px 18px; padding: 20px 0; border-top: 1px solid #E2E2DE">
+          <span aria-hidden="true" style="grid-row: span 3; display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 999px; background: {{t.bg}}; color: {{t.fg}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{t.icoon}}"></path></svg></span>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.3">{{t.titel}}</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #4A4A50">{{t.tekst}}</p>
+          <sc-if value="{{t.heeftLink}}" hint-placeholder-val="{{true}}">
+            <a href="{{t.href}}" style="justify-self: start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #101012; font-size: 16px; font-weight: 500; text-decoration: underline">{{t.link}}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </sc-if>
+        </li>
+      </sc-for>
+    </ul>
+  </div>
+</section>
+
+<section id="zorg" aria-labelledby="zorg-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(80px, 10vw, 128px) 32px 0; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 16px">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
+    <h2 id="zorg-kop" style="margin: 0; max-width: 16ch; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.03em; text-wrap: balance">Zo zorgen we voor de kandidaten.</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; color: #4A4A50">Wie meedoet, laat zichzelf zien op tv. Deze afspraken liggen vast, en elke deelnemer kan ze nalopen.</p>
+  </div>
+  <ul class="nt-zorg" style="margin: 0; padding: 0; list-style: none">
+    <sc-for list="{{zorg}}" as="z" hint-placeholder-count="6">
+      <li class="nf-sv" style="border-radius: 20px; border: 1px solid #E2E2DE; background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #C6F05A; color: #101012"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{z.icoon}}"></path></svg></span>
+        <h3 style="margin: 4px 0 0; font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em">{{z.titel}}</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #4A4A50">{{z.tekst}}</p>
+      </li>
+    </sc-for>
+  </ul>
+  <p style="margin: 0; max-width: 72ch; font-size: 15px; line-height: 1.5; color: #4A4A50">Kandidaten zien hun eigen fragment vóór de uitzending en kunnen feitelijke fouten laten herstellen. De afspraken leunen op de zorgregels die de Britse toezichthouder Ofcom sinds 05-04-2021 hanteert, en op wat deelnemers van andere programma's misten. <a href="{{bijbelZorgUrl}}" target="_blank" rel="noopener" style="color: #101012; font-weight: 500">Lees het hoofdstuk over zorg in de formatbijbel</a></p>
+</section>
+
 <section id="casting" aria-labelledby="casting-kop" style="margin-top: clamp(80px, 10vw, 128px); background: #F4F4F1; scroll-margin-top: 16px">
   <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px; display: flex; flex-direction: column; gap: 32px">
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
@@ -358,6 +578,43 @@ a:hover>svg:last-child{transform:translateX(4px)}
   </div>
 </section>
 
+<section id="zenders" aria-labelledby="zenders-kop" data-tone="donker" style="background: #101012; color: #FFFFFF; scroll-margin-top: 16px">
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(64px, 8vw, 104px) 32px">
+    <div class="nt-twee">
+      <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+        <p style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C6F05A">Formatbijbel · versie 0.1</p>
+        <h2 id="zenders-kop" style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(42px, 5.4vw, 76px); line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance">Voor zenders en producenten.</h2>
+        <p style="margin: 0; max-width: 48ch; font-size: 18px; line-height: 1.5; color: #E2E2DE">Het format staat beschreven in een formatbijbel: het draaiboek per minuut, het seizoen, de vaste momenten, casting, zorg voor deelnemers, verdienopties en een pilotplan. Bij elke vergelijking met een ander programma staat een bron.</p>
+        <p style="margin: 0; max-width: 48ch; font-size: 16px; line-height: 1.5; color: #C8C8CE">De demo-aflevering speelt met fictieve mensen. De zender huis 1 in de demo bestaat niet.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+          <a href="{{bijbelUrl}}" target="_blank" rel="noopener" class="nt-knop" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #C6F05A; color: #101012; text-decoration: none; font-weight: 600; font-size: 17px">Lees de formatbijbel
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+          </a>
+          <a href="#demo" class="nt-knop" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1.5px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de demo</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 17px; font-weight: 600">Wat klaarligt</h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+            <sc-for list="{{klaar}}" as="k" hint-placeholder-count="5">
+              <li class="nf-sv" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-top: 1px solid #3A3A40; font-size: 17px; line-height: 1.4"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F05A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M5 12l5 5 9-10"></path></svg>{{k}}</li>
+            </sc-for>
+          </ul>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 17px; font-weight: 600">Nog in te vullen</h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{nogOpen}}" as="o" hint-placeholder-count="6">
+              <li style="padding: 4px 12px; border-radius: 999px; border: 1px dashed #8A8A90; font-size: 14px; font-weight: 500; color: #E2E2DE">{{o}}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer style="border-top: 1px solid #E2E2DE">
   <div style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 15px; color: #4A4A50">
     <span>{{naam}} is een initiatief van House of Founders</span>
@@ -367,7 +624,7 @@ a:hover>svg:last-child{transform:translateX(4px)}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":5910}}'>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":11408}}'>
 class Component extends DCLogic {
   renderVals() {
     const VIDEO = '';
@@ -443,7 +700,166 @@ class Component extends DCLogic {
       ]) }
     ];
 
+    const LIME = '#C6F05A';
+    const BLAUW = '#1F2E9A';
+    const KORAAL = '#FF7552';
+    const LUCHT = '#6EC0FF';
+    const BIJBEL = 'https://github.com/florianjulius-creator/next-founder/blob/main/docs/tv-format.md';
+
+    const formatStats = [
+      { n: '8', label: 'afleveringen in seizoen 1', bg: '#EEEEE9', fg: INK, sub: '#55555A' },
+      { n: '45', label: 'minuten per aflevering', bg: '#EEEEE9', fg: INK, sub: '#55555A' },
+      { n: '3', label: 'kandidaten per idee', bg: '#EEEEE9', fg: INK, sub: '#55555A' },
+      { n: '0', label: 'euro investering van de tafel', bg: LIME, fg: INK, sub: '#2E3A12' }
+    ];
+
+    const vergelijking = [
+      ['Wie pitcht', 'De ondernemer, om geld', 'Drie kandidaten, om een idee'],
+      ['Wat de tafel geeft', 'Geld in ruil voor aandelen', 'Uren, intro’s en een netwerk'],
+      ['De prijs', 'Een investering', 'Een bedrijf en een tafel die blijft'],
+      ['Wie beslist', 'De investeerders', 'De founder kiest, op dag 30 stemmen de makers'],
+      ['Na de uitzending', 'Onderhandelen buiten beeld', 'Dertig dagen bewijsroute, in beeld'],
+      ['Wie niet wint', 'Gaat met lege handen naar huis', 'Krijgt het laatste woord en een route verder']
+    ].map((r) => ({ term: r[0], oud: r[1], nieuw: r[2] }));
+
+    // Run-down of one 45-minute episode. Start times are derived from the durations, so they always add up.
+    const FASE = {
+      kader: { naam: 'Opening en slot', bg: INK },
+      r1: { naam: 'Ronde 1 · Het idee', bg: LIME },
+      r2: { naam: 'Ronde 2 · De pitch', bg: BLAUW },
+      r3: { naam: 'Ronde 3 · Het gesprek', bg: KORAAL },
+      r4: { naam: 'Ronde 4 · De match', bg: LUCHT }
+    };
+    const BLOK = [
+      { duur: 2, fase: 'kader', titel: 'Koude opening', route: 'Dag 30 · Stemming van de makers', momenten: ['Dag 30'],
+        wat: 'Dag 30 van de vorige match. De makers stemmen of de sleutel blijft, ieder met een reden in één zin. In de eerste aflevering staat hier een vooruitblik. Daarna de titel.' },
+      { duur: 4, fase: 'r1', titel: 'De founder die loslaat', route: 'Paspoort van de makers', momenten: [],
+        wat: 'Een portret op locatie: wat de founder bouwde, voor wie, en waarom het bij een ander verder moet.' },
+      { duur: 1, fase: 'r1', titel: 'Zestig seconden', route: 'Paspoort van de makers', momenten: ['Het paspoort'],
+        wat: 'De founder legt het paspoort op de salontafel en vertelt het idee in zestig seconden. Bij elke claim hoort een bron.' },
+      { duur: 6, fase: 'r2', titel: 'De kandidaten', route: 'Dag 0 · Pitch het terug', momenten: [],
+        wat: 'Drie korte portretten, met fragmenten uit de pitchvideo van twee minuten waarmee ze zich aanmeldden.' },
+      { duur: 5, fase: 'r2', titel: 'Koffie met de maker', route: 'Koffie met de maker', momenten: [],
+        wat: 'Vooraf gefilmd aan de keukentafel. De founder spreekt elke kandidaat apart, voordat iemand aan tafel zit.' },
+      { duur: 6, fase: 'r2', titel: 'Drie pitches', route: 'Dag 0 · Pitch het terug', momenten: ['Dag één'],
+        wat: 'Negentig seconden per kandidaat, met een klok in beeld. Elke pitch eindigt met dezelfde zin: op dag één ga ik ...' },
+      { duur: 5, fase: 'r3', titel: 'Het bewijs op tafel', route: 'Dag 1 tot 7 · Huiswerk', momenten: ['Bel de klant'],
+        wat: 'Het huiswerk komt op tafel: gesprekken en toezeggingen van klanten. De tafel kiest er één uit en belt die klant op de speaker. De klant heeft vooraf ingestemd.' },
+      { duur: 6, fase: 'r3', titel: 'Het gesprek op de bank', route: 'Dag 1 tot 7 · Huiswerk', momenten: [],
+        wat: 'De tafel vraagt door op de bank. Wie is je eerste klant, en wat doe je in week twee als het tegenzit?' },
+      { duur: 2.5, fase: 'r4', titel: 'Bedenktijd in de tuin', route: 'Keuze van de founder', momenten: ['Bedenktijd in de tuin'],
+        wat: 'De founder loopt met de presentator de tuin in. De camera blijft binnen, achter het glas. Thuis sluit de stemming Wie zou jij kiezen?' },
+      { duur: 3.5, fase: 'r4', titel: 'De keuze en de sleutel', route: 'Dag 7 · Skin in the game', momenten: ['De sleutel', 'Ik sta achter je'],
+        wat: 'De founder kiest en geeft de sleutel. De winnaar bevestigt de inleg, en wie aan tafel achter de winnaar staat, zegt het hardop.' },
+      { duur: 2, fase: 'r4', titel: 'De deur blijft open', route: 'Terug naar de etalage', momenten: ['De deur blijft open'],
+        wat: 'De twee anderen krijgen het laatste woord en persoonlijke feedback van de tafel. Op het platform staan andere ventures voor ze klaar.' },
+      { duur: 2, fase: 'kader', titel: 'Kijker en founder', route: 'Dag 8 tot 30 · Proefmaand', momenten: [],
+        wat: 'De uitslag van de kijkers naast de keuze van de founder. Daarna een vooruitblik op de proefmaand en de oproep om je aan te melden.' }
+    ];
+    const blok = (st.blok !== undefined && st.blok !== null) ? st.blok : 0;
+    const tijd = (m) => String(Math.floor(m)).padStart(2, '0') + ':' + String(Math.round((m % 1) * 60)).padStart(2, '0');
+    let klok = 0;
+    const blokken = BLOK.map((b, i) => {
+      const start = tijd(klok);
+      klok += b.duur;
+      const f = FASE[b.fase];
+      return {
+        ...b,
+        id: 'blok-' + (i + 1),
+        start: start,
+        duurLabel: String(b.duur).replace('.', ',') + ' min',
+        fase: f.naam,
+        bg: f.bg,
+        rand: f.bg,
+        open: blok === i,
+        heeftMoment: b.momenten.length > 0,
+        kies: () => this.setState({ blok: blok === i ? -1 : i, rWissel: !st.rWissel })
+      };
+    });
+    const fases = Object.values(FASE).map((f) => ({ naam: f.naam, bg: f.bg, rand: f.bg }));
+
+    // The minute of each ritual comes from the run-down above.
+    const MOMENT = [
+      { naam: 'Dag 30', tekst: 'De makers stemmen of de sleutel blijft, ieder met een reden in één zin. Zo opent de volgende aflevering.',
+        icoon: 'M4 12a8 8 0 1 0 16 0a8 8 0 1 0-16 0M8.5 12.5l2.5 2.5 4.5-5', bg: INK, fg: WIT, sub: '#C8C8CE', rand: INK, tone: 'donker' },
+      { naam: 'Het paspoort', tekst: 'De founder legt een map op de salontafel: wat er staat, met een bron bij elke claim.',
+        icoon: 'M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM9 8h6M9 12h6M9 16h3', bg: LIME, fg: INK, sub: '#2E3A12', rand: LIME, tone: 'licht' },
+      { naam: 'Dag één', tekst: 'Elke pitch eindigt met dezelfde zin. Wat een kandidaat als eerste doet, zegt meer dan een cv.',
+        icoon: 'M4 6h16v14H4zM4 10h16M8 3v5M16 3v5M11 14l1.5-1v5', bg: BLAUW, fg: WIT, sub: '#D3D9FA', rand: BLAUW, tone: 'donker' },
+      { naam: 'Bel de klant', tekst: 'De tafel kiest één toezegging uit het huiswerk en belt die klant op de speaker, met toestemming vooraf.',
+        icoon: 'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2', bg: KORAAL, fg: INK, sub: '#3A160C', rand: KORAAL, tone: 'licht' },
+      { naam: 'Bedenktijd in de tuin', tekst: 'De founder loopt de tuin in. De camera blijft binnen, achter het glas, zonder geluid.',
+        icoon: 'M12 21v-9M12 12c0-4 3-7 8-7 0 5-3 7-8 7zM12 15c0-3-2.5-5-7-5 0 4 2.5 5 7 5', bg: '#EEEEE9', fg: INK, sub: '#55555A', rand: '#EEEEE9', tone: 'licht' },
+      { naam: 'De sleutel', tekst: 'Een sleutel in een doosje van notenhout. Wie hem krijgt, begint aan de proefmaand.',
+        icoon: 'M4 15a4 4 0 1 0 8 0a4 4 0 1 0-8 0M11 12l9-9M16 7l3 3M14 9l2 2', bg: LUCHT, fg: INK, sub: '#0E3550', rand: LUCHT, tone: 'licht' },
+      { naam: 'Ik sta achter je', tekst: 'Wie aan tafel achter de winnaar staat, steekt de hand op en zegt het hardop, met een toezegging erbij.',
+        icoon: 'M8 13V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v8a7 7 0 0 1-7 7h-.5a6 6 0 0 1-4.6-2.2L3.4 15.6a1.5 1.5 0 0 1 2.3-1.9L8 16', bg: LIME, fg: INK, sub: '#2E3A12', rand: LIME, tone: 'licht' },
+      { naam: 'De deur blijft open', tekst: 'Wie niet gekozen wordt, krijgt het laatste woord en een route naar andere ventures in de etalage.',
+        icoon: 'M3 21h18M6 21V4a1 1 0 0 1 1-1h8v18M15 3l4 2v14l-4 2M12 12h.01', bg: WIT, fg: INK, sub: '#4A4A50', rand: '#E2E2DE', tone: 'licht' }
+    ];
+    const momenten = MOMENT.map((m) => ({ ...m, wanneer: blokken.find((b) => b.momenten.indexOf(m.naam) >= 0).start }));
+
+    const zesMatches = [LIME, BLAUW, KORAAL, LUCHT, LIME, BLAUW].map((bg, i) => ({ nr: String(i + 1), bg: bg, fg: bg === BLAUW ? WIT : INK }));
+    const seizoenRest = [
+      { label: 'Aflevering 7', titel: 'De terugkomdag', tekst: 'De zes nieuwe founders terug in de villa. Dag 30 van de zesde match en een open gesprek over wat werkte en wat niet, met vragen van kijkers.',
+        bg: INK, fg: WIT, sub: '#C8C8CE', rand: INK, lijn: 'solid', tone: 'donker', live: false },
+      { label: 'Aflevering 8', titel: 'De finale', tekst: 'Hoe vaak koos de kijker hetzelfde als de founder? De tafel kijkt terug en de aanmelding voor seizoen 2 gaat open.',
+        bg: LIME, fg: INK, sub: '#2E3A12', rand: LIME, lijn: 'solid', tone: 'licht', live: true },
+      { label: 'Special', titel: 'Een jaar later', tekst: 'Terug bij elke nieuwe founder. Wat staat er nu, en staat de tafel er nog?',
+        bg: WIT, fg: INK, sub: '#4A4A50', rand: '#8A8A90', lijn: 'dashed', tone: 'licht', live: false }
+    ];
+
+    const thuis = [
+      { titel: 'Wie zou jij kiezen?', tekst: 'Stem tijdens de uitzending op een van de drie kandidaten. De stemming sluit als de founder de tuin in loopt.',
+        link: 'Probeer het in de demo', href: '#demo', icoon: 'M4 5h16v14H4zM8 12l3 3 5-6', bg: LIME, fg: INK },
+      { titel: 'Kijker naast founder', tekst: 'Na de keuze zie je hoe de kijkers stemden. In de finale volgt de stand van het seizoen: hoe vaak koos Nederland hetzelfde als de founder?',
+        link: '', href: '', icoon: 'M4 20V10M10 20V4M16 20v-7M2 20h20', bg: BLAUW, fg: WIT },
+      { titel: 'Volg de proefmaand', tekst: 'Elke week een korte update van de nieuwe founder, op de pagina van de venture.',
+        link: '', href: '', icoon: 'M6 4h12v16l-6-4-6 4z', bg: KORAAL, fg: INK },
+      { titel: 'Vraag de tafel', tekst: 'Stuur tijdens het seizoen je vraag in. In de terugkomdag komen vragen van kijkers aan bod.',
+        link: '', href: '', icoon: 'M4 5h16v11H9l-5 4z', bg: LUCHT, fg: INK }
+    ].map((t) => ({ ...t, heeftLink: t.link !== '' }));
+
+    const zorg = [
+      { titel: 'Een echte deal', tekst: 'De overdrachtsakte en de afspraken liggen getekend klaar vóór de opname. De sleutel op tv is ook op papier het begin van de proefmaand.',
+        icoon: 'M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h4' },
+      { titel: 'Vooraf weten waar je aan begint', tekst: 'Je hoort schriftelijk wat meedoen kan betekenen, ook voor je welzijn, en wat wij doen om dat klein te houden.',
+        icoon: 'M4 12a8 8 0 1 0 16 0a8 8 0 1 0-16 0M12 11v5M12 8h.01' },
+      { titel: 'Begeleiding los van de redactie', tekst: 'Een psycholoog die niet aan de redactie rapporteert, van de eerste screening tot na de uitzending.',
+        icoon: 'M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z' },
+      { titel: 'Niemand wordt afgebrand', tekst: 'Er is geen afvalrace en het publiek stemt niemand weg. Wie niet gekozen wordt, krijgt het laatste woord en persoonlijke feedback van de tafel.',
+        icoon: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z' },
+      { titel: 'Nazorg die doorloopt', tekst: 'De begeleider belt na de uitzending zelf, [DUUR NAZORG] lang. Ook als er veel aandacht op sociale media komt.',
+        icoon: 'M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4' },
+      { titel: 'De makers beslissen', tekst: 'De stem van de kijker telt nooit mee. De founder kiest, en op dag 30 stemmen de makers, ieder met een reden.',
+        icoon: 'M4 12a8 8 0 1 0 16 0a8 8 0 1 0-16 0M8.5 12.5l2.5 2.5 4.5-5' }
+    ];
+
+    const klaar = [
+      'Formatbijbel met bronnen',
+      'Draaiboek van 45 minuten, gekoppeld aan de bewijsroute',
+      'Seizoensopbouw met acht vaste momenten',
+      'Zorgafspraken voor deelnemers',
+      'Pilotplan in vier fasen'
+    ];
+    const nogOpen = ['[ZENDER]', '[PRODUCENT]', '[BUDGET]', '[PRESENTATOR]', '[NAMEN TAFEL]', '[CONTACT]'];
+
     return {
+      formatStats: formatStats,
+      vergelijking: vergelijking,
+      blokken: blokken,
+      blokOpen: blok >= 0,
+      fases: fases,
+      rAnim: st.rWissel ? 'nt-rb' : 'nt-ra',
+      momenten: momenten,
+      zesMatches: zesMatches,
+      seizoenRest: seizoenRest,
+      thuis: thuis,
+      zorg: zorg,
+      klaar: klaar,
+      nogOpen: nogOpen,
+      bijbelUrl: BIJBEL,
+      bijbelZorgUrl: BIJBEL + '#12-zorg-en-eerlijkheid',
       founderFoto: FOUNDER_FOTO,
       naam: naam,
       video: VIDEO,

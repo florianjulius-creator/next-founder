@@ -73,6 +73,45 @@ async function open(route, width) {
   await page.close();
 }
 
+// Desktop: the format sections (run-down, moments, season, care, broadcasters)
+{
+  const { page, problems } = await open('/tv/', 1440);
+  for (const id of ['format', 'founder', 'demo', 'rondes', 'draaiboek', 'momenten', 'achter-je', 'daarna', 'seizoen', 'afleveringen', 'thuis', 'zorg', 'casting', 'zenders']) {
+    ok(`tv: section #${id} is on the page`, (await page.locator(`section#${id}`).count()) === 1);
+  }
+
+  const rd = page.locator('#draaiboek');
+  const knoppen = rd.locator('button[aria-expanded]');
+  const n = await knoppen.count();
+  ok('tv: run-down lists twelve blocks', n === 12, `(saw ${n})`);
+  const total = await rd.locator('.nt-seg').evaluateAll((els) => els.reduce((s, e) => s + parseFloat(getComputedStyle(e).flexGrow), 0));
+  ok('tv: run-down blocks add up to 45 minutes', total === 45, `(sum ${total})`);
+  const starts = await knoppen.evaluateAll((els) => els.map((e) => e.firstElementChild.textContent.trim()));
+  ok('tv: run-down starts at 00:00 and its last block at 43:00', starts[0] === '00:00' && starts[11] === '43:00', `(saw ${JSON.stringify(starts)})`);
+  const geopend = rd.locator('button[aria-expanded="true"]');
+  ok('tv: run-down opens with the cold open', (await geopend.count()) === 1 && (await geopend.innerText()).includes('Koude opening'));
+  const bewijs = rd.locator('button', { hasText: 'Het bewijs op tafel' });
+  await bewijs.click();
+  ok('tv: choosing a block opens only that block', (await geopend.count()) === 1 && (await geopend.innerText()).includes('Het bewijs op tafel'));
+  ok('tv: the open block names its signature moment', (await page.locator('#blok-7 a[href="#momenten"]', { hasText: 'Bel de klant' }).count()) === 1);
+  ok('tv: the timeline highlights only the open block', (await rd.locator('.nt-seg[data-actief="true"]').count()) === 1
+    && (await rd.locator('.nt-seg').nth(6).getAttribute('data-actief')) === 'true');
+  await bewijs.click();
+  ok('tv: choosing the open block again closes it', (await geopend.count()) === 0 && (await page.locator('#blok-7').count()) === 0);
+
+  const momenten = page.locator('#momenten li');
+  ok('tv: eight signature moments', (await momenten.count()) === 8, `(saw ${await momenten.count()})`);
+  const sleutel = momenten.filter({ has: page.locator('h3', { hasText: /^De sleutel$/ }) });
+  ok('tv: a moment shows its minute from the run-down', (await sleutel.innerText()).includes('37:30'));
+
+  ok('tv: season shows episodes 1 to 6, 7, 8 and the special', (await page.locator('#seizoen ol.nt-seizoen > li').count()) === 4);
+  ok('tv: six care commitments', (await page.locator('#zorg ul.nt-zorg > li').count()) === 6);
+  const bijbel = 'https://github.com/florianjulius-creator/next-founder/blob/main/docs/tv-format.md';
+  ok('tv: broadcasters block links to the format bible', (await page.locator(`#zenders a[href="${bijbel}"]`).count()) === 1);
+  ok('tv: format sections cause no errors', problems.length === 0, problems.join(' | '));
+  await page.close();
+}
+
 // Phone width: no sideways scroll
 {
   const { page, problems } = await open('/tv/', 390);
@@ -80,6 +119,10 @@ async function open(route, width) {
   ok('tv at 390px: no horizontal scroll', sw <= 390, `(scrollWidth ${sw})`);
   ok('tv at 390px: no errors or missing files', problems.length === 0, problems.join(' | '));
   await page.screenshot({ path: path.join(shots, 'tv-mobile.png'), fullPage: true });
+  await page.locator('#draaiboek button', { hasText: 'De keuze en de sleutel' }).click();
+  const swOpen = await page.evaluate(() => document.documentElement.scrollWidth);
+  ok('tv at 390px: an open run-down block does not scroll sideways', swOpen <= 390, `(scrollWidth ${swOpen})`);
+  await page.locator('#draaiboek').screenshot({ path: path.join(shots, 'tv-mobile-draaiboek.png') });
   await page.close();
 }
 

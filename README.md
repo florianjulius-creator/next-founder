@@ -48,6 +48,11 @@ Een `.dc.html`-bestand heeft drie delen:
 Het hoofdmenu is op elke pagina hetzelfde en komt uit `tools/sync-nav.mjs`. Pas een menu-item daar aan
 en draai `node tools/sync-nav.mjs`; `tools/check-nav.mjs` faalt als een pagina een item verliest of verbergt.
 
+Linken naar een andere pagina doe je met de canvasnaam (`F-Makers.dc.html`), ook in data in de code.
+De build maakt er de route van; `tools/check-links.mjs` faalt als een link nergens uitkomt.
+
+Het tv-format staat beschreven in [docs/tv-format.md](docs/tv-format.md), de formatbijbel voor zenders en producenten.
+
 Werkwijze: pas het bestand in `design/` aan, draai `npm run check` en open een pull request.
 Florian zet wijzigingen terug op het canvas en zet de site live.
 
