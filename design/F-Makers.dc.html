@@ -327,6 +327,25 @@ a:hover>svg:last-child{transform:translateX(4px)}
               </div>
             </div>
           </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px 24px; padding-top: 16px; border-top: 1px solid #E2E2DE">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span id="l-inzet" style="font-size: 15px; font-weight: 500">Wat investeer je zelf in het idee?</span>
+              <div role="group" aria-labelledby="l-inzet" style="display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{inzetKeuze}}" as="k" hint-placeholder-count="4">
+                  <button type="button" class="nm-keuze" onClick="{{k.kies}}" aria-pressed="{{k.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{k.rand}}; background: {{k.bg}}; color: {{k.fg}}; font: inherit; font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; cursor: pointer">{{k.label}}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span id="l-mininleg" style="font-size: 15px; font-weight: 500">Minimale inleg van de nieuwe founder</span>
+              <div role="group" aria-labelledby="l-mininleg" style="display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{minKeuze}}" as="k" hint-placeholder-count="4">
+                  <button type="button" class="nm-keuze" onClick="{{k.kies}}" aria-pressed="{{k.aan}}" style="appearance: none; margin: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{k.rand}}; background: {{k.bg}}; color: {{k.fg}}; font: inherit; font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; cursor: pointer">{{k.label}}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.45; color: #4A4A50">Bedragen gaan als investering de BV in, niet naar jou persoonlijk. De minimale inleg zie je terug in de etalage.</p>
         </fieldset>
 
         <div style="display: grid; grid-template-columns: minmax(0, 420px); gap: 24px">
@@ -375,7 +394,7 @@ a:hover>svg:last-child{transform:translateX(4px)}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg>
         </span>
         <h3 style="margin: 0; font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.05; letter-spacing: -0.03em; overflow-wrap: break-word">{{klaarKop}}</h3>
-        <p style="margin: 0; max-width: 48ch; font-size: 18px; line-height: 1.5; color: #3A3A40">Je aanmelding is binnen. {{makersKlaar}} Het paspoort heeft nu {{bewijsTel}} van de 5 bewijzen. Pas als elke claim een bron heeft, gaat de venture de etalage in.</p>
+        <p style="margin: 0; max-width: 48ch; font-size: 18px; line-height: 1.5; color: #3A3A40">Je aanmelding is binnen. {{makersKlaar}} {{geldKlaar}} Het paspoort heeft nu {{bewijsTel}} van de 5 bewijzen. Pas als elke claim een bron heeft, gaat de venture de etalage in.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
           <a href="F-Bento.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #101012; color: #FFFFFF; text-decoration: none; font-weight: 500; font-size: 17px">Bekijk de etalage
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
@@ -415,6 +434,9 @@ a:hover>svg:last-child{transform:translateX(4px)}
           </div>
           <p style="margin: 0; display: flex; align-items: flex-start; gap: 8px; font-size: 14px; line-height: 1.4; color: #101012">
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg><span>{{pSteun}}</span>
+          </p>
+          <p style="margin: 0; display: flex; align-items: flex-start; gap: 8px; font-size: 14px; line-height: 1.4; color: #101012">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M4 7h16v10H4zM4 11h16M8 15h3"></path></svg><span>{{pGeld}}</span>
           </p>
           <p style="margin: 0; padding-top: 12px; border-top: 1px solid #E2E2DE; font-size: 14px; font-weight: 500">{{pNiveau}} · {{pEditie}}</p>
         </div>
@@ -492,7 +514,7 @@ a:hover>svg:last-child{transform:translateX(4px)}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":6310}}'>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":6580}}'>
 class Component extends DCLogic {
   renderVals() {
     const st = this.state || {};
@@ -547,6 +569,8 @@ class Component extends DCLogic {
     const vraag = st.vraag ?? 0;
     const uren = st.uren ?? 4;
     const intros = st.intros ?? [];
+    const inzet = st.inzet ?? -1;
+    const minInleg = st.minInleg ?? -1;
     const model = st.model ?? 'belang';
     const fee = model === 'fee';
     const mtik = st.mtik || 0;
@@ -634,6 +658,8 @@ class Component extends DCLogic {
     if (!fNaam.trim()) fouten.push('Geef je venture een naam.');
     if (!makersSel.length) fouten.push('Kies wie er meebouwde.');
     if (!mailGoed) fouten.push('Vul een geldig e-mailadres in, zodat we je kunnen bereiken.');
+    if (inzet < 0) fouten.push('Kies wat je zelf in het idee investeert.');
+    if (minInleg < 0) fouten.push('Kies de minimale inleg van de nieuwe founder.');
     if (!akkoord) fouten.push('Vink aan dat alle makers akkoord zijn. Zonder dat gaat de venture niet de etalage in.');
     const toonFouten = poging && fouten.length > 0;
 
@@ -684,6 +710,10 @@ class Component extends DCLogic {
       profielUrl: PROFIEL_URL + encodeURIComponent('Profiel aanpassen: ' + TAFEL[persoon].naam)
     };
     const INTRO = ['Klanten', 'Partners', 'Investeerders'];
+    const INZET = ['Alleen tijd', 'Tot € 5.000', '€ 5.000 tot € 25.000', 'Meer dan € 25.000'];
+    const MININLEG = ['Geen', '€ 2.500', '€ 5.000', '€ 10.000', '€ 25.000'];
+    const inzetKeuze = INZET.map((label, i) => ({ label: label, aan: inzet === i, ...pil(inzet === i), kies: () => this.setState({ inzet: i }) }));
+    const minKeuze = MININLEG.map((label, i) => ({ label: label, aan: minInleg === i, ...pil(minInleg === i), kies: () => this.setState({ minInleg: i }) }));
     const urenKeuze = [2, 4, 8].map((u) => ({ label: u + ' uur', aan: uren === u, ...pil(uren === u), kies: () => this.setState({ uren: u }) }));
     const introKeuze = INTRO.map((label) => {
       const aan = intros.includes(label);
@@ -763,8 +793,12 @@ class Component extends DCLogic {
         if (fouten.length > 0) this.setState({ poging: true });
         else this.setState({ verzonden: true, poging: false });
       },
-      opnieuw: () => this.setState({ verzonden: false, poging: false, fNaam: '', fZin: '', makersSel: [], fMail: '', akkoord: false, bew: [true, false, false, false, false], uren: 4, intros: [] }),
+      opnieuw: () => this.setState({ verzonden: false, poging: false, fNaam: '', fZin: '', makersSel: [], fMail: '', akkoord: false, bew: [true, false, false, false, false], uren: 4, intros: [], inzet: -1, minInleg: -1 }),
       urenKeuze: urenKeuze,
+      inzetKeuze: inzetKeuze,
+      minKeuze: minKeuze,
+      pGeld: 'Inzet maker: ' + (inzet >= 0 ? INZET[inzet].toLowerCase() : 'nog kiezen') + ' · minimale inleg: ' + (minInleg >= 0 ? MININLEG[minInleg].toLowerCase() : 'nog kiezen'),
+      geldKlaar: (inzet >= 0 && minInleg >= 0) ? 'Je investeert zelf ' + INZET[inzet].toLowerCase() + ' en vraagt een inleg van ' + (minInleg === 0 ? 'nul euro' : 'minimaal ' + MININLEG[minInleg]) + '.' : '',
       introKeuze: introKeuze,
       pSteun: 'Steun: ' + uren + ' uur per maand' + (introNamen.length ? ", intro's bij " + introLijst : ''),
       klaarKop: (fNaam.trim() || 'Je venture') + ' staat als concept klaar.',

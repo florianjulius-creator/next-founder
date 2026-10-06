@@ -124,10 +124,14 @@ async function previewHeight(page, file) {
     && (await page.locator('#f-naam').inputValue()) === 'Testventure');
   ok('makers: live preview shows the name', (await page.getByText('Testventure').count()) > 0);
   await page.locator('#f-mail').fill('test@voorbeeld.nl');
+  await page.locator('[aria-labelledby="l-inzet"] button').nth(1).click();
+  await page.locator('[aria-labelledby="l-mininleg"] button').nth(3).click();
+  ok('makers: money choices show in the preview', (await page.getByText('Inzet maker: tot € 5.000 · minimale inleg: € 10.000').count()) === 1);
   await page.locator('button.nm-maker').first().click();
   await page.locator('button[role="checkbox"]:not(.nm-maker)').last().click();
   await page.locator('button[type="submit"]').click();
   ok('makers: complete form shows the confirmation', (await page.getByText('Testventure staat als concept klaar.').count()) === 1);
+  ok('makers: confirmation repeats the money', (await page.getByText('vraagt een inleg van minimaal € 10.000', { exact: false }).count()) === 1);
   await page.locator('button', { hasText: 'Nog een venture aanmelden' }).click();
   ok('makers: a new form resets the support menu', (await page.getByText('Steun: 4 uur per maand', { exact: true }).count()) === 1);
   await page.locator('button', { hasText: 'Eenmalige fee' }).click();
