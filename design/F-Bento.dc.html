@@ -183,7 +183,7 @@ input::placeholder{color:#6E6E74}
       <a href="#route" class="nf-tile" style="grid-area: f1; display: flex; flex-direction: column; gap: 6px; padding: 18px; border-radius: 20px; background: #EEEEE9; color: #101012; text-decoration: none; min-width: 0">
         <span style="font-family: 'Funnel Display', sans-serif; font-weight: 300; font-size: clamp(60px, 6vw, 84px); line-height: 0.9; letter-spacing: -0.04em; font-variant-numeric: tabular-nums"><span class="nf-teller" aria-hidden="true"></span><span class="nf-sr">30</span></span>
         <span style="font-family: 'Funnel Display', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.1; letter-spacing: -0.02em">dagen bewijsroute</span>
-        <span style="margin-top: auto; font-size: 15px; line-height: 1.4; color: #55555A">Van koffie tot stemming. Eén kandidaat per venture tegelijk.</span>
+        <span style="margin-top: auto; font-size: 15px; line-height: 1.4; color: #55555A">Van pitch tot stemming. Eén kandidaat per venture tegelijk.</span>
         <span aria-hidden="true" style="display: inline-flex; margin-top: 4px">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </span>
@@ -673,7 +673,7 @@ input::placeholder{color:#6E6E74}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":9830}}'>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":9870}}'>
 class Component extends DCLogic {
   renderVals() {
     const st = this.state || {};
@@ -860,16 +860,16 @@ class Component extends DCLogic {
     const volgZin = aantalGevolgd === 0 ? 'Je volgt nog geen ventures.' : aantalGevolgd === 1 ? 'Je volgt 1 venture.' : 'Je volgt ' + aantalGevolgd + ' ventures.';
 
     const spoorK = [
-      { dag: 'Dag 0', titel: 'Koffie met de maker', tekst: 'Een half uur kennismaken met een van de makers. Klikt het van twee kanten, dan volgt de pitch.' },
-      { dag: 'Dag 1', titel: 'Pitch het terug', tekst: 'Twee minuten video waarin je uitlegt welk probleem het oplost, en waarom jij en waarom nu.' },
+      { dag: 'Dag 0', titel: 'Pitch het terug', tekst: 'Twee minuten video waarin je uitlegt welk probleem het oplost, en waarom jij en waarom nu. Daarmee meld je je aan, via Socialjuice.' },
+      { dag: 'Dag 1', titel: 'Koffie met de maker', tekst: 'Een half uur kennismaken met een van de makers. Klikt het van twee kanten, dan begint je huiswerk.' },
       { dag: 'Dag 1 tot 7', titel: 'Huiswerk', tekst: 'Gesprekken en toezeggingen die de makers zelf kunnen nalopen.' },
       { dag: 'Dag 7', titel: 'Skin in the game', tekst: 'Inleg of borg, die naar de BV gaat als runway.' },
       { dag: 'Dag 8 tot 30', titel: 'Proefmaand', tekst: "Vooraf vastgelegde doelen, elke week een update aan de makers en [AANTAL] warme intro's uit het netwerk van de tafel." },
       { dag: 'Dag 30', titel: 'Stemming', tekst: 'De makers stemmen. Ja betekent CEO en meerderheid.' }
     ];
     const spoorM = [
-      { titel: 'Kennismaken', tekst: 'Een half uur, en een eerlijk oordeel of het klikt.' },
       { titel: 'Paspoort', tekst: 'Wat er staat, met bron bij elke claim.' },
+      { titel: 'Kennismaken', tekst: 'Een half uur, en een eerlijk oordeel of het klikt.' },
       { titel: 'Bereikbaar', tekst: 'Vragen van de kandidaat binnen 48 uur beantwoord.' },
       { titel: 'Overdrachts\u00ADakte klaar', tekst: 'IP en aandelen liggen klaar voor overdracht.' },
       { titel: 'Overdrachts\u00ADuren', tekst: 'Twee uur per week sparren en deuren openen.' },
@@ -1006,8 +1006,8 @@ class Component extends DCLogic {
       actieOpen: actieOpen,
       actieDicht: !actieOpen,
       actieLabel: kand ? 'Instappen bij ' + d.naam : 'Zo lever je een venture aan',
-      actieHref: kand ? '#route' : 'F-Makers.dc.html',
-      actieHint: kand ? 'Je begint op dag 0 met koffie met een van de makers.' : 'Een venture begint met het paspoort: wat er staat, met een bron bij elke claim.',
+      actieHref: kand ? 'F-Aanmelden.dc.html#' + d.naam.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : 'F-Makers.dc.html',
+      actieHint: kand ? 'Je meldt je aan met een pitchvideo van twee minuten.' : 'Een venture begint met het paspoort: wat er staat, met een bron bij elke claim.',
       dichtLabel: d.status === 'vol' ? 'Vol' : 'Overgedragen',
       dichtIcoon: d.status === 'vol' ? 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 20c1.5-4 4.5-6 8-6s6.5 2 8 6' : 'M5 12l5 5 9-10',
       dichtUitleg: d.status === 'vol' ? 'Er zit één kandidaat in de proefmaand. Haalt die de route niet, dan komt de plek weer vrij.' : 'Deze venture heeft een nieuwe founder.',

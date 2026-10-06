@@ -22,7 +22,7 @@ const base = `http://localhost:${server.address().port}`;
 let failed = 0;
 const ok = (name, pass, detail = '') => { console.log(`${pass ? 'PASS' : 'FAIL'} ${name}${pass ? '' : ' ' + detail}`); if (!pass) failed++; };
 
-const PAGES = { '/': 'index.html', '/makers/': 'makers/index.html', '/tv/': 'tv/index.html' };
+const PAGES = { '/': 'index.html', '/makers/': 'makers/index.html', '/tv/': 'tv/index.html', '/aanmelden/': 'aanmelden/index.html' };
 
 // 1. Static: the build must have turned every canvas file name into a route, also inside component data.
 for (const [route, file] of Object.entries(PAGES)) {

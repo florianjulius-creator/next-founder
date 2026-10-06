@@ -17,8 +17,8 @@ om zich te bewijzen, daarna stemmen de makers of de venture wordt overgedragen.
 | `site/` | De browsercode die een ontwerp klikbaar maakt (`dc.js`, `runtime.js`) plus morphdom en het favicon. |
 | `tools/` | `build.mjs` maakt de website in `public/`, `check.mjs` test hem in een echte browser. |
 
-De website bestaat uit twee pagina's: `/` komt uit `design/F-Bento.dc.html` en `/makers/` uit
-`design/F-Makers.dc.html`. De andere bestanden in `design/` zijn eerdere richtingen (A tot en met E, G)
+De website bestaat uit vier pagina's: `/` komt uit `design/F-Bento.dc.html`, `/makers/` uit
+`design/F-Makers.dc.html`, `/tv/` uit `design/F-TV.dc.html` en `/aanmelden/` uit `design/F-Aanmelden.dc.html`. De andere bestanden in `design/` zijn eerdere richtingen (A tot en met E, G)
 en het stijlbord. Die staan niet op de site.
 
 ## Lokaal draaien
@@ -52,6 +52,8 @@ Linken naar een andere pagina doe je met de canvasnaam (`F-Makers.dc.html`), ook
 De build maakt er de route van; `tools/check-links.mjs` faalt als een link nergens uitkomt.
 
 Het tv-format staat beschreven in [docs/tv-format.md](docs/tv-format.md), de formatbijbel voor zenders en producenten.
+
+Kandidaten melden zich aan via Socialjuice. Hoe dat werkt en wat er nog ingericht moet worden: [docs/socialjuice.md](docs/socialjuice.md).
 
 Werkwijze: pas het bestand in `design/` aan, draai `npm run check` en open een pull request.
 Florian zet wijzigingen terug op het canvas en zet de site live.

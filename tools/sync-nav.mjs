@@ -8,7 +8,7 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const HOME = 'F-Bento.dc.html';
-const PAGES = ['F-Bento.dc.html', 'F-Makers.dc.html', 'F-TV.dc.html'];
+const PAGES = ['F-Bento.dc.html', 'F-Makers.dc.html', 'F-TV.dc.html', 'F-Aanmelden.dc.html'];
 
 // page: the file the item belongs to; hash: the section on that page.
 const ITEMS = [

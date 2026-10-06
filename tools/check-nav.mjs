@@ -25,7 +25,7 @@ let failed = 0;
 const ok = (name, pass, detail = '') => { console.log(`${pass ? 'PASS' : 'FAIL'} ${name}${pass ? '' : ' ' + detail}`); if (!pass) failed++; };
 
 const ITEMS = ['De tafel', 'Ventures', 'Bewijsroute', 'Op tv', 'Voor makers'];
-const PAGES = { '/': 'home', '/makers/': 'makers', '/tv/': 'tv' };
+const PAGES = { '/': 'home', '/makers/': 'makers', '/tv/': 'tv', '/aanmelden/': 'aanmelden' };
 const browser = await chromium.launch();
 
 for (const [route, name] of Object.entries(PAGES)) {

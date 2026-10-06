@@ -63,7 +63,7 @@
     },
     "F-Bento.dc.html": {
       "expand": "fill",
-      "h": 9830,
+      "h": 9870,
       "is_interactive": true,
       "title": "F · Editorial bento (gekozen, ronde 4)",
       "w": 1440,
@@ -96,6 +96,15 @@
       "w": 1440,
       "x": 9120,
       "y": 16770
+    },
+    "F-Aanmelden.dc.html": {
+      "expand": "fill",
+      "h": 2260,
+      "is_interactive": true,
+      "title": "F4 · Aanmelden voor een idee (Socialjuice)",
+      "w": 1440,
+      "x": 9120,
+      "y": 28328
     }
   },
   "createdOnFiles": {
