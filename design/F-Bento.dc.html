@@ -400,10 +400,6 @@ input::placeholder{color:#6E6E74}
       </sc-for>
     </ul>
   </div>
-  <p style="width: 100%; max-width: 1280px; margin: -8px auto 0; box-sizing: border-box; padding: 0 32px; display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; font-size: 14px; line-height: 1.45; color: #5C5C62">
-    <span>Profielen uit de who's who van Deel II. Staat jouw profiel er niet goed op?</span>
-    <a href="{{profielUrl}}" class="nf-navlink" style="display: inline-flex; align-items: center; min-height: 44px; color: #101012; font-weight: 500; text-decoration: underline">Pas het aan of laat het verwijderen</a>
-  </p>
 </section>
 
 <section id="vraag" aria-labelledby="vraag-kop" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: clamp(72px, 9vw, 112px) 32px 0; display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 16px">
@@ -677,7 +673,7 @@ input::placeholder{color:#6E6E74}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":9890}}'>
+<script type="text/x-dc" data-dc-script data-props='{"naam":{"editor":"text","default":"Next Founder"},"$preview":{"width":1440,"height":9830}}'>
 class Component extends DCLogic {
   renderVals() {
     const st = this.state || {};
@@ -959,7 +955,6 @@ class Component extends DCLogic {
       stapelRest: TAFEL.length - stapel.length,
       stapelRestDelay: (900 + stapel.length * 60) + 'ms',
       stapelZin: TAFEL.length + ' founders en builders aan tafel',
-      profielUrl: 'https://github.com/florianjulius-creator/next-founder/issues/new?title=Profiel%20aanpassen',
       zoek: zoek,
       zetZoek: (e) => this.setState({ zoek: waarde(e) }),
       zoekChips: zoekChips,

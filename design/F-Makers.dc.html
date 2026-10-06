@@ -178,10 +178,6 @@ a:hover>svg:last-child{transform:translateX(4px)}
           </sc-if>
           <p style="margin: 0">{{pk.track}}</p>
         </div>
-        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; font-size: 14px; line-height: 1.4; color: {{pk.sub}}">
-          <span>Uit de who's who van Deel II</span>
-          <a href="{{pk.profielUrl}}" style="display: inline-flex; align-items: center; min-height: 44px; color: {{pk.fg}}; font-weight: 500; text-decoration: underline">Profiel aanpassen of verwijderen</a>
-        </p>
       </div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
@@ -582,7 +578,6 @@ class Component extends DCLogic {
       { venture: 'Vaste Prik', status: 'open', makers: ['florian-julius'] }
     ];
     const MAX_BEGELEIDING = null;
-    const PROFIEL_URL = 'https://github.com/florianjulius-creator/next-founder/issues/new?title=';
 
     const PAL = [
       { label: 'Limoen', bg: '#C6F05A', fg: INK, sub: '#2E3A12', tone: 'licht' },
@@ -708,8 +703,7 @@ class Component extends DCLogic {
       meterW: (MAX_BEGELEIDING ? Math.min(100, Math.round(pkBegeleidt / MAX_BEGELEIDING * 100)) : 0) + '%',
       isMaker: pkNamen.length > 0,
       makerVan: 'Maker van ' + (pkNamen.length < 2 ? pkNamen.join('') : pkNamen.slice(0, -1).join(', ') + ' en ' + pkNamen[pkNamen.length - 1]) + '.',
-      track: pkOver === 0 ? 'Op Next Founder: nieuw, nog geen overdrachten begeleid.' : 'Op Next Founder: ' + pkOver + (pkOver === 1 ? ' overdracht' : ' overdrachten') + ' begeleid.',
-      profielUrl: PROFIEL_URL + encodeURIComponent('Profiel aanpassen: ' + TAFEL[persoon].naam)
+      track: pkOver === 0 ? 'Op Next Founder: nieuw, nog geen overdrachten begeleid.' : 'Op Next Founder: ' + pkOver + (pkOver === 1 ? ' overdracht' : ' overdrachten') + ' begeleid.'
     };
     const INTRO = ['Klanten', 'Partners', 'Investeerders'];
     const INZET = ['Alleen tijd', 'Tot € 5.000', '€ 5.000 tot € 25.000', 'Meer dan € 25.000'];

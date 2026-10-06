@@ -61,6 +61,7 @@ async function previewHeight(page, file) {
   ok('home: hydration leaves the pre-render untouched', mut === 0, `(${mut} DOM changes)`);
   await previewHeight(page, 'F-Bento.dc.html');
   ok('home: nav links to the table', (await page.locator('header a[href="#tafel"]').count()) === 1 && (await page.locator('section#tafel').count()) === 1);
+  ok('home: no who\'s-who notice under the table', (await page.getByText("who's who").count()) === 0);
   ok('home: the route has six steps', (await page.locator('#route button[aria-controls^="stap-"]').count()) === 6);
 
   // Vraag de tafel: default query, typing (diacritics ignored), chips, empty state
@@ -110,8 +111,8 @@ async function previewHeight(page, file) {
   await previewHeight(page, 'F-Makers.dc.html');
   ok('makers: the promise has six steps', (await page.locator('#belofte li').count()) === 6);
   await page.locator('button.nm-gezicht', { hasText: 'Florian Julius' }).click();
-  ok('makers: person card shows trackrecord and profile link', (await page.getByText('Maker van Biedmeester en Vaste Prik.').count()) === 1
-    && /Florian%20Julius/.test(await page.getByRole('link', { name: 'Profiel aanpassen of verwijderen' }).getAttribute('href')));
+  ok('makers: person card shows trackrecord, no who\'s-who notice', (await page.getByText('Maker van Biedmeester en Vaste Prik.').count()) === 1
+    && (await page.getByText("who's who").count()) === 0);
   await page.locator('#aanmelden button', { hasText: '8 uur' }).click();
   await page.locator('#aanmelden button[role="checkbox"]', { hasText: 'Investeerders' }).click();
   await page.locator('#aanmelden button[role="checkbox"]', { hasText: 'Klanten' }).click();
