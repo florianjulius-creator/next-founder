@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solliciteer · The Next Founder</title>
+<meta name="description" content="Solliciteer voor een venture van The Next Founder met een video, zet als maker de mijlpalen van je venture, en volg de voortgang.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>
+(function(){var en=/^#\/en(\/|$)/.test(location.hash);document.documentElement.lang=en?'en':'nl';if(en)document.title='Apply · The Next Founder'})();
+window.TNV_ROOT='../';
+</script>
+<style>
+body{min-height:100vh;display:flex;flex-direction:column}
+.abar{display:flex;justify-content:space-between;align-items:center;height:72px;gap:16px}
+.abar .lock{font-size:20px}
+.abar .r{display:flex;gap:10px;align-items:center}
+.abar .tabs{display:flex;gap:4px;padding:4px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:999px}
+.abar .tabs a{height:34px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.abar .tabs a[aria-current="true"]{background:#fff;color:var(--ink)}
+.app{flex:1;padding:16px 0 64px}
+.app h1{font:600 clamp(34px,3.6vw,48px)/1.05 var(--f);letter-spacing:-.035em;margin:0}
+.app .p{color:var(--ink-2);margin:14px 0 32px;font-size:16px;max-width:60ch}
+.pick{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 16px}
+.pick a{display:block}
+.pick .tile{padding:10px;border-radius:22px}
+.pick img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}
+.pick b{display:block;font-size:15px;font-weight:600;margin-top:12px}
+.pick span{display:block;font-size:13px;color:var(--ink-2)}
+.pick a:hover .tile{background:var(--soft-2)}
+.head2{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.head2 a{font-size:14px;font-weight:600;color:var(--ink-2)}
+.brief{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:24px;align-items:stretch}
+.brief .box{background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:22px;padding:20px}
+.brief .box .k{margin-bottom:10px}
+#call,.ob,.dash{--nv-accent:#111111;--nv-radius:24px;--nv-panel:#F5F5F4;--nv-line:#E3E3E0;--nv-ink:#111}
+.an{max-width:720px;margin:24px auto 0;text-align:center}
+.an ol{list-style:none;padding:0;margin:32px auto 0;display:grid;gap:10px;text-align:left;max-width:440px}
+.an li{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2);font-weight:600;font-size:14.5px;transition:background .3s,color .3s}
+.an li i{width:18px;height:18px;border-radius:50%;border:2px solid #C9C9C4;flex:none}
+.an li.on{color:var(--ink)}
+.an li.on i{border-color:var(--dot);border-top-color:transparent;animation:spin .8s linear infinite}
+.an li.ok{background:#fff;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
+.an li.ok i{background:var(--ink);border-color:var(--ink);animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.res{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px;align-items:start;margin-top:8px}
+.score{background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:28px;padding:28px;text-align:center}
+.score b{display:block;font:600 96px/1 var(--f);letter-spacing:-.05em}
+.score span{font-size:14px;color:var(--ink-2)}
+.score .verdict{margin-top:18px;display:inline-flex;height:36px;align-items:center;padding:0 16px;border-radius:999px;font-weight:700;font-size:14px;background:#fff}
+.score .verdict.yes{background:var(--ink);color:#fff}
+.subs{display:grid;gap:10px;margin-top:22px;text-align:left}
+.subs div{font-size:13.5px;font-weight:600}
+.subs div i{display:block;height:6px;border-radius:3px;background:#fff;margin-top:6px;overflow:hidden}
+.subs div i u{display:block;height:100%;background:var(--ink);text-decoration:none}
+.fb{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px}
+.fb h2{font:600 28px/1.1 var(--f);letter-spacing:-.03em;margin:0 0 14px}
+.fb p{color:var(--ink-2);margin:0 0 14px}
+.fb ul{margin:0 0 18px;padding-left:18px}
+.fb li+li{margin-top:6px}
+.fb .k{margin-top:18px}
+.alt{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.alt a{display:flex;gap:10px;align-items:center;padding:8px 14px 8px 8px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:14px}
+.alt img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.note{font-size:12.5px;color:var(--ink-2);margin-top:14px}
+.ob{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
+.ob form{background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:28px;padding:24px;display:grid;gap:16px}
+.ob label{display:grid;gap:6px;font-size:13px;font-weight:600}
+.ob input[type=text],.ob input[type=number],.ob textarea{height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;padding:0 14px;font-size:15px;width:100%;min-width:0}
+.ob textarea{height:72px;padding:10px 14px;resize:vertical}
+.ob input[type=range]{width:100%;accent-color:#111}
+.ob .lr{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2)}
+.seg{display:flex;gap:4px;padding:4px;background:#fff;border-radius:999px;border:1px solid var(--line)}
+.seg button{flex:1;height:36px;border:0;border-radius:999px;background:transparent;font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink-2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.msr{display:grid;grid-template-columns:minmax(0,1fr) 84px 110px 36px;gap:6px;align-items:center}
+.msr button{height:36px;border-radius:50%;border:0;background:#fff;cursor:pointer}
+.ob .add{height:40px;border-radius:999px;border:1.5px dashed #C9C9C4;background:transparent;font-weight:600;cursor:pointer}
+.prev{display:grid;gap:12px}
+.prev .vhead{display:flex;gap:14px;align-items:center;margin-bottom:4px}
+.prev .vhead b{font:600 28px/1.1 var(--f);letter-spacing:-.03em}
+.prev .mrow{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.dash .top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;margin-bottom:24px}
+.dash .top img{width:88px;height:88px;border-radius:20px;object-fit:cover}
+.dash .top h1{font-size:48px}
+.dash .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.dash .kp div{background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:22px;padding:18px 20px}
+.dash .kp b{display:block;font:600 26px/1.1 var(--f);letter-spacing:-.02em}
+.dash .kp span{font-size:13px;color:var(--ink-2)}
+body{background:#fff}
+.mkw{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:18px;box-shadow:0 0 0 1px var(--line)}
+.mkw>img{width:100%;height:100%;object-fit:cover;display:block}
+.mkw .mk img{position:static;width:20px;height:20px;aspect-ratio:auto;border-radius:6px}
+.abar,.app{width:100%;box-sizing:border-box}
+.abar .back{font-size:14px;font-weight:600;color:var(--ink-2);margin-right:6px}
+.abar .back:hover{color:var(--ink)}
+.intro4{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;min-height:calc(100svh - 160px)}
+.i-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 0 0 1px var(--line)}
+.i-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.i-tag{position:absolute;left:16px;top:16px;background:rgba(255,255,255,.92);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px}
+.i-v{display:inline-flex;align-items:center;gap:10px;font-weight:600;margin-bottom:22px}
+.i-v img{width:36px;height:36px;border-radius:10px;box-shadow:0 6px 14px -8px rgba(0,0,0,.4)}
+.i-list{list-style:none;margin:8px 0 32px;padding:0;display:grid;gap:0;counter-reset:i}
+.i-list li{display:grid;grid-template-columns:32px 1fr;padding:14px 0;border-top:1px solid var(--line);counter-increment:i}
+.i-list li::before{content:counter(i);grid-row:span 2;font-size:13px;font-weight:600;color:var(--ink-2)}
+.i-list b{font-weight:600}
+.i-list span{font-size:14.5px;color:var(--ink-2)}
+.login{max-width:440px;margin:10vh auto 0;text-align:center}
+.login form{display:grid;gap:10px}
+.login input{height:52px;border-radius:14px;border:1px solid var(--line);padding:0 16px;font-size:16px}
+.login .pill{justify-content:center}
+.dash .top{grid-template-columns:auto minmax(0,1fr)}
+.dash .top img{width:72px;height:72px;border-radius:18px;box-shadow:0 10px 22px -12px rgba(0,0,0,.4)}
+.dash .top .k{display:block;margin-bottom:4px}
+.dash .mrow{margin-bottom:28px}
+.nexts ul{margin:0;padding:0;list-style:none;display:grid;gap:0}
+.nexts li{padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+/* the Eva intro fits the viewport on desktop: the picture takes the height left under the bar, with a margin below */
+@media (min-width:1081px){.app:has(.intro4){padding:8px 0 32px}.intro4{min-height:0}.i-img{aspect-ratio:auto;height:calc(100svh - 72px - 40px);max-height:860px;min-height:420px}}
+@media (max-width:1080px){.intro4{grid-template-columns:minmax(0,1fr);gap:28px;min-height:0}.i-img{aspect-ratio:16/10}}
+@media (max-width:1080px){.pick{grid-template-columns:1fr 1fr}.res,.ob,.brief{grid-template-columns:minmax(0,1fr)}.abar .tabs{display:none}}
+@media (max-width:640px){.pick{grid-template-columns:minmax(0,1fr)}.dash .kp{grid-template-columns:minmax(0,1fr)}.dash .top{grid-template-columns:auto minmax(0,1fr)}.dash .top .pill{display:none}.msr{grid-template-columns:minmax(0,1fr) 64px 36px}.msr input:nth-child(3){grid-column:1/3}}
+
+/* start: the picture grows to the right into the call */
+@media (min-width:1081px){
+ .intro4{transition:grid-template-columns .7s cubic-bezier(.65,0,.25,1),gap .7s cubic-bezier(.65,0,.25,1)}
+ .i-txt{min-width:0;transition:opacity .3s ease,transform .3s ease}
+ .intro4.go{grid-template-columns:minmax(0,1fr) minmax(0,0fr);gap:0}
+ .intro4.go .i-txt{opacity:0;transform:translateX(24px);pointer-events:none}
+ .intro4.go .i-tag{opacity:0;transition:opacity .3s}
+ .app:has(.call4){padding:8px 0 32px}
+ .call4 .nv-screen{aspect-ratio:auto;height:calc(100svh - 72px - 40px);max-height:860px;min-height:420px}
+}
+.call4 .nv-call{grid-template-columns:minmax(0,1fr)}
+.call4 .nv-side{display:none}
+.call4 .nv-go{background:#fff;color:#111}
+.call4 .nv-bar:not([hidden]) .nv-btn{animation:cpop .5s cubic-bezier(.3,1.5,.5,1) backwards}
+.call4 .nv-bar .nv-btn:nth-child(2){animation-delay:.06s}.call4 .nv-bar .nv-btn:nth-child(3){animation-delay:.12s}.call4 .nv-bar .nv-btn:nth-child(4){animation-delay:.18s}.call4 .nv-bar .nv-btn:nth-child(5){animation-delay:.24s}
+@keyframes cpop{from{opacity:0;transform:translateY(18px) scale(.4)}}
+.call4 .nv-top,.call4 .nv-who,.call4 .nv-self{animation:cfade .5s .3s ease backwards}
+@keyframes cfade{from{opacity:0}}
+.call4 .nv-in{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);width:min(560px,calc(100% - 32px));z-index:2}
+.call4 .nv-in:empty{display:none}
+.call4 .nv-in .nv-pick{justify-content:center}
+.call4 .nv-in .nv-pick button{border:0;background:rgba(255,255,255,.16);backdrop-filter:blur(10px);color:#fff}
+.call4 .nv-in .nv-pick button:hover{background:#fff;color:#111}
+.call4 .nv-in .nv-type{margin-top:8px}
+.call4 .nv-in .nv-type input{border:0;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);color:#fff}
+.call4 .nv-in .nv-type input::placeholder{color:rgba(255,255,255,.7)}
+.call4 .nv-in .nv-type button{background:#fff;color:#111}
+.call4 .nv-cap{bottom:190px}
+
+/* bring in your idea: one question per screen */
+.app:has(.ob2){padding:8px 0 32px}
+.ob2{max-width:760px;margin:0 auto;min-height:calc(100svh - 72px - 48px);display:grid;grid-template-rows:auto 1fr auto;gap:24px}
+.ob2bar{position:relative;height:3px;background:#EEEEEA;border-radius:3px;margin-top:8px}
+.ob2bar span{position:absolute;inset:0 auto 0 0;background:#111;border-radius:3px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.ob2bar em{position:absolute;right:0;top:14px;font-style:normal;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.ob2st{display:grid;align-content:center}
+.ob2in{animation:ob2in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ob2in{from{opacity:0;transform:translateX(calc(var(--d) * 28px))}}
+.ob2k{margin:0 0 12px;font-size:13px;font-weight:600;color:var(--dot)}
+.ob2 h1{font:600 clamp(36px,4.4vw,56px)/1.04 var(--f);letter-spacing:-.04em;margin:0 0 36px}
+.ob2 input{font:inherit;color:var(--ink);background:transparent;border:0;outline:0}
+.ob2big{display:block;width:100%;font-size:clamp(28px,3vw,40px)!important;font-weight:500!important;letter-spacing:-.03em;padding:8px 0 14px;border-bottom:1.5px solid #E3E3E0!important;transition:border-color .2s}
+.ob2line{display:block;width:100%;font-size:19px!important;padding:18px 0 14px;border-bottom:1.5px solid #E3E3E0!important;margin-top:8px;transition:border-color .2s}
+.ob2big:focus,.ob2line:focus{border-color:#111!important}
+.ob2 input::placeholder{color:#B4B4AE}
+.ob2opts{display:grid;gap:10px}
+.ob2o{position:relative;display:grid;gap:4px;text-align:left;padding:20px 64px 20px 22px;border-radius:20px;border:0;background:#fff;box-shadow:inset 0 0 0 1.5px #E6E6E2;cursor:pointer;font:inherit;color:var(--ink);transition:box-shadow .2s,transform .2s}
+.ob2o:hover{box-shadow:inset 0 0 0 1.5px #111}
+.ob2o b{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.ob2o span{font-size:14.5px;color:var(--ink-2)}
+.ob2o i{position:absolute;right:22px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #D2D2CC;transition:.2s}
+.ob2o[aria-pressed=true]{box-shadow:inset 0 0 0 2px #111}
+.ob2o[aria-pressed=true] i{background:#111;box-shadow:inset 0 0 0 6px #111,inset 0 0 0 11px #fff}
+.ob2ms{display:grid}
+.ob2m{display:grid;grid-template-columns:28px minmax(0,1fr) 92px 120px;gap:14px;align-items:center;padding:14px 0;border-bottom:1.5px solid #EEEEEA}
+.ob2m:focus-within{border-color:#111}
+.ob2m .n{width:28px;height:28px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600}
+.ob2m>input{font-size:18px!important;padding:6px 0;min-width:0}
+.ob2m label{display:flex;align-items:center;gap:6px;background:#F5F5F3;border-radius:12px;padding:0 12px;height:42px;font-size:14px;color:var(--ink-2)}
+.ob2m label input{width:100%;min-width:0;font-size:15px!important;font-variant-numeric:tabular-nums}
+.ob2h{margin:18px 0 0;font-size:14px;color:var(--ink-2)}
+.ob2card{border-radius:24px;background:#fff;box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(0,0,0,.35);padding:26px}
+.ob2ch{display:flex;gap:14px;align-items:center}
+.ob2ini{width:52px;height:52px;border-radius:15px;background:linear-gradient(#E58A68,#C45E3A);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:600;flex:none}
+.ob2ch b{display:block;font-size:20px;letter-spacing:-.02em}.ob2ch div span{font-size:14.5px;color:var(--ink-2)}
+.ob2tags{display:flex;gap:6px;margin:18px 0 6px}
+.ob2tags span{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:999px;background:#F3F3F0}
+.ob2card ol{list-style:none;margin:0;padding:0}
+.ob2card li{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 0;border-top:1px solid #EFEFEC;font-size:15px}
+.ob2card li i{width:18px;height:18px;border-radius:6px;box-shadow:inset 0 0 0 1.5px #CFCFC9}
+.ob2card li em{font-style:normal;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ob2nav{display:flex;justify-content:space-between;align-items:center}
+.ob2back{border:0;background:none;font:inherit;font-weight:600;font-size:15px;color:var(--ink-2);cursor:pointer;padding:10px 0}
+.ob2back:hover{color:var(--ink)}
+.ob2nav .pill:disabled{opacity:.25;cursor:default}
+.ob2done{grid-row:1/-1;align-self:center;text-align:center;display:grid;justify-items:center;gap:6px;animation:ob2in .5s both;--d:0}
+.ob2ok{width:64px;height:64px;border-radius:50%;background:var(--dot);color:#fff;display:grid;place-items:center;margin-bottom:18px;animation:cpop .6s cubic-bezier(.3,1.5,.5,1) both}
+.ob2done h1{margin:0 0 6px}
+.ob2done p{margin:0;max-width:46ch;color:var(--ink-2);font-size:17px}
+.ob2done .note{margin:10px 0 22px;font-size:13px}
+@media (max-width:640px){.ob2m{grid-template-columns:28px minmax(0,1fr) 1fr;row-gap:10px}.ob2m>input{grid-column:2/-1}.ob2m label:first-of-type{grid-column:2}}
+
+/* V5: founder profile */
+.ob2chips{display:flex;flex-wrap:wrap;gap:8px}
+.ob2chips button{font:inherit;font-size:15.5px;font-weight:600;padding:12px 18px;border-radius:999px;border:0;background:#fff;box-shadow:inset 0 0 0 1.5px #E6E6E2;cursor:pointer;color:var(--ink);transition:box-shadow .2s,background .2s,color .2s}
+.ob2chips button:hover{box-shadow:inset 0 0 0 1.5px #111}
+.ob2chips button[aria-pressed=true]{background:#111;color:#fff;box-shadow:none}
+.ob2chk{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:15px;color:var(--ink-2);cursor:pointer}
+.ob2chk input{width:18px;height:18px;accent-color:#111}
+.pdone .pm-h{font-size:15px;font-weight:600;margin:28px 0 10px;letter-spacing:0}
+.pm{display:grid;gap:8px;width:min(440px,100%)}
+.pm a{display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);text-align:left;transition:box-shadow .2s}
+.pm a:hover{box-shadow:inset 0 0 0 1.5px #111}
+.pm img{width:40px;height:40px}
+.pm span{display:grid;flex:1}.pm b{font-weight:600}.pm em{font-style:normal;font-size:13px;color:var(--ink-2)}
+
+/* V7: account setup */
+.su .ob2st{min-height:0}
+.su-demo{margin-top:26px;border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:var(--dot);cursor:pointer;padding:0}
+.su-demo:hover{text-decoration:underline}
+.su-r{display:flex;gap:18px;align-items:center}
+.su-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.su-type{position:relative;text-align:left;border:0;background:#fff;border-radius:24px;padding:18px 18px 20px;box-shadow:inset 0 0 0 1.5px #E6E6E2;cursor:pointer;font:inherit;color:var(--ink);display:grid;gap:6px;transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .2s}
+.su-type:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:inset 0 0 0 1.5px #111}
+.su-type[aria-pressed=true]{box-shadow:inset 0 0 0 2px #111;transform:translateY(-4px)}
+.su-type b{font-size:18px;font-weight:600}.su-type>span:last-child{font-size:14px;color:var(--ink-2)}
+.su-ill{position:relative;height:96px;border-radius:16px;background:color-mix(in srgb,var(--c) 18%,#fff);margin-bottom:10px;overflow:hidden}
+.su-ill i{position:absolute;border-radius:50%;background:var(--c);transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
+.su-ill i:nth-child(1){width:44px;height:44px;left:18px;top:26px}
+.su-ill i:nth-child(2){width:28px;height:28px;left:70px;top:14px;opacity:.6}
+.su-ill i:nth-child(3){width:62px;height:62px;right:-10px;bottom:-18px;opacity:.85}
+.su-tech i{border-radius:10px}.su-all i:nth-child(2){border-radius:6px}
+.su-type:hover .su-ill i:nth-child(1){transform:translate(8px,-6px) scale(1.1)}
+.su-type:hover .su-ill i:nth-child(3){transform:translate(-8px,-6px)}
+.su-sk{display:grid;gap:4px}
+.su-row{display:grid;grid-template-columns:130px 1fr 96px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #EFEFEC}
+.su-row>span{font-size:17px;font-weight:600}
+.su-row em{font-style:normal;font-size:13px;color:var(--ink-2);text-align:right}
+.su-dots{display:flex;gap:8px}
+.su-dots button{width:40px;height:40px;border-radius:12px;border:0;background:#F3F3F0;cursor:pointer;display:grid;place-items:center;transition:transform .25s cubic-bezier(.3,1.6,.5,1),background .2s}
+.su-dots button:first-child{width:28px;background:none}
+.su-dots button:first-child i{width:10px;height:10px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #C9C9C4}
+.su-dots button.on{background:#111}
+.su-dots button.on:nth-child(4){background:var(--dot)}
+.su-dots button:hover{transform:scale(1.08)}
+.su-eva{border-radius:28px;background:#0f0f10;color:#fff;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.su-eh{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.su-eh img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 25%}
+.su-eh div{display:grid}.su-eh b{font-weight:600}.su-eh div span{font-size:12.5px;color:rgba(255,255,255,.55)}
+.su-live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7)}
+.su-live i{width:7px;height:7px;border-radius:50%;background:#3BD16F;animation:blink 1.4s infinite}
+.su-log{display:flex;flex-direction:column;gap:8px;padding:18px 16px;height:280px;overflow:auto}
+.su-b{max-width:80%;padding:11px 15px;border-radius:18px;font-size:15px;line-height:1.45;animation:subin .35s cubic-bezier(.2,.8,.2,1) both}
+.su-b.eva{background:#1e1e20;border-bottom-left-radius:6px;align-self:flex-start}
+.su-b.me{background:var(--dot);border-bottom-right-radius:6px;align-self:flex-end}
+.su-b.typing{display:flex;gap:4px;padding:14px 16px}.su-b.typing i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);animation:subounce 1s infinite}
+.su-b.typing i:nth-child(2){animation-delay:.15s}.su-b.typing i:nth-child(3){animation-delay:.3s}
+@keyframes subin{from{opacity:0;transform:translateY(8px) scale(.97)}}
+@keyframes subounce{50%{transform:translateY(-4px);opacity:1}}
+.su-ans{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 16px;min-height:56px}
+.su-ans button{font:inherit;font-size:14px;font-weight:600;padding:10px 14px;border-radius:999px;border:0;background:rgba(255,255,255,.1);color:#fff;cursor:pointer;animation:subin .35s both}
+.su-ans button:hover{background:#fff;color:#111}
+.su-build{text-align:center;display:grid;justify-items:center}
+.su-orb{width:120px;height:120px;border-radius:50%;padding:5px;background:conic-gradient(from 0deg,#CD633F,#FFCD3C,#C6F05A,#6EC0FF,#A98DFF,#CD633F);animation:suspin 3s linear infinite;margin-bottom:26px}
+.su-orb img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 25%;border:4px solid #fff;animation:suspin 3s linear infinite reverse}
+@keyframes suspin{to{transform:rotate(360deg)}}
+.su-build ol{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:left}
+.su-build li{display:flex;align-items:center;gap:10px;color:var(--ink-2);font-weight:600;transition:color .3s}
+.su-build li i{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #C9C9C4;position:relative;transition:.3s}
+.su-build li.ok{color:var(--ink)}.su-build li.ok i{background:var(--dot);box-shadow:none}
+.su-build li.ok i::after{content:"";position:absolute;left:7px;top:4px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+/* V7: log in */
+.li2{max-width:980px;margin:24px auto 0;display:grid;gap:14px}
+.li-me{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.li-me span:nth-child(2){display:grid;flex:1}.li-me em{font-style:normal;font-size:13px;color:var(--ink-2)}.li-me .hp-av{width:40px;height:40px;font-size:16px}
+.li-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.li-card{border-radius:28px;padding:36px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:14px;align-content:start;position:relative;overflow:hidden}
+.li-card h1,.li-card h2{margin:0;font-size:clamp(32px,3.4vw,46px);font-weight:600;letter-spacing:-.04em;line-height:1.02}
+.li-card h2{font-size:28px}.li-card p{margin:0;color:var(--ink-2);font-size:16px;max-width:42ch}
+.li-card form{display:grid;gap:10px}.li-card input{height:52px;border-radius:14px;border:1.5px solid #E6E6E2;padding:0 16px;font:inherit;font-size:16px}
+.li-new{background:#111;color:#fff;box-shadow:none;min-height:420px;align-content:end}
+.li-new p{color:rgba(255,255,255,.7)}.li-new .pill{background:#fff;color:#111;justify-self:start}
+.li-blobs i{position:absolute;border-radius:50%}
+.li-blobs i:nth-child(1){width:150px;height:150px;background:#FF7552;right:-30px;top:-30px;animation:lib 7s ease-in-out infinite}
+.li-blobs i:nth-child(2){width:80px;height:80px;background:#C6F05A;right:120px;top:60px;border-radius:22px;animation:lib 9s ease-in-out infinite reverse}
+.li-blobs i:nth-child(3){width:56px;height:56px;background:#6EC0FF;right:40px;top:150px;animation:lib 8s ease-in-out infinite}
+@keyframes lib{50%{transform:translate(-14px,12px) rotate(20deg)}}
+/* V7: founder profile */
+.fp{max-width:1040px;margin:12px auto 0;display:grid;gap:14px}
+.fp-card{border-radius:28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);padding:28px}
+.fp-top{display:flex;gap:18px;align-items:center}
+.fp-av{width:84px;height:84px;border-radius:26px;background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 60%,#111));color:#fff;display:grid;place-items:center;font-size:36px;font-weight:600;flex:none;transform:rotate(-4deg)}
+.fp-top h1{margin:0;font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.fp-top p{margin:8px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.fp-type{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--c) 22%,#fff)}
+.fp-av2{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:#F3F3F0;color:var(--ink-2)}
+.fp-act{margin-left:auto;display:flex;gap:8px}
+.fp-eva{margin:24px 0 0;display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:20px;background:#F6F6F3}
+.fp-eva img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 25%;flex:none}
+.fp-eva p{margin:0;font-size:17px;line-height:1.5}.fp-eva cite{display:block;margin-top:6px;font-style:normal;font-size:13px;color:var(--ink-2)}
+.fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0;margin:0}
+.fp-box{border-radius:28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);padding:24px 26px}
+.rad{width:100%;max-width:340px;display:block;margin:0 auto;overflow:visible}
+.rad .rg{fill:none;stroke:#ECECE8;stroke-width:1}.rad .ra{stroke:#ECECE8;stroke-width:1}
+.rad .rp{fill:color-mix(in srgb,var(--dot) 28%,transparent);stroke:var(--dot);stroke-width:2;stroke-linejoin:round;animation:radin .9s cubic-bezier(.3,1.4,.5,1) both;transform-origin:150px 150px}
+.rad text{font-size:12px;font-weight:600;fill:#6b6b66;font-family:var(--f)}
+@keyframes radin{from{transform:scale(.2);opacity:0}}
+.fp-chips{display:flex;flex-wrap:wrap;gap:6px}.fp-chips span{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#111;color:#fff}
+.fp-sk{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fp-sk li{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:center;font-size:14px;font-weight:600}
+.fp-sk i{height:8px;border-radius:4px;background:#EFEFEC;overflow:hidden}.fp-sk u{display:block;height:100%;background:#111;border-radius:4px}
+.fp-sk li:first-child u{background:var(--dot)}
+.fp-match{border-radius:28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);padding:24px 26px;display:grid;gap:10px}
+.fp-mh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.fp-mh h2{margin:0;font-size:24px;font-weight:600;letter-spacing:-.03em}.fp-mh a{font-weight:600;font-size:14px}
+.fp-v{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:10px;border-radius:20px;transition:background .2s}
+.fp-v:hover{background:#F6F6F3}
+.fp-vi{width:120px;height:90px;object-fit:cover;border-radius:14px}
+.fp-vn{display:flex;align-items:center;gap:8px}.fp-vn img{width:26px;height:26px}.fp-vn b{font-size:17px}
+.fp-pct{margin-left:auto;font-size:13px;font-weight:600;color:#fff;background:var(--dot);padding:5px 11px;border-radius:999px;font-variant-numeric:tabular-nums}
+.fp-vt p{margin:4px 0 0;font-size:14px;color:var(--ink-2)}.fp-fit b{color:var(--ink)}
+@media (max-width:820px){.su-types,.li-grid,.fp-grid{grid-template-columns:minmax(0,1fr)}.su-row{grid-template-columns:96px 1fr}.su-row em{display:none}.fp-top{flex-wrap:wrap}.fp-act{margin-left:0}.fp-v{grid-template-columns:84px 1fr}.fp-vi{width:84px;height:70px}.li-new{min-height:320px}}
+</style>
+</head>
+<body>
+<div class="wrap abar">
+  <a id="home" href="../nl/index.html" aria-label="The Next Founder"><span class="lock"><span class="s">The Next</span><span class="b">Founder<i></i></span></span></a>
+  <div class="r"><a class="back" id="back" href="../nl/index.html">&#8592; <span id="backt">Terug naar de site</span></a><div class="lang" role="group" aria-label="Taal"><a id="lnl" href="#/" hreflang="nl">NL</a><a id="len" href="#/en/" hreflang="en">EN</a></div></div>
+</div>
+<main class="wrap app" id="main"></main>
+<script src="../assets/tnv.js"></script>
+<script>
+const {LANG,T,ventures,LEVEL,esc,vimg,PLAN,STRICT,STRICT_D,KIND,STATUS,need,mcard}=TNV;
+const pre=LANG==='en'?'#/en/':'#/';
+const main=document.getElementById('main');
+document.getElementById('home').href='../'+LANG+'/index.html';
+document.getElementById('lnl').setAttribute('aria-current',LANG==='nl');document.getElementById('len').setAttribute('aria-current',LANG==='en');
+function setTabs(){}
+document.getElementById('back').href='../'+LANG+'/index.html';document.getElementById('backt').textContent=T('Terug naar de site','Back to the site');
+function setLang(r){document.getElementById('lnl').href='#/'+r;document.getElementById('len').href='#/en/'+r}
+
+/* the score: a prototype that reads the answers; in the real product the analysis runs on the video */
+const QA=[T(['Ik wil bouwen, niet bedenken','Dit probleem ken ik zelf','Ik zoek een team om mee te starten'],['I want to build, not invent','I know this problem first hand','I want a team to start with']),
+ T(['Ik werkte in die markt','Ik ben zelf die klant','Nog weinig, ik leer snel'],['I worked in that market','I am that customer myself','Not much yet, I learn fast']),
+ T(['Verkopen en klanten binnenhalen','Bouwen en het product','Allebei, met een team om me heen'],['Selling and winning customers','Building and the product','Both, with a team around me']),
+ null,
+ T(['Ik heb eerder iets opgebouwd','Ik geef niet snel op','Ik wil eerst hun verhaal horen'],['I have built something before','I do not give up easily','I want to hear their story first'])];
+const W=[[75,85,70],[90,80,55],null,null,[85,75,65]];
+function side(a){const i=QA[2].indexOf(a);if(i>=0)return ['com','tech','both'][i];const s=a.toLowerCase();if(/verko|sales|sell|klant|custom|commerc/.test(s))return 'com';if(/bouw|build|code|tech|product|engineer/.test(s))return 'tech';return 'both'}
+function fit(v,sd){const t=PLAN[v.id].tech;return Math.round(sd==='com'?100-t*.8:sd==='tech'?30+t*.8:72)}
+function pts(i,a){if(!W[i])return 70;const k=QA[i].indexOf(a);return k>=0?W[i][k]:Math.min(90,60+Math.round(a.length/4))}
+function plan(a){const q=T(['Eerst twintig klantgesprekken','Meteen verkopen, dan bouwen','Product scherper, dan verkopen'],['Twenty customer calls first','Sell right away, then build','Sharpen the product, then sell']);const k=q.indexOf(a);return k>=0?[82,76,66][k]:Math.min(92,55+Math.round(a.length/3))}
+function score(v,ans){const sd=side(ans[2]||'');const m=fit(v,sd),p=plan(ans[3]||''),c=Math.round((pts(0,ans[0]||'')+pts(1,ans[1]||'')+pts(4,ans[4]||''))/3);return {m,p,c,sd,total:Math.round(.45*m+.3*p+.25*c)}}
+
+let RUN=0;
+function route(){
+  RUN++;
+  const h=location.hash||'#/';const en=/^#\/en(\/|$)/.test(h);
+  if((en?'en':'nl')!==LANG){location.reload();return}
+  const r=h.replace(/^#\/(en\/)?/,'');const [a,b,c]=r.split('/');
+  document.body.classList.toggle('dark',false);
+  if(a==='apply'&&ventures.some(v=>v.id===b))return c==='call'?apply(b):intro(b);
+  if(a==='idea')return onboard();
+  if(a==='profile'||a==='signup')return signup();
+  if(a==='me')return me();
+  if(a==='login')return login();
+  if(a==='dashboard')return dash('vaste-prik');
+  pick();
+}
+let AUTO=false;
+function intro(id){
+  const v=ventures.find(x=>x.id===id);setLang('apply/'+id);
+  main.innerHTML='<div class="intro4"><div class="i-img"><img src="../assets/img/eva.jpg" alt="'+T('Eva, een AI-interviewer (een gegenereerd, fictief persoon)','Eva, an AI interviewer (a generated, fictional person)')+'"><span class="i-tag">'+T('AI-interviewer','AI interviewer')+'</span></div>'+
+   '<div class="i-txt"><div class="i-v"><img src="../assets/img/badges/'+v.id+'.svg" alt=""><span>'+esc(v.name)+'</span></div>'+
+   '<h1>'+T('Maak kennis met Eva','Meet Eva')+'</h1><p class="p">'+T('Eva is de AI-interviewer van The Next Founder. Ze voert het eerste gesprek over '+v.name+', zodat elke kandidaat dezelfde kans krijgt en de makers ieder gesprek kunnen terugkijken.','Eva is the AI interviewer of The Next Founder. She holds the first conversation about '+v.name+', so every candidate gets the same chance and the makers can watch every conversation back.')+'</p>'+
+   '<ol class="i-list"><li><b>'+T('Vijf vragen over '+v.name,'Five questions about '+v.name)+'</b><span>'+T('Over jou, de klant en de eerste mijlpaal. Ongeveer tien minuten.','About you, the customer and the first milestone. About ten minutes.')+'</span></li>'+
+   '<li><b>'+T('Op video, hardop of getypt','On video, out loud or typed')+'</b><span>'+T('Je camera mag aan, het hoeft niet. Je kunt ook een antwoord kiezen.','Your camera can be on, it does not have to be. You can also pick an answer.')+'</span></li>'+
+   '<li><b>'+T('Altijd een score en feedback','Always a score and feedback')+'</b><span>'+T('Direct na het gesprek, ook als het deze keer niet past.','Straight after the conversation, even if it is not a fit this time.')+'</span></li>'+
+   '<li><b>'+T('De beste kandidaten gaan door','The best candidates go through')+'</b><span>'+T('Wie door is, krijgt een opdracht en daarna een gesprek met de makers. De besten worden uitgenodigd voor de show, waar de founder wordt gekozen.','If you are through, you get an assignment and then a conversation with the makers. The best are invited to the show, where the founder is chosen.')+'</span></li></ol>'+
+   '<div class="ctas"><a class="pill lg" href="'+pre+'apply/'+id+'/call">'+T('Start het gesprek','Start the conversation')+'</a><a class="pill lg soft" href="../'+LANG+'/ventures/'+id+'/index.html">'+T('Eerst de venture bekijken','See the venture first')+'</a></div>'+
+   '<p class="note">'+T('Prototype: er wordt niets opgenomen of verstuurd.','Prototype: nothing is recorded or sent.')+'</p></div></div>';
+  scrollTo(0,0);
+  const go=main.querySelector('.ctas .pill');
+  go.onclick=e=>{e.preventDefault();const box=main.querySelector('.intro4');
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches||innerWidth<1081){AUTO=true;location.hash=pre+'apply/'+id+'/call';return}
+    box.classList.add('go');setTimeout(()=>{AUTO=true;location.hash=pre+'apply/'+id+'/call'},720)};
+}
+function login(){
+  setLang('login');
+  const p=TNV.getProfile();
+  main.innerHTML='<div class="li2">'+(p?'<a class="li-me" href="'+pre+'me"><span class="hp-av">'+esc((p.name||'?').charAt(0).toUpperCase())+'</span><span><b>'+T('Ga verder als ','Continue as ')+esc(p.name)+'</b><em>'+T('Je founderprofiel','Your founder profile')+'</em></span><i>&#8594;</i></a>':'')+
+   '<div class="li-grid"><div class="li-card li-new"><span class="li-blobs" aria-hidden="true"><i></i><i></i><i></i></span><h1>'+T('Nieuw hier?','New here?')+'</h1><p>'+T('Maak in twee minuten je founderprofiel, met een kort gesprek met Eva. Daarna zie je bij elke venture hoe goed je erbij past.','Make your founder profile in two minutes, with a short conversation with Eva. Then every venture shows how well you fit.')+'</p><a class="pill lg" href="'+pre+'signup">'+T('Maak je profiel','Make your profile')+'</a></div>'+
+   '<div class="li-card"><h2>'+T('Inloggen','Log in')+'</h2><p>'+T('Je krijgt een link per mail, geen wachtwoord.','You get a link by email, no password.')+'</p><form id="lf"><label class="nv-sr" for="em">E-mail</label><input id="em" type="email" placeholder="'+T('je@email.nl','you@email.com')+'" required><button class="pill lg soft" type="submit">'+T('Stuur de link','Send the link')+'</button></form><p class="note">'+T('Prototype: met een profiel ga je naar je profiel, zonder naar het dashboard van de voorbeeld-founder van Vaste Prik.','Prototype: with a profile you go to your profile, without one to the dashboard of the example founder of Vaste Prik.')+'</p></div></div></div>';
+  main.querySelector('#lf').onsubmit=e=>{e.preventDefault();location.hash=pre+(TNV.getProfile()?'me':'dashboard')};
+  scrollTo(0,0);
+}
+function pick(){
+  setTabs('');setLang('');
+  main.innerHTML='<h1>'+T('Voor welke venture?','Which venture?')+'</h1><p class="p">'+T('Kies de venture waarvoor je Eva wilt spreken.','Choose the venture you want to talk to Eva about.')+'</p><div class="pick">'+
+  ventures.map(v=>'<a href="'+pre+'apply/'+v.id+'"><div class="tile mkw"><img src="'+TNV.vimg(v)+'" alt=""></div><b>'+esc(v.name)+'</b><span>'+T('Zoekt: ','Needs: ')+esc(need(v).toLowerCase())+' · '+T('eerste mijlpaal dag ','first milestone day ')+PLAN[v.id].ms[0].day+'</span></a>').join('')+'</div>';
+  scrollTo(0,0);
+}
+function apply(id){
+  const run=RUN;
+  const v=ventures.find(x=>x.id===id);setTabs('');setLang('apply/'+id+'/call');
+  main.innerHTML='<div id="call" class="call4"></div>';
+  TNV.interview(document.getElementById('call'),{venture:v.id,onVenture:x=>{history.replaceState(null,'',pre+'apply/'+x+'/call');apply(x)},onDone:(vv,ans)=>{if(run===RUN)analyse(vv,ans)}});
+  /* only Eva on screen: the answer field floats over the picture, the side panel goes */
+  const c=document.getElementById('call'),scr=c.querySelector('.nv-screen'),inp=c.querySelector('.nv-in');if(scr&&inp)scr.appendChild(inp);
+  const sel=c.querySelector('.nv-meta select');
+  if(AUTO){AUTO=false;const b=c.querySelector('.nv-go');if(b)b.click()}
+  scrollTo(0,0);
+}
+function analyse(v,ans){
+  const run=RUN;
+  const st=T(['Video omgezet naar tekst','Vergeleken met wat '+v.name+' nodig heeft','Je plan voor mijlpaal 1 beoordeeld','Score en feedback opgesteld'],['Video turned into text','Compared with what '+v.name+' needs','Your plan for milestone 1 assessed','Score and feedback written']);
+  main.innerHTML='<div class="an"><h1>'+T('Je video wordt geanalyseerd','Analysing your video')+'</h1><ol>'+st.map(s=>'<li><i></i>'+esc(s)+'</li>').join('')+'</ol><p class="note">'+T('Prototype: in het echt draait de analyse op je video. Hier rekenen we met je antwoorden.','Prototype: in the real product the analysis runs on your video. Here it works from your answers.')+'</p></div>';
+  scrollTo(0,0);
+  const li=[...main.querySelectorAll('li')];let i=0;
+  const tick=()=>{if(run!==RUN)return;if(i>0){li[i-1].classList.remove('on');li[i-1].classList.add('ok')}if(i<li.length){li[i].classList.add('on');i++;setTimeout(tick,750)}else setTimeout(()=>{if(run===RUN)result(v,ans)},400)};tick();
+}
+function result(v,ans){
+  const s=score(v,ans),yes=s.total>=70;
+  const good=[],work=[];
+  (s.m>=70?good:work).push(s.m>=70?T('Je kracht past bij wat '+v.name+' nodig heeft.','Your strength fits what '+v.name+' needs.'):T(v.name+' zoekt vooral iemand die '+need(v).toLowerCase()+' sterk is. Laat zien waar jij dat al deed.',v.name+' mostly needs someone strong on the '+need(v).toLowerCase()+' side. Show where you have done that before.'));
+  (s.p>=70?good:work).push(s.p>=70?T('Je plan voor de eerste mijlpaal is concreet.','Your plan for the first milestone is concrete.'):T('Maak je plan voor mijlpaal 1 concreter: wie bel je in week één, en hoeveel?','Make your plan for milestone 1 more concrete: who do you call in week one, and how many?'));
+  (s.c>=72?good:work).push(s.c>=72?T('Je laat zien dat je het meent.','You show that you mean it.'):T('Vertel meer over wat je eerder bouwde of doorzette.','Say more about what you built or pushed through before.'));
+  const alt=ventures.filter(x=>x.id!==v.id).map(x=>[x,fit(x,s.sd)]).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  main.innerHTML='<div class="head2"><h1>'+T('Je score','Your score')+'</h1><a href="'+pre+'">'+T('Terug naar de ventures','Back to the ventures')+'</a></div><div class="res">'+
+   '<div class="score"><span>'+esc(v.name)+'</span><b>'+s.total+'</b><span>'+T('van de 100','out of 100')+'</span><div><span class="verdict'+(yes?' yes':'')+'">'+(yes?T('Door naar de opdracht','Through to the assignment'):T('Deze keer niet','Not this time'))+'</span></div>'+
+   '<div class="subs">'+[[T('Match met wat de venture nodig heeft','Match with what the venture needs'),s.m],[T('Plan voor de eerste mijlpaal','Plan for the first milestone'),s.p],[T('Inzet en motivatie','Commitment and motivation'),s.c]].map(([l,n])=>'<div>'+l+' · '+n+'<i><u style="width:'+n+'%"></u></i></div>').join('')+'</div></div>'+
+   '<div class="fb"><h2>'+(yes?T('Je bent door','You are through'):T('Dank je voor je video','Thank you for your video'))+'</h2><p>'+(yes?T('Je krijgt binnen een dag een opdracht rond de eerste mijlpaal van '+v.name+'. De beste opdrachten krijgen een gesprek met de makers, en wie overtuigt wordt uitgenodigd voor de show. Zijn er meer goede kandidaten dan plekken, dan beslist loting, en de anderen gaan voor in de volgende aflevering.','Within a day you get an assignment around the first milestone of '+v.name+'. The best assignments get a conversation with the makers, and whoever convinces them is invited to the show. If there are more good candidates than seats, a draw decides, and the others go first in the next episode.'):T('Deze keer gaat '+v.name+' verder met andere kandidaten. Je feedback krijg je toch, zodat je weet waarom.',v.name+' continues with other candidates this time. You still get your feedback, so you know why.'))+'</p>'+
+   (good.length?'<h3 class="k">'+T('Wat sterk was','What was strong')+'</h3><ul>'+good.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+   (work.length?'<h3 class="k">'+T('Waar je kunt groeien','Where you can grow')+'</h3><ul>'+work.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+   '<h3 class="k">'+(yes?T('Ook interessant voor jou','Also worth a look'):T('Ventures die beter passen','Ventures that fit you better'))+'</h3><div class="alt">'+alt.map(([x])=>'<a href="'+pre+'apply/'+x.id+'"><img src="../assets/img/badges/'+x.id+'.svg" alt="">'+esc(x.name)+'</a>').join('')+'</div>'+
+   (yes?'<div class="ctas" style="margin-top:22px"><a class="pill lg" href="#" onclick="this.outerHTML=\'<p class=note>'+T('Prototype: er wordt niets verstuurd.','Prototype: nothing is sent.')+'</p>\';return false">'+T('Plan ronde 2','Plan round 2')+'</a></div>':'')+
+   '<p class="note">'+T('Prototype. Iedere kandidaat krijgt feedback, ook bij een afwijzing.','Prototype. Every candidate gets feedback, also when rejected.')+'</p></div></div>';
+  scrollTo(0,0);
+}
+function card(o,i){
+  const m=o.ms[i];
+  return '<div class="mc mc-planned"><div class="mc-top"><span class="mc-n">'+T('Mijlpaal','Milestone')+' '+(i+1)+'</span><span class="mc-k">'+esc(STRICT[o.strict])+'</span></div><b class="mc-goal">'+esc(m.goal||T('Doel van de mijlpaal','Goal of the milestone'))+'</b><div class="mc-row"><span><small>Deadline</small>'+T('Dag ','Day ')+esc(m.day||'?')+'</span><span><small>Tranche '+(i+1)+'</small>'+esc(m.amount?'€ '+m.amount:'€ ['+T('bedrag','amount')+']')+'</span><span><small>Status</small><em class="mc-st">'+STATUS.planned+'</em></span></div></div>';
+}
+function onboard(){
+  setTabs('');setLang('idea');
+  const o={name:'',line:'',need:'',strict:'',ms:[{goal:'',day:30,amount:''},{goal:'',day:90,amount:''},{goal:'',day:180,amount:''}]};
+  const NEED={com:[T('Iemand commercieel','Someone commercial'),T('Verkopen, klanten, partners.','Sales, customers, partners.')],tech:[T('Iemand technisch','Someone technical'),T('Bouwen, product, data.','Building, product, data.')],both:[T('Allebei','Both'),T('Een founder die beide kan, of een duo.','A founder who does both, or a pair.')]};
+  const ok=[()=>o.name.trim()&&o.line.trim(),()=>o.need,()=>o.strict,()=>o.ms.every(m=>m.goal.trim()),()=>true];
+  let st=0,dir=1;
+  const opt=(k,t,d,on)=>'<button type="button" class="ob2o" data-k="'+k+'" aria-pressed="'+on+'"><b>'+t+'</b><span>'+d+'</span><i aria-hidden="true"></i></button>';
+  const steps=[
+   ()=>'<p class="ob2k">'+T('Je idee','Your idea')+'</p><h1>'+T('Hoe heet het?','What is it called?')+'</h1><input class="ob2big" id="nm" autocomplete="off" placeholder="'+T('Naam van de venture','Name of the venture')+'" value="'+esc(o.name)+'"><input class="ob2line" id="ln" autocomplete="off" placeholder="'+T('Wat doet het, en voor wie, in één zin','What it does, and for whom, in one sentence')+'" value="'+esc(o.line)+'"><p class="ob2h">'+T('We bekijken elk idee voordat het op het platform komt.','We review every idea before it goes on the platform.')+'</p>',
+   ()=>'<p class="ob2k">'+T('De founder','The founder')+'</p><h1>'+T('Wie zoek je?','Who are you looking for?')+'</h1><div class="ob2opts">'+Object.entries(NEED).map(([k,[t,d]])=>opt(k,t,d,o.need===k)).join('')+'</div>',
+   ()=>'<p class="ob2k">'+T('De afspraak','The agreement')+'</p><h1>'+T('Hoe streng zijn de mijlpalen?','How strict are the milestones?')+'</h1><div class="ob2opts">'+['loose','standard','strict'].map(k=>opt(k,STRICT[k],STRICT_D[k],o.strict===k)).join('')+'</div>',
+   ()=>'<p class="ob2k">'+T('De mijlpalen','The milestones')+'</p><h1>'+T('Wat moet er gebeuren?','What has to happen?')+'</h1><div class="ob2ms">'+o.ms.map((m,i)=>'<div class="ob2m"><span class="n">'+(i+1)+'</span><input data-i="'+i+'" data-f="goal" autocomplete="off" placeholder="'+[T('Bijvoorbeeld tien betalende klanten','For example ten paying customers'),T('Bijvoorbeeld een werkende eerste versie','For example a working first version'),T('Bijvoorbeeld honderd klanten','For example a hundred customers')][i]+'" value="'+esc(m.goal)+'"><label><span>'+T('dag','day')+'</span><input data-i="'+i+'" data-f="day" inputmode="numeric" value="'+esc(m.day)+'"></label><label><span>€</span><input data-i="'+i+'" data-f="amount" inputmode="numeric" placeholder="'+T('bedrag','amount')+'" value="'+esc(m.amount)+'"></label></div>').join('')+'</div><p class="ob2h">'+T('Elke mijlpaal ontgrendelt een tranche. Bedragen mag je open laten, het team helpt.','Each milestone unlocks a tranche. You can leave amounts open, the team helps.')+'</p>',
+   ()=>'<p class="ob2k">'+T('Controleer','Check')+'</p><h1>'+T('Zo zien kandidaten het','This is what candidates see')+'</h1><div class="ob2card"><div class="ob2ch"><span class="ob2ini">'+esc((o.name.trim()[0]||'?').toUpperCase())+'</span><div><b>'+esc(o.name)+'</b><span>'+esc(o.line)+'</span></div></div><div class="ob2tags"><span>'+NEED[o.need][0]+'</span><span>'+STRICT[o.strict]+'</span></div><ol>'+o.ms.map((m,i)=>'<li><i></i><span>'+esc(m.goal)+'</span><em>'+T('dag ','day ')+esc(m.day||'?')+' · '+(m.amount?'€ '+esc(m.amount):T('bedrag open','amount open'))+'</em></li>').join('')+'</ol></div>'
+  ];
+  main.innerHTML='<div class="ob2"><div class="ob2bar"><span id="pg"></span><em id="pc"></em></div><div class="ob2st" id="stg"></div><div class="ob2nav"><button type="button" class="ob2back" id="bk">'+T('Terug','Back')+'</button><button type="button" class="pill lg" id="nx"></button></div></div>';
+  const stg=main.querySelector('#stg'),nx=main.querySelector('#nx'),bk=main.querySelector('#bk');
+  function upd(){nx.disabled=!ok[st]();}
+  function draw(){
+    main.querySelector('#pg').style.width=((st+1)/steps.length*100)+'%';
+    main.querySelector('#pc').textContent=T('Stap ','Step ')+(st+1)+T(' van ',' of ')+steps.length;
+    bk.style.visibility=st?'visible':'hidden';
+    nx.textContent=st===steps.length-1?T('Verstuur voor review','Send for review'):T('Verder','Continue');
+    stg.innerHTML='<div class="ob2in" style="--d:'+dir+'">'+steps[st]()+'</div>';
+    const nm=stg.querySelector('#nm'),ln=stg.querySelector('#ln');
+    if(nm){nm.oninput=()=>{o.name=nm.value;upd()};ln.oninput=()=>{o.line=ln.value;upd()};setTimeout(()=>(o.name?ln:nm).focus(),60)}
+    stg.querySelectorAll('.ob2o').forEach(b=>b.onclick=()=>{if(st===1)o.need=b.dataset.k;else o.strict=b.dataset.k;stg.querySelectorAll('.ob2o').forEach(x=>x.setAttribute('aria-pressed',x===b));upd();setTimeout(()=>go(1),260)});
+    stg.querySelectorAll('.ob2m input').forEach(x=>x.oninput=()=>{o.ms[x.dataset.i][x.dataset.f]=x.value;upd()});
+    const f1=stg.querySelector('.ob2m input');if(f1)setTimeout(()=>f1.focus(),60);
+    upd();
+  }
+  function go(d){if(d>0&&!ok[st]())return;if(d>0&&st===steps.length-1)return done();st=Math.max(0,Math.min(steps.length-1,st+d));dir=d;draw()}
+  function done(){main.querySelector('.ob2').innerHTML='<div class="ob2done"><span class="ob2ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h1>'+T('Ingestuurd','Sent in')+'</h1><p>'+T('Het team kijkt je mijlpalen na en zoekt partners voor de eerste fase. Daarna staat '+o.name+' bij de ventures.','The team reviews your milestones and looks for partners for the first phase. Then '+o.name+' joins the ventures.')+'</p><p class="note">'+T('Prototype: er is niets verstuurd.','Prototype: nothing was sent.')+'</p><a class="pill lg soft" href="../'+LANG+'/index.html#ventures">'+T('Naar de ventures','To the ventures')+'</a></div>'}
+  nx.onclick=()=>go(1);bk.onclick=()=>go(-1);
+  main.querySelector('.ob2').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&e.target.tagName==='INPUT'){e.preventDefault();go(1)}});
+  draw();scrollTo(0,0);
+}
+function profile(){
+  setTabs('');setLang('profile');
+  const {SECTORS,ROLE,ROLE_S}=TNV;
+  const o={roles:[],secs:[],name:'',about:'',link:'',email:'',show:true};
+  const ok=[()=>o.roles.length,()=>o.secs.length,()=>o.name.trim()&&o.about.trim(),()=>/.+@.+\..+/.test(o.email)];
+  const RD={ceo:T('Verkopen, klanten, partners, het bedrijf leiden.','Sales, customers, partners, running the company.'),cto:T('Bouwen, product, data, techniek.','Building, product, data, engineering.'),cmo:T('Merk, groei, content, community.','Brand, growth, content, community.')};
+  let st=0,dir=1;
+  const steps=[
+   ()=>'<p class="ob2k">'+T('Je profiel','Your profile')+'</p><h1>'+T('Wat voor founder ben je?','What kind of founder are you?')+'</h1><div class="ob2opts">'+['ceo','cto','cmo'].map(k=>'<button type="button" class="ob2o" data-g="roles" data-k="'+k+'" aria-pressed="'+o.roles.includes(k)+'"><b>'+ROLE[k]+'</b><span>'+RD[k]+'</span><i aria-hidden="true"></i></button>').join('')+'</div><p class="ob2h">'+T('Meer dan één mag.','More than one is fine.')+'</p>',
+   ()=>'<p class="ob2k">'+T('Je profiel','Your profile')+'</p><h1>'+T('Welke sectoren spreken je aan?','Which sectors speak to you?')+'</h1><div class="ob2chips">'+Object.keys(SECTORS).map(k=>'<button type="button" data-g="secs" data-k="'+k+'" aria-pressed="'+o.secs.includes(k)+'">'+SECTORS[k]+'</button>').join('')+'</div>',
+   ()=>'<p class="ob2k">'+T('Je profiel','Your profile')+'</p><h1>'+T('Wie ben je?','Who are you?')+'</h1><input class="ob2big" id="pn" autocomplete="name" placeholder="'+T('Je naam','Your name')+'" value="'+esc(o.name)+'"><input class="ob2line" id="pa" autocomplete="off" placeholder="'+T('Wat heb je gedaan, in één zin','What you have done, in one sentence')+'" value="'+esc(o.about)+'"><input class="ob2line" id="pl" autocomplete="url" placeholder="'+T('LinkedIn, mag ook later','LinkedIn, can come later')+'" value="'+esc(o.link)+'">',
+   ()=>'<p class="ob2k">'+T('Bijna klaar','Almost done')+'</p><h1>'+T('Waar mailen we je?','Where do we email you?')+'</h1><input class="ob2big" id="pe" type="email" autocomplete="email" placeholder="'+T('je@email.nl','you@email.com')+'" value="'+esc(o.email)+'"><label class="ob2chk"><input type="checkbox" id="ps"'+(o.show?' checked':'')+'><span>'+T('Ook een mail als de inschrijving voor de volgende show opengaat','Also email me when applications for the next show open')+'</span></label>'
+  ];
+  main.innerHTML='<div class="ob2"><div class="ob2bar"><span id="pg"></span><em id="pc"></em></div><div class="ob2st" id="stg"></div><div class="ob2nav"><button type="button" class="ob2back" id="bk">'+T('Terug','Back')+'</button><button type="button" class="pill lg" id="nx"></button></div></div>';
+  const stg=main.querySelector('#stg'),nx=main.querySelector('#nx'),bk=main.querySelector('#bk');
+  function upd(){nx.disabled=!ok[st]()}
+  function draw(){
+    main.querySelector('#pg').style.width=((st+1)/steps.length*100)+'%';
+    main.querySelector('#pc').textContent=T('Stap ','Step ')+(st+1)+T(' van ',' of ')+steps.length;
+    bk.style.visibility=st?'visible':'hidden';
+    nx.textContent=st===steps.length-1?T('Maak mijn profiel','Make my profile'):T('Verder','Continue');
+    stg.innerHTML='<div class="ob2in" style="--d:'+dir+'">'+steps[st]()+'</div>';
+    stg.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{const g=o[b.dataset.g],k=b.dataset.k,i=g.indexOf(k);if(i<0)g.push(k);else g.splice(i,1);b.setAttribute('aria-pressed',i<0);upd()});
+    [['pn','name'],['pa','about'],['pl','link'],['pe','email']].forEach(([id,f])=>{const x=stg.querySelector('#'+id);if(x)x.oninput=()=>{o[f]=x.value;upd()}});
+    const sh=stg.querySelector('#ps');if(sh)sh.onchange=()=>{o.show=sh.checked};
+    const f1=stg.querySelector('input:not([type=checkbox])');if(f1)setTimeout(()=>f1.focus(),60);
+    upd();
+  }
+  function go(d){if(d>0&&!ok[st]())return;if(d>0&&st===steps.length-1)return done();st=Math.max(0,Math.min(steps.length-1,st+d));dir=d;draw()}
+  function done(){
+    const sc=v=>(v.roles.some(r=>o.roles.includes(r))?2:0)+(o.secs.includes(v.sector)?1:0);
+    const m=ventures.filter(v=>sc(v)>=2).sort((a,b)=>sc(b)-sc(a)).slice(0,4);
+    main.querySelector('.ob2').innerHTML='<div class="ob2done pdone"><span class="ob2ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h1>'+T('Je profiel staat','Your profile is set')+'</h1><p>'+T('We mailen je zodra er een venture bijkomt die past'+(o.show?', en wanneer de inschrijving voor de volgende show opengaat.':'.'),'We email you as soon as a venture that fits is added'+(o.show?', and when applications for the next show open.':'.'))+'</p><p class="note">'+T('Prototype: er is niets opgeslagen of verstuurd.','Prototype: nothing was saved or sent.')+'</p>'+
+     (m.length?'<h2 class="pm-h">'+T('Nu al een match','Already a match')+'</h2><div class="pm">'+m.map(v=>'<a href="'+pre+'apply/'+v.id+'"><img src="../assets/img/badges/'+v.id+'.svg" alt=""><span><b>'+esc(v.name)+'</b><em>'+T('Zoekt ','Looking for ')+v.roles.map(r=>ROLE_S[r]).join(', ')+'</em></span><i aria-hidden="true">&#8594;</i></a>').join('')+'</div>':'<a class="pill lg soft" href="../'+LANG+'/ventures/index.html">'+T('Bekijk de ventures','See the ventures')+'</a>')+'</div>';
+  }
+  nx.onclick=()=>go(1);bk.onclick=()=>go(-1);
+  main.querySelector('.ob2').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'){e.preventDefault();go(1)}});
+  draw();scrollTo(0,0);
+}
+/* V7: account setup, playful, one step per screen; every step can be skipped, and an example fills it in */
+const SKP=()=>Object.fromEntries(TNV.SKILLS.map(([k])=>[k,0]));
+const PRESET={com:{sales:3,marketing:2,product:1,tech:0,ops:2,finance:2},tech:{sales:0,marketing:1,product:3,tech:3,ops:1,finance:0},all:{sales:2,marketing:2,product:2,tech:1,ops:2,finance:1}};
+const TYPES=()=>({com:[T('Commercieel','Commercial'),T('Verkopen, klanten, partners, het verhaal.','Sales, customers, partners, the story.'),'#FF7552'],tech:[T('Technisch','Technical'),T('Bouwen, product, data, techniek.','Building, product, data, engineering.'),'#1F2E9A'],all:[T('Van alles wat','A bit of everything'),T('Je pakt op wat er ligt, van verkoop tot product.','You pick up whatever needs doing, from sales to product.'),'#C6F05A']});
+const LVL=()=>[T('Nog niet','Not yet'),T('Een beetje','A little'),T('Goed','Good'),T('Mijn ding','My thing')];
+const EVAQ=n=>[
+ {q:T('Hoi '+n+', ik ben Eva. Wat is het mooiste dat je tot nu toe hebt gebouwd of verkocht?','Hi '+n+', I am Eva. What is the best thing you have built or sold so far?'),a:T(['Een eigen bedrijf','Een product bij een scale-up','Een team of afdeling','Nog niets, ik wil beginnen'],['A company of my own','A product at a scale-up','A team or a department','Nothing yet, I want to start'])},
+ {q:T('Mooi. Wanneer ben je op je best?','Nice. When are you at your best?'),a:T(['Als ik met klanten praat','Als ik iets bouw','Als ik orde schep in chaos','Als ik een verhaal vertel'],['Talking to customers','Building something','Bringing order to chaos','Telling a story'])},
+ {q:T('Laatste vraag. Hoeveel tijd kun je vrijmaken voor een venture?','Last question. How much time can you free up for a venture?'),a:T(['Fulltime, nu meteen','Fulltime over een paar maanden','Eerst parttime'],['Full time, right away','Full time in a few months','Part time first'])}];
+function summary(p){const top=TNV.SKILLS.slice().sort((x,y)=>(p.skills[y[0]]||0)-(p.skills[x[0]]||0)).slice(0,2).map(x=>x[1].toLowerCase());const ty=TYPES()[p.type]?TYPES()[p.type][0].toLowerCase():T('veelzijdige','versatile');
+ const ind=(p.industries||[]).slice(0,2).map(k=>TNV.SECTORS[k].toLowerCase());
+ return T((p.name||'Deze founder')+' is een '+(p.type==='all'?'allround':ty)+' founder, sterk in '+top.join(' en ')+(ind.length?', met een hart voor '+ind.join(' en '):'')+'.'+(p.eva&&p.eva[2]?' Beschikbaar: '+p.eva[2].toLowerCase()+'.':''),
+   (p.name||'This founder')+' is a '+(p.type==='all'?'versatile':ty)+' founder, strong in '+top.join(' and ')+(ind.length?', with a soft spot for '+ind.join(' and '):'')+'.'+(p.eva&&p.eva[2]?' Available: '+p.eva[2].toLowerCase()+'.':''))}
+function signup(){
+  setTabs('');setLang('signup');
+  const prev=TNV.getProfile();
+  const o=prev?JSON.parse(JSON.stringify(prev)):{name:'',email:'',type:'',skills:SKP(),industries:[],eva:[]};
+  const ok=[()=>o.name.trim(),()=>true,()=>o.type,()=>true,()=>o.industries.length,()=>o.eva.length>=3,()=>true];
+  let st=0,dir=1,ei=0;
+  const steps=[
+   ()=>'<p class="ob2k">'+T('Welkom bij The Next Founder','Welcome to The Next Founder')+'</p><h1>'+T('Hoi. Hoe heet je?','Hi. What is your name?')+'</h1><input class="ob2big" id="su-n" autocomplete="given-name" placeholder="'+T('Je voornaam','Your first name')+'" value="'+esc(o.name)+'"><button type="button" class="su-demo" id="demo">'+T('Snel kijken? Vul een voorbeeld in','Just looking? Fill in an example')+' &#8594;</button>',
+   ()=>'<p class="ob2k">'+T('Je account','Your account')+'</p><h1>'+T('Waar mogen we je mailen?','Where can we email you?')+'</h1><input class="ob2big" id="su-e" type="email" autocomplete="email" placeholder="'+T('je@email.nl','you@email.com')+'" value="'+esc(o.email)+'"><p class="ob2h">'+T('Geen wachtwoord: je logt in met een link per mail. In dit prototype ga je meteen door.','No password: you log in with a link by email. In this prototype you go straight on.')+'</p>',
+   ()=>'<p class="ob2k">'+T('Jij als founder','You as a founder')+'</p><h1>'+T('Wat voor founder ben je?','What kind of founder are you?')+'</h1><div class="su-types">'+Object.entries(TYPES()).map(([k,[t,d,c]])=>'<button type="button" class="su-type" data-k="'+k+'" aria-pressed="'+(o.type===k)+'" style="--c:'+c+'"><span class="su-ill su-'+k+'" aria-hidden="true"><i></i><i></i><i></i></span><b>'+t+'</b><span>'+d+'</span></button>').join('')+'</div>',
+   ()=>'<p class="ob2k">'+T('Je sterke punten','Your strengths')+'</p><h1>'+T('Waar ben je goed in?','What are you good at?')+'</h1><div class="su-sk">'+TNV.SKILLS.map(([k,l])=>'<div class="su-row"><span>'+l+'</span><div class="su-dots" data-k="'+k+'">'+[0,1,2,3].map(n=>'<button type="button" data-n="'+n+'" aria-pressed="'+((o.skills[k]||0)===n)+'" class="'+(n<=(o.skills[k]||0)&&n>0?'on':'')+'" aria-label="'+l+': '+LVL()[n]+'"><i></i></button>').join('')+'</div><em>'+LVL()[o.skills[k]||0]+'</em></div>').join('')+'</div><p class="ob2h">'+T('We vulden het alvast in op basis van je type. Tik om aan te passen.','We pre-filled it from your type. Tap to adjust.')+'</p>',
+   ()=>'<p class="ob2k">'+T('Je markten','Your markets')+'</p><h1>'+T('Welke sectoren spreken je aan?','Which sectors speak to you?')+'</h1><div class="ob2chips">'+Object.keys(TNV.SECTORS).map(k=>'<button type="button" data-k="'+k+'" aria-pressed="'+o.industries.includes(k)+'">'+TNV.SECTORS[k]+'</button>').join('')+'</div>',
+   ()=>'<div class="su-eva"><div class="su-eh"><img src="../assets/img/eva.jpg" alt="'+T('Eva, een AI-interviewer (gegenereerd, fictief)','Eva, an AI interviewer (generated, fictional)')+'"><div><b>Eva</b><span>'+T('AI-interviewer · drie korte vragen','AI interviewer · three short questions')+'</span></div><span class="su-live"><i></i>'+T('Live','Live')+'</span></div><div class="su-log" id="log" aria-live="polite"></div><div class="su-ans" id="ans"></div></div>',
+   ()=>'<div class="su-build"><div class="su-orb" aria-hidden="true"><img src="../assets/img/eva.jpg" alt=""></div><h1>'+T('Eva maakt je profiel','Eva is making your profile')+'</h1><ol>'+[T('Je sterke punten gewogen','Your strengths weighed'),T('Je gesprek samengevat','Your conversation summarised'),T('Vergeleken met '+TNV.ventures.length+' ventures','Compared with '+TNV.ventures.length+' ventures')].map(x=>'<li><i></i>'+x+'</li>').join('')+'</ol></div>'
+  ];
+  main.innerHTML='<div class="ob2 su"><div class="ob2bar"><span id="pg"></span><em id="pc"></em></div><div class="ob2st" id="stg"></div><div class="ob2nav"><button type="button" class="ob2back" id="bk">'+T('Terug','Back')+'</button><div class="su-r"><button type="button" class="ob2back" id="sk">'+T('Overslaan','Skip')+'</button><button type="button" class="pill lg" id="nx"></button></div></div></div>';
+  const stg=main.querySelector('#stg'),nx=main.querySelector('#nx'),bk=main.querySelector('#bk'),sk=main.querySelector('#sk'),nav=main.querySelector('.ob2nav');
+  function upd(){nx.disabled=!ok[st]()}
+  function evaChat(){const log=stg.querySelector('#log'),ans=stg.querySelector('#ans'),Q=EVAQ(o.name||T('daar','there'));
+    function bub(who,t){const d=document.createElement('div');d.className='su-b '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+    function ask(){if(ei>=Q.length){const d=document.createElement('div');d.className='su-b eva';d.textContent=T('Dank je. Ik heb genoeg om je profiel te maken.','Thank you. I have enough to make your profile.');log.appendChild(d);ans.innerHTML='';upd();return}
+      const ty=document.createElement('div');ty.className='su-b eva typing';ty.innerHTML='<i></i><i></i><i></i>';log.appendChild(ty);ans.innerHTML='';
+      setTimeout(()=>{ty.remove();bub('eva',Q[ei].q);ans.innerHTML=Q[ei].a.map(x=>'<button type="button">'+esc(x)+'</button>').join('');ans.querySelectorAll('button').forEach(b=>b.onclick=()=>{o.eva[ei]=b.textContent;bub('me',b.textContent);ei++;ask()})},700)}
+    o.eva=[];ei=0;ask()}
+  function draw(){
+    main.querySelector('#pg').style.width=((st+1)/steps.length*100)+'%';
+    main.querySelector('#pc').textContent=T('Stap ','Step ')+(st+1)+T(' van ',' of ')+steps.length;
+    bk.style.visibility=st&&st<6?'visible':'hidden';nav.style.visibility=st===6?'hidden':'visible';
+    sk.style.display=st===0||st>=6?'none':'';
+    nx.textContent=st===5?T('Maak mijn profiel','Make my profile'):T('Verder','Continue');
+    stg.innerHTML='<div class="ob2in" style="--d:'+dir+'">'+steps[st]()+'</div>';
+    const bind=(id,f)=>{const x=stg.querySelector('#'+id);if(x){x.oninput=()=>{o[f]=x.value;upd()};setTimeout(()=>x.focus(),60)}};bind('su-n','name');bind('su-e','email');
+    const dm=stg.querySelector('#demo');if(dm)dm.onclick=demo;
+    stg.querySelectorAll('.su-type').forEach(b=>b.onclick=()=>{o.type=b.dataset.k;o.skills=Object.assign(SKP(),PRESET[o.type]);stg.querySelectorAll('.su-type').forEach(x=>x.setAttribute('aria-pressed',x===b));upd();setTimeout(()=>go(1),320)});
+    stg.querySelectorAll('.su-dots').forEach(g=>g.querySelectorAll('button').forEach(b=>b.onclick=()=>{const k=g.dataset.k,n=+b.dataset.n;o.skills[k]=n;g.querySelectorAll('button').forEach(x=>{x.setAttribute('aria-pressed',+x.dataset.n===n);x.classList.toggle('on',+x.dataset.n<=n&&+x.dataset.n>0)});g.nextElementSibling.textContent=LVL()[n]}));
+    stg.querySelectorAll('.ob2chips button').forEach(b=>b.onclick=()=>{const k=b.dataset.k,i=o.industries.indexOf(k);if(i<0)o.industries.push(k);else o.industries.splice(i,1);b.setAttribute('aria-pressed',i<0);upd()});
+    if(st===5)evaChat();
+    if(st===6)build();
+    upd();
+  }
+  function build(){const li=[...stg.querySelectorAll('.su-build li')];li.forEach((l,i)=>setTimeout(()=>l.classList.add('ok'),450+i*520));
+    setTimeout(()=>{o.created=new Date().toISOString();if(!o.type)o.type='all';if(!o.industries.length)o.industries=['ai'];TNV.setProfile(o);location.hash=pre+'me'},450+li.length*520+300)}
+  function demo(){Object.assign(o,{name:o.name.trim()||'Sam',email:'sam@voorbeeld.nl',type:'tech',skills:Object.assign(SKP(),PRESET.tech,{ops:2}),industries:['care','mob'],eva:T(['Een product bij een scale-up','Als ik iets bouw','Fulltime over een paar maanden'],['A product at a scale-up','Building something','Full time in a few months'])});st=6;dir=1;draw()}
+  function go(d){if(d>0&&!ok[st]())return;st=Math.max(0,Math.min(steps.length-1,st+d));dir=d;draw()}
+  nx.onclick=()=>go(1);bk.onclick=()=>go(-1);sk.onclick=()=>{if(st===4&&!o.industries.length)o.industries=[];st=Math.min(6,st+1);if(st===5){}dir=1;if(st===5&&!o.eva.length){o.eva=T(['Nog niets, ik wil beginnen','Als ik orde schep in chaos','Eerst parttime'],['Nothing yet, I want to start','Bringing order to chaos','Part time first'])}draw()};
+  main.querySelector('.ob2').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();go(1)}});
+  draw();scrollTo(0,0);
+}
+function radar(sk){const R=110,c=150,n=TNV.SKILLS.length,pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/n;return [c+Math.cos(a)*r,c+Math.sin(a)*r]};
+  const ring=r=>TNV.SKILLS.map((x,i)=>pt(i,r).join(',')).join(' ');
+  const poly=TNV.SKILLS.map(([k],i)=>pt(i,Math.max(.12,(sk[k]||0)/3)*R).join(',')).join(' ');
+  return '<svg class="rad" viewBox="0 0 300 300" role="img" aria-label="'+T('Je sterke punten','Your strengths')+'">'+[1,2,3].map(r=>'<polygon points="'+ring(R*r/3)+'" class="rg"/>').join('')+TNV.SKILLS.map((x,i)=>{const [x2,y2]=pt(i,R);return '<line x1="150" y1="150" x2="'+x2+'" y2="'+y2+'" class="ra"/>'}).join('')+'<polygon points="'+poly+'" class="rp"/>'+TNV.SKILLS.map(([k,l],i)=>{const [x,y]=pt(i,R+22);return '<text x="'+x+'" y="'+y+'" text-anchor="middle" dominant-baseline="middle">'+l+'</text>'}).join('')+'</svg>'}
+function me(){
+  setTabs('');setLang('me');
+  const p=TNV.getProfile();
+  if(!p){main.innerHTML='<div class="ob2done"><h1>'+T('Nog geen profiel','No profile yet')+'</h1><p>'+T('Maak in twee minuten je founderprofiel.','Make your founder profile in two minutes.')+'</p><a class="pill lg" href="'+pre+'signup">'+T('Maak je profiel','Make your profile')+'</a></div>';return}
+  const ty=TYPES()[p.type]||TYPES().all;
+  const ms=TNV.ventures.map(v=>[v,TNV.match(v,p)]).sort((a,b)=>b[1]-a[1]);
+  main.innerHTML='<div class="fp">'+
+   '<section class="fp-card"><div class="fp-top"><span class="fp-av" style="--c:'+ty[2]+'">'+esc((p.name||'?').charAt(0).toUpperCase())+'</span><div><h1>'+esc(p.name||'')+'</h1><p><span class="fp-type" style="--c:'+ty[2]+'">'+ty[0]+' founder</span>'+(p.eva&&p.eva[2]?'<span class="fp-av2">'+esc(p.eva[2])+'</span>':'')+'</p></div><div class="fp-act"><a class="pill soft" href="'+pre+'signup">'+T('Bewerk','Edit')+'</a><button type="button" class="pill soft" id="out">'+T('Uitloggen','Log out')+'</button></div></div>'+
+   '<blockquote class="fp-eva"><img src="../assets/img/eva.jpg" alt=""><div><p>'+esc(summary(p))+'</p><cite>'+T('Eva, na jullie gesprek','Eva, after your conversation')+'</cite></div></blockquote></section>'+
+   '<section class="fp-grid"><div class="fp-box"><p class="k">'+T('Sterke punten','Strengths')+'</p>'+radar(p.skills)+'</div><div class="fp-box"><p class="k">'+T('Sectoren','Sectors')+'</p><div class="fp-chips">'+(p.industries||[]).map(k=>'<span>'+TNV.SECTORS[k]+'</span>').join('')+'</div><p class="k" style="margin-top:26px">'+T('Wat je meebrengt','What you bring')+'</p><ul class="fp-sk">'+TNV.SKILLS.slice().sort((a,b)=>(p.skills[b[0]]||0)-(p.skills[a[0]]||0)).map(([k,l])=>'<li><span>'+l+'</span><i><u style="width:'+((p.skills[k]||0)/3*100)+'%"></u></i></li>').join('')+'</ul></div></section>'+
+   '<section class="fp-match"><div class="fp-mh"><h2>'+T('Jouw beste matches','Your best matches')+'</h2><a href="../'+LANG+'/ventures/index.html">'+T('Alle ventures op match','All ventures by match')+' &#8594;</a></div>'+
+    ms.slice(0,3).map(([v,m])=>{const yb=TNV.youBring(v,p),th=TNV.teamHas(v);return '<a class="fp-v" href="../'+LANG+'/ventures/'+v.id+'/index.html"><img class="fp-vi" src="'+TNV.vimg(v)+'" alt=""><div class="fp-vt"><div class="fp-vn"><img src="../assets/img/badges/'+v.id+'.svg" alt=""><b>'+esc(v.name)+'</b><span class="fp-pct">'+m+'%</span></div><p>'+esc(v.line)+'</p><p class="fp-fit">'+(yb.length?T('Jij brengt ','You bring ')+'<b>'+yb.join(', ').toLowerCase()+'</b> · ':'')+T('het team heeft ','the team has ')+th.join(', ').toLowerCase()+'</p></div></a>'}).join('')+'</section>'+
+   '<p class="note">'+T('Prototype: je profiel staat alleen in deze browser. Teamsterktes van de ventures zijn voorbeelddata.','Prototype: your profile only lives in this browser. The ventures’ team strengths are example data.')+'</p></div>';
+  main.querySelector('#out').onclick=()=>{TNV.setProfile(null);location.hash=pre+'login'};
+  scrollTo(0,0);
+}
+function dash(id){
+  const v=ventures.find(x=>x.id===id);setLang('dashboard');
+  main.innerHTML='<div class="dash"><p class="note" style="margin:0 0 18px">'+T('Voorbeeld met fictieve voortgang.','Example with fictional progress.')+'</p><div class="top"><img src="../assets/img/badges/'+v.id+'.svg" alt=""><div><span class="k">'+T('Je bent goedgekeurd','You have been approved')+'</span><h1>'+T('Welkom, founder van '+v.name,'Welcome, founder of '+v.name)+'</h1></div></div>'+
+   '<div class="kp"><div><b>'+TNV.eur(30000)+'</b><span>'+T('Tranche 1 vrijgegeven','Tranche 1 released')+'</span></div><div><b>'+T('Dag ','Day ')+PLAN[id].ms[1].day+'</b><span>'+T('Deadline van mijlpaal 2','Deadline of milestone 2')+'</span></div><div><b>'+esc(STRICT[PLAN[id].strict])+'</b><span>'+esc(STRICT_D[PLAN[id].strict])+'</span></div></div>'+
+   '<h2 class="k">'+T('Je mijlpalen','Your milestones')+'</h2><div class="mrow">'+mcard(v,0,{status:'released'})+mcard(v,1,{status:'active'})+mcard(v,2,{status:'planned'})+'</div>'+
+   '<div class="nexts"><h2 class="k">'+T('Deze week','This week')+'</h2><ul><li>'+T('Koffie met Florian Julius, de maker','Coffee with Florian Julius, the maker')+'</li><li>'+T('Een update voor de partners, elke vrijdag','An update for the partners, every Friday')+'</li><li>'+T('Je voortgang staat publiek op de venturepagina','Your progress is public on the venture page')+'</li></ul></div></div>';
+  scrollTo(0,0);
+}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>

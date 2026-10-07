@@ -1,0 +1,99 @@
+# The Next Founder
+
+> The Next Founder is a platform and TV format by House of Founders. Ventures that were thought up, built and tested at House of Founders look for a founder to run them; partners fund the first phase in tranches released per milestone. Candidates apply in a video conversation with Eva, an AI interviewer, get a score and feedback, and the best pitch on the show, where investors compete for the founder.
+
+The site is in Dutch (default) and English. Seven ventures come from House of Founders; ten are examples for the prototype. Tranche amounts are examples. The app is a scripted prototype.
+
+## Pages
+
+- [Home](/en/)
+- [How it works](/en/how-it-works/)
+- [The show](/en/the-show/)
+
+## Ventures
+
+- [Exit Buddy](/en/ventures/exit-buddy/): Finds the right adviser for selling your business.
+- [APK Opa](/en/ventures/apk-opa/): Retired mechanics inspect a used car before you buy it.
+- [Whoop Dog](/en/ventures/whoop-dog/): A tracker that measures how your dog sleeps and recovers.
+- [Eitje](/en/ventures/eitje/): A fertility check for women.
+- [Zonde](/en/ventures/zonde/): Helps households once their solar panels stop paying off.
+- [Biedmeester](/en/ventures/biedmeester/): An AI that watches, explains and adjusts the Google Ads of several clients.
+- [Vaste Prik](/en/ventures/vaste-prik/): Digital loyalty cards in Apple and Google Wallet, no app needed.
+- [Fietsdokter](/en/ventures/fietsdokter/): A bike mechanic who comes to your home or office, on subscription. (example)
+- [Klusbieb](/en/ventures/klusbieb/): Borrow tools from your neighbours, by the day. (example)
+- [Oogstrijk](/en/ventures/oogstrijk/): Farm surplus straight to restaurants. (example)
+- [Stille Uren](/en/ventures/stille-uren/): Book a quiet seat in a café, by the hour. (example)
+- [Kinderkast](/en/ventures/kinderkast/): A clothing subscription for kids, second hand and growing with them. (example)
+- [Pensioenpraat](/en/ventures/pensioenpraat/): Explains to freelancers in five minutes what to do about their pension. (example)
+- [Beweegmaatje](/en/ventures/beweegmaatje/): Matches older people with a walking buddy nearby. (example)
+- [Bouwlog](/en/ventures/bouwlog/): A digital site diary for contractors, dictated on site. (example)
+- [Zorgrooster](/en/ventures/zorgrooster/): An AI that builds rosters for home care. (example)
+- [Bakdeel](/en/ventures/bakdeel/): Share a cargo bike with your street. (example)
+
+## Exit Buddy
+
+Finds the right adviser for selling your business. Needs: commercial. Milestones: Twenty owners who want to sell in conversation; The first three paid engagements; Ten advisers under contract.
+
+## APK Opa
+
+Retired mechanics inspect a used car before you buy it. Needs: commercial. Milestones: Ten retired mechanics on board; The first fifty inspections in one region; A second region open.
+
+## Whoop Dog
+
+A tracker that measures how your dog sleeps and recovers. Needs: technical. Milestones: A working prototype on fifteen dogs; Crowdfunding campaign live; Manufacturing partner chosen.
+
+## Eitje
+
+A fertility check for women. Needs: technical and commercial. Milestones: Medical partner lab chosen; A waiting list of five hundred women; The first paid checks.
+
+## Zonde
+
+Helps households once their solar panels stop paying off. Needs: commercial. Milestones: Fifty leads from households with panels; The first installer as partner; Twenty households helped.
+
+## Biedmeester
+
+An AI that watches, explains and adjusts the Google Ads of several clients. Needs: commercial. Milestones: Five paying agencies; Company and IP deed in place; Twenty paying agencies.
+
+## Vaste Prik
+
+Digital loyalty cards in Apple and Google Wallet, no app needed. Needs: commercial. Milestones: Ten paying businesses; A till system as sales partner; A hundred businesses live.
+
+## Fietsdokter
+
+A bike mechanic who comes to your home or office, on subscription. Needs: commercial. Milestones: A hundred subscribers in one city; Three companies on a team plan; A second mechanic at work.
+
+## Klusbieb
+
+Borrow tools from your neighbours, by the day. Needs: technical and commercial. Milestones: Two hundred tools listed; Five hundred loans; A second neighbourhood live.
+
+## Oogstrijk
+
+Farm surplus straight to restaurants. Needs: commercial. Milestones: Ten farmers on board; Twenty restaurants ordering weekly; Own delivery route profitable.
+
+## Stille Uren
+
+Book a quiet seat in a café, by the hour. Needs: technical and commercial. Milestones: Fifteen cafés on board; A thousand hours booked; A plan for companies.
+
+## Kinderkast
+
+A clothing subscription for kids, second hand and growing with them. Needs: commercial. Milestones: Three hundred active subscriptions; Returns under two days; A thousand active subscriptions.
+
+## Pensioenpraat
+
+Explains to freelancers in five minutes what to do about their pension. Needs: technical and commercial. Milestones: A waiting list of a thousand freelancers; A pension partner on paper; The first paying users.
+
+## Beweegmaatje
+
+Matches older people with a walking buddy nearby. Needs: commercial. Milestones: Fifty pairs in one municipality; A municipality as client; Three municipalities.
+
+## Bouwlog
+
+A digital site diary for contractors, dictated on site. Needs: technical. Milestones: Ten contractors in a pilot; Integration with an accounting package; Fifty paying contractors.
+
+## Zorgrooster
+
+An AI that builds rosters for home care. Needs: technical. Milestones: A pilot with one home care team; Rosters in half the time; Three organisations paying.
+
+## Bakdeel
+
+Share a cargo bike with your street. Needs: commercial. Milestones: Ten streets with a cargo bike; A housing association as partner; A hundred streets.

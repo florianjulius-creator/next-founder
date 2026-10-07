@@ -1,0 +1,31 @@
+# The Next Founder
+
+> The Next Founder is a platform and TV format by House of Founders. Ventures that were thought up, built and tested at House of Founders look for a founder to run them; partners fund the first phase in tranches released per milestone. Candidates apply in a video conversation with Eva, an AI interviewer, get a score and feedback, and the best pitch on the show, where investors compete for the founder.
+
+The site is in Dutch (default) and English. Seven ventures come from House of Founders; ten are examples for the prototype. Tranche amounts are examples. The app is a scripted prototype.
+
+## Pages
+
+- [Home](/en/)
+- [How it works](/en/how-it-works/)
+- [The show](/en/the-show/)
+
+## Ventures
+
+- [Exit Buddy](/en/ventures/exit-buddy/): Finds the right adviser for selling your business.
+- [APK Opa](/en/ventures/apk-opa/): Retired mechanics inspect a used car before you buy it.
+- [Whoop Dog](/en/ventures/whoop-dog/): A tracker that measures how your dog sleeps and recovers.
+- [Eitje](/en/ventures/eitje/): A fertility check for women.
+- [Zonde](/en/ventures/zonde/): Helps households once their solar panels stop paying off.
+- [Biedmeester](/en/ventures/biedmeester/): An AI that watches, explains and adjusts the Google Ads of several clients.
+- [Vaste Prik](/en/ventures/vaste-prik/): Digital loyalty cards in Apple and Google Wallet, no app needed.
+- [Fietsdokter](/en/ventures/fietsdokter/): A bike mechanic who comes to your home or office, on subscription. (example)
+- [Klusbieb](/en/ventures/klusbieb/): Borrow tools from your neighbours, by the day. (example)
+- [Oogstrijk](/en/ventures/oogstrijk/): Farm surplus straight to restaurants. (example)
+- [Stille Uren](/en/ventures/stille-uren/): Book a quiet seat in a café, by the hour. (example)
+- [Kinderkast](/en/ventures/kinderkast/): A clothing subscription for kids, second hand and growing with them. (example)
+- [Pensioenpraat](/en/ventures/pensioenpraat/): Explains to freelancers in five minutes what to do about their pension. (example)
+- [Beweegmaatje](/en/ventures/beweegmaatje/): Matches older people with a walking buddy nearby. (example)
+- [Bouwlog](/en/ventures/bouwlog/): A digital site diary for contractors, dictated on site. (example)
+- [Zorgrooster](/en/ventures/zorgrooster/): An AI that builds rosters for home care. (example)
+- [Bakdeel](/en/ventures/bakdeel/): Share a cargo bike with your street. (example)

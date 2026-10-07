@@ -79,3 +79,9 @@ Dit vraagt toegang tot het Cloudflare-account van Florian.
 - De site vraagt zoekmachines om niet te indexeren (`noindex`), omdat het nog een ontwerp is.
 - De referentiebeelden van het bord "Vijf stijlen uit Mobbin" staan niet in deze repo; ze zijn van derden.
   Het bord linkt naar de bron op Mobbin.
+
+## The Next Founder, versie 7 (vanuit Builders Design)
+
+`builds/the-next-founder-v7/` is een kant-en-klare statische versie van de site en de app, gemaakt in Builders Design op 7 oktober 2026: Nederlands op `nl/`, Engels op `en/`, de app op `app/`. Alle paden zijn relatief, dus de map werkt zo als hij is, bijvoorbeeld met `npx serve builds/the-next-founder-v7`. Wat erin zit: de ventures met filters op sector en rol, een founderprofiel met een kort gesprek met Eva en een match per venture, de selectie in zeven stappen tot en met de show, en de deal per venture. Teamsterktes en tien van de zeventien ventures zijn voorbeelddata.
+
+Deze branch laat de rest van het project ongemoeid; `main` blijft de bron van de huidige site.
